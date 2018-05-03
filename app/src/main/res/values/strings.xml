@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">MyMoney</string>
+    <string name="welcome">Welcome</string>
+    <string name="next">Next</string>
+    <string name="skip">Skip</string>
+    <string name="start">Start</string>
+    <string name="title_slide1">Connect the charger</string>
+    <string name="string_slide1">Money Lover</string>
+
+    <string name="desc_slide1">Lên kế hoạch tài chính thông minh và từng bước tiết kiệm để hiện thực hóa ước mơ.</string>
+    <string name="string_desc_slide1">Mẹo đầu tiên: đăng nhập để truy cập vào dữ liệu của bạn trên tất cả các thiết bị.</string>
+
+    <string name="title_slide2">Kiểm soát từng khoản thu chi với hệ thống báo cáo chi tiết.</string>
+
+    <string name="desc_slide2">It will  keep you updated on battery charging status through notification and home screen widget</string>
+    <string name="title_slide3">Alert on 100%</string>
+    <string name="title_slide4">Chán nản sẽ có những trò chơi giải trí cùng app...</string>
+    <string name="title_slide5">Nghe nhạc mp3 cực đỉnh cùng app và được thiết kế giao diện cực đẹp.</string>
+    <string name="desc_slide3">It will alert you when battery reaches 100%</string>
+    <string name="btnmoney">Đã Sử Dụng MONEY LOVER</string>
+    <string name="fistmoney">Lần Đầu Sử Dụng MONEY LOVER</string>
+</resources>
