@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/projectAndroid.iml" filepath="$PROJECT_DIR$/projectAndroid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mymemory.iml" filepath="$PROJECT_DIR$/mymemory.iml" />
     </modules>
   </component>
 </project>

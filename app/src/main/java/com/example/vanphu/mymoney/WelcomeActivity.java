@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.text.Html;
@@ -16,43 +17,57 @@ import android.widget.TextView;
 
 public class WelcomeActivity extends Activity {
     private ViewPager viewPager;
-    private ViewPagerAdapter viewPagerAdapter;
     private LinearLayout dotsLayout;
-    private TextView[] dots;
     private int[] layouts;
-    private Button btnSkip, btnNext,btnda,btnlandau;
+    private Button btnSkip;
+    private Button btnNext;
+    private Button btnLogin;
+//    private Button btnRegistered;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.welcome_activity);
-        viewPager = (ViewPager) findViewById(R.id.view_pager);
-        dotsLayout = (LinearLayout) findViewById(R.id.layoutDots);
-        btnSkip = (Button) findViewById(R.id.btn_skip);
-        btnNext = (Button) findViewById(R.id.btn_next);
+        viewPager = findViewById(R.id.view_pager);
+        dotsLayout = findViewById(R.id.layoutDots);
+        Init();
 //        list layout slides
         layouts = new int[]{
                 R.layout.item_slide_1,
                 R.layout.item_slide_2,
-                R.layout.item_slide_1
+                R.layout.item_slide_3
         };
-
+//        add login
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(WelcomeActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
         // adding bottom dots
         addBottomDots(0);
 
+        ViewPagerAdapter viewPagerAdapter;
         viewPagerAdapter = new ViewPagerAdapter();
         viewPager.setAdapter(viewPagerAdapter);
         viewPager.addOnPageChangeListener(viewPagerPageChangeListener);
     }
-    public  void btnSkipClick(View v)
-    {
+
+    public void Init() {
+        btnSkip = findViewById(R.id.btn_skip);
+        btnNext = findViewById(R.id.btn_next);
+        btnLogin = findViewById(R.id.btnLogin);
+//        btnRegistered = (Button) findViewById(R.id.btnRegistered);
+    }
+
+    public void btnSkipClick(View v) {
         launchHomeScreen();
     }
 
-    public  void btnNextClick(View v)
-    {
+    public void btnNextClick(View v) {
         // checking for last page
         // if last page home screen will be launched
-        int current = getItem(1);
+        int current = getItem();
         if (current < layouts.length) {
             // move to next screen
             viewPager.setCurrentItem(current);
@@ -60,6 +75,7 @@ public class WelcomeActivity extends Activity {
             launchHomeScreen();
         }
     }
+
     ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener() {
 
         @Override
@@ -90,6 +106,7 @@ public class WelcomeActivity extends Activity {
     };
 
     private void addBottomDots(int currentPage) {
+        TextView[] dots;
         dots = new TextView[layouts.length];
 
         dotsLayout.removeAllViews();
@@ -104,25 +121,29 @@ public class WelcomeActivity extends Activity {
         if (dots.length > 0)
             dots[currentPage].setTextColor(getResources().getColor(R.color.dot_active));
     }
-    private int getItem(int i) {
-        return viewPager.getCurrentItem() + i;
+
+    private int getItem() {
+        return viewPager.getCurrentItem() + 1;
     }
 
     private void launchHomeScreen() {
 
     }
+
     public class ViewPagerAdapter extends PagerAdapter {
         private LayoutInflater layoutInflater;
 
 
-        public ViewPagerAdapter() {
+        ViewPagerAdapter() {
 
         }
 
+        @NonNull
         @Override
-        public Object instantiateItem(ViewGroup container, int position) {
+        public Object instantiateItem(@NonNull ViewGroup container, int position) {
             layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
+            assert layoutInflater != null;
             View view = layoutInflater.inflate(layouts[position], container, false);
             container.addView(view);
 
@@ -135,13 +156,13 @@ public class WelcomeActivity extends Activity {
         }
 
         @Override
-        public boolean isViewFromObject(View view, Object obj) {
+        public boolean isViewFromObject(@NonNull View view, @NonNull Object obj) {
             return view == obj;
         }
 
 
         @Override
-        public void destroyItem(ViewGroup container, int position, Object object) {
+        public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
             View view = (View) object;
             container.removeView(view);
         }
