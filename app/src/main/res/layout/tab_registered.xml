@@ -1,6 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_login"
+    android:gravity="center">
 
-</android.support.constraint.ConstraintLayout>
+    <RelativeLayout
+        android:id="@+id/layout_First"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+
+    <LinearLayout
+        android:layout_width="330dp"
+        android:layout_height="350dp"
+        android:layout_below="@+id/layout_First"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/drawable_layout_login"
+        android:orientation="vertical"
+        android:weightSum="3">
+        <RelativeLayout
+            android:layout_weight="0.4"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ng_k_t_i_kho_n"
+                android:textSize="27sp"
+                android:textColor="@color/startblue"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_weight="0.5"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center"
+            >
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/img_question"
+                android:contentDescription="@string/welcome" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.7">
+
+            <android.support.design.widget.TextInputLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/edit_User"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_person_outline_black_24dp"
+                    android:drawableStart="@drawable/ic_person_outline_black_24dp"
+                    android:hint="@string/username"
+                    android:inputType="textEmailAddress" />
+            </android.support.design.widget.TextInputLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.7">
+
+            <android.support.design.widget.TextInputLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:passwordToggleDrawable="@drawable/select_password"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="#ce12ae">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/edit_Password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_verified_user_black_24dp"
+                    android:drawableStart="@drawable/ic_verified_user_black_24dp"
+                    android:hint="@string/password"
+
+                    android:inputType="textPassword" />
+            </android.support.design.widget.TextInputLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.7"
+            android:gravity="center|top">
+            <Button
+                android:id="@+id/btn_Login"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:background="@drawable/select_button"
+                android:text="@string/ng_k"
+                android:textColor="#f7f3f3" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="330dp"
     android:layout_gravity="center"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:weightSum="2"
 
-    >
+    android:baselineAligned="false">
     <RelativeLayout
         android:layout_weight="0.25"
         android:layout_width="0dp"
@@ -29,14 +30,14 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:paddingLeft="20dp"
-        >
+        android:paddingStart="20dp"
+        tools:ignore="RtlSymmetry">
         <TextView
-            android:id="@+id/txttext"
+            android:id="@+id/txt_Text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Đang Kết Nối Với Máy Chủ..."
-            android:textSize="15dp"
+            android:text="@string/ang_k_t_n_i_v_i_m_y_ch"
+            android:textSize="15sp"
             android:textColor="#1a1a1a"
             />
     </RelativeLayout>
