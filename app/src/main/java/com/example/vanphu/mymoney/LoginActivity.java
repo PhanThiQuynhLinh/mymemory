@@ -65,18 +65,6 @@ public class LoginActivity extends AppCompatActivity {
         public PlaceholderFragment() {
         }
 
-        /**
-         * Returns a new instance of this fragment for the given section
-         * number.
-         */
-        public static PlaceholderFragment newInstance(int sectionNumber) {
-            PlaceholderFragment fragment = new PlaceholderFragment();
-            Bundle args = new Bundle();
-            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-            fragment.setArguments(args);
-            return fragment;
-        }
-
         @Override
         public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
@@ -103,11 +91,9 @@ public class LoginActivity extends AppCompatActivity {
             // Return a PlaceholderFragment (defined as a static inner class below).
             switch (position){
                 case 0:
-                    Tab_Login t_Login=new Tab_Login();
-                    return t_Login;
+                    return new Tab_Login();
                 case 1:
-                    Tab_Registered t_Registered=new Tab_Registered();
-                    return t_Registered;
+                    return new Tab_Registered();
                 default:
                     return null;
             }

@@ -34,5 +34,22 @@
     <string name="ang_k_t_n_i_v_i_m_y_ch">Đang Kết Nối Với Máy Chủ...</string>
     <string name="ng_k_t_i_kho_n">Đăng Ký Tài Khoản</string>
     <string name="ng_k">Đăng Ký</string>
-
+    <string name="h_v_t_n">Họ Và Tên</string>
+    <string name="l_a_ch_n_h_nh_nh">Lựa Chọn Hình Ảnh</string>
+    <string-array name="list_image_avatar">
+        <item>img_beatifull</item>
+        <item>img_boy</item>
+        <item>img_grirl</item>
+        <item>img_hotboy</item>
+        <item>img_men</item>
+        <item>img_sexy</item>
+    </string-array>
+    <string-array name="list_name_avatar">
+        <item>Người Đẹp</item>
+        <item>Con Trai</item>
+        <item>Con Gái</item>
+        <item>Đẹp Trai</item>
+        <item>Đàn Ông</item>
+        <item>Quyến Rũ</item>
+    </string-array>
 </resources>

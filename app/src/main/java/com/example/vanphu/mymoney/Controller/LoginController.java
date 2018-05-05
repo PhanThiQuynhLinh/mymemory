@@ -3,11 +3,8 @@ package com.example.vanphu.mymoney.Controller;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.support.design.widget.TextInputEditText;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -28,78 +25,82 @@ import java.util.Map;
 
 public class LoginController {
     private Context mContext;
-
-    private RequestQueue requestQueue;
-    private StringRequest request;
-    private SharedPreferences sharedPreferences;
+    private RequestQueue mRequestQueue;
+    private StringRequest mRequest;
+    private SharedPreferences mSharedPreferences;
 
     public LoginController(Context mContext) {
         this.mContext = mContext;
-        sharedPreferences =mContext.getSharedPreferences("datalogin", Context.MODE_PRIVATE);
-        Tab_Login.edit_User.setText(sharedPreferences.getString("username",""));
-        Tab_Login.edit_Password.setText(sharedPreferences.getString("password",""));
-        Tab_Login.cb_Remember.setChecked(sharedPreferences.getBoolean("checked",false));
+        mSharedPreferences = mContext.getSharedPreferences("datalogin", Context.MODE_PRIVATE);
+        Tab_Login.sEdit_User.setText(mSharedPreferences.getString("username", ""));
+        Tab_Login.sEdit_Password.setText(mSharedPreferences.getString("password", ""));
+        Tab_Login.sCb_Remember.setChecked(mSharedPreferences.getBoolean("checked", false));
     }
 
-    public void login(final String URL, final CheckBox cb_Remember, final TextInputEditText edit_User, final TextInputEditText edit_Password, Button btn_Login) {
-        btn_Login.setOnClickListener(new View.OnClickListener() {
+    public void login(final String URL) {
+        Tab_Login.sBtn_Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Declare Dialog
-                final Dialog dialog=new Dialog(mContext);
-                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                dialog.setContentView(R.layout.dialog_watting);
-                dialog.show();
-                request = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONObject jsonObject = new JSONObject(response);
+                if (Tab_Login.sEdit_Password.getText().toString().equals("") || Tab_Login.sEdit_User.getText().toString().equals("")) {
+                    Toast.makeText(mContext, "Vui Lòng Chọn Điền Đầy Đủ Thông Tin", Toast.LENGTH_LONG).show();
+                } else {
+                    //                Declare Dialog
+                    final Dialog dialog = new Dialog(mContext);
+                    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                    dialog.setContentView(R.layout.dialog_watting);
+                    dialog.show();
+                    mRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            try {
+                                JSONObject jsonObject = new JSONObject(response);
 //                            if login success
-                            if (jsonObject.names().get(0).equals("success")) {
+                                if (jsonObject.names().get(0).equals("success")) {
 //                                declare dialog
 
-                                Toast.makeText(mContext, "Đăng Nhập Thành Công", Toast.LENGTH_LONG).show();
-                                if (cb_Remember.isChecked()) {
-                                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                                    editor.putString("username", edit_User.getText().toString().trim());
-                                    editor.putString("password", edit_Password.getText().toString().trim());
-                                    editor.putBoolean("checked", true);
-                                    editor.commit();
+                                    Toast.makeText(mContext, "Đăng Nhập Thành Công", Toast.LENGTH_LONG).show();
+                                    if (Tab_Login.sCb_Remember.isChecked()) {
+                                        SharedPreferences.Editor editor = mSharedPreferences.edit();
+                                        editor.putString("username", Tab_Login.sEdit_User.getText().toString().trim());
+                                        editor.putString("password", Tab_Login.sEdit_Password.getText().toString().trim());
+                                        editor.putBoolean("checked", true);
+                                        editor.commit();
+                                    } else {
+                                        SharedPreferences.Editor editor = mSharedPreferences.edit();
+                                        editor.remove("username");
+                                        editor.remove("password");
+                                        editor.remove("checked");
+                                        editor.commit();
+                                    }
                                 } else {
-                                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                                    editor.remove("username");
-                                    editor.remove("password");
-                                    editor.remove("checked");
-                                    editor.commit();
+                                    dialog.dismiss();
+                                    Toast.makeText(mContext, "Đăng Nhập Thất Bại", Toast.LENGTH_LONG).show();
                                 }
-                            } else {
-                                dialog.dismiss();
-                                Toast.makeText(mContext,"Đăng Nhập Thất Bại",Toast.LENGTH_LONG).show();
-                            }
 
-                        } catch (JSONException e) {
-                            dialog.dismiss();
-                            Toast.makeText(mContext,"Đăng Nhập Thất Bại",Toast.LENGTH_LONG).show();
+                            } catch (JSONException e) {
+                                dialog.dismiss();
+                                Toast.makeText(mContext, "Đăng Nhập Thất Bại", Toast.LENGTH_LONG).show();
+                            }
                         }
-                    }
-                }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(mContext, "Error" + error, Toast.LENGTH_SHORT).show();
-                    }
-                }) {
-                    @Override
-                    protected Map<String, String> getParams() throws AuthFailureError {
-                        HashMap<String, String> hashMap = new HashMap<>();
+                    }, new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            Toast.makeText(mContext, "Error" + error, Toast.LENGTH_SHORT).show();
+                        }
+                    }) {
+                        @Override
+                        protected Map<String, String> getParams() throws AuthFailureError {
+                            HashMap<String, String> hashMap = new HashMap<>();
 //                        post item data
-                        hashMap.put("email", edit_User.getText().toString());
-                        hashMap.put("password", edit_Password.getText().toString());
-                        return hashMap;
-                    }
-                };
-                requestQueue = Volley.newRequestQueue(mContext);
-                requestQueue.add(request);
+                            hashMap.put("email", Tab_Login.sEdit_User.getText().toString());
+                            hashMap.put("password", Tab_Login.sEdit_Password.getText().toString());
+                            return hashMap;
+                        }
+                    };
+                    mRequestQueue = Volley.newRequestQueue(mContext);
+                    mRequestQueue.add(mRequest);
+                }
+
             }
         });
 

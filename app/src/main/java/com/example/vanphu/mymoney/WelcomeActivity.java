@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -14,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class WelcomeActivity extends Activity {
     private ViewPager viewPager;
@@ -59,7 +61,27 @@ public class WelcomeActivity extends Activity {
         btnLogin = findViewById(R.id.btnLogin);
 //        btnRegistered = (Button) findViewById(R.id.btnRegistered);
     }
-
+    boolean twice = false;
+    @Override
+    public void onBackPressed() {
+        if (twice) {
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.addCategory(Intent.CATEGORY_HOME);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+            finish();
+            System.exit(0);
+        }
+//        delay 3000 milis changer twice
+        twice = true;
+        Toast.makeText(WelcomeActivity.this, "Nhấn Thêm Lần Nữa Để Thoát", Toast.LENGTH_LONG).show();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                twice = false;
+            }
+        }, 3000);
+    }
     public void btnSkipClick(View v) {
         launchHomeScreen();
     }

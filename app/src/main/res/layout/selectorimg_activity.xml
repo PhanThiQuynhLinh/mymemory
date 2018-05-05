@@ -1,9 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.vanphu.mymoney.SelectorImageActivity">
-
-</android.support.constraint.ConstraintLayout>
+    android:orientation="vertical"
+    android:weightSum="4"
+    android:background="@color/endblue">
+    <LinearLayout
+        android:layout_weight="0.4"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:baselineAligned="false"
+        android:paddingStart="10dp"
+        tools:ignore="RtlSymmetry">
+        <RelativeLayout
+            android:layout_weight="0.25"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            tools:ignore="NestedWeights">
+            <Button
+                android:id="@+id/btn_Previous"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@android:drawable/ic_menu_revert"
+                android:onClick="btnSkipClick"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_weight="1.5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center|top"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/l_a_ch_n_h_nh_nh"
+                android:textColor="#f2f0f0"
+                android:textSize="20sp"
+                android:textStyle="normal"
+                />
+        </RelativeLayout>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_weight="3.6"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingTop="20dp"
+        >
+        <GridView
+            android:id="@+id/grid_Avatar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:numColumns="3"
+            />
+    </RelativeLayout>
+</LinearLayout>

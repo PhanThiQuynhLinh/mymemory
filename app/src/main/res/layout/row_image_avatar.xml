@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="UseCompoundDrawables">
 
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+        android:id="@+id/img_Avatar"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="@string/welcome"
+        android:src="@android:drawable/screen_background_dark" />
+
+    <TextView
+        android:id="@+id/txt_NameAvatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="@string/welcome"
+        android:textColor="#fcf8f8"
+        android:textSize="18sp" />
+</LinearLayout>
