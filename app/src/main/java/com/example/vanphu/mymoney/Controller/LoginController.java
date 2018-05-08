@@ -2,6 +2,7 @@ package com.example.vanphu.mymoney.Controller;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.View;
 import android.view.Window;
@@ -15,6 +16,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.vanphu.mymoney.R;
+import com.example.vanphu.mymoney.SpendActivity;
 import com.example.vanphu.mymoney.Tab.Tab_Login;
 
 import org.json.JSONException;
@@ -72,6 +74,9 @@ public class LoginController {
                                         editor.remove("checked");
                                         editor.commit();
                                     }
+                                    Intent intent=new Intent(mContext, SpendActivity.class);
+                                    intent.putExtra("User",Tab_Login.sEdit_User.getText().toString().trim());
+                                    mContext.startActivity(intent);
                                 } else {
                                     dialog.dismiss();
                                     Toast.makeText(mContext, "Đăng Nhập Thất Bại", Toast.LENGTH_LONG).show();

@@ -31,15 +31,15 @@
             android:layout_weight="0.55"
             android:gravity="center">
 
-            <Button
-                android:id="@+id/btnLogin"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/drawable_button_style"
-                android:text="@string/btnmoney"
-                android:textColor="@color/trang"
-                android:textSize="@dimen/norm"
-                />
+            <!--<Button-->
+                <!--android:id="@+id/btnLogin"-->
+                <!--android:layout_width="250dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:background="@drawable/drawable_button_style"-->
+                <!--android:text="@string/btnmoney"-->
+                <!--android:textColor="@color/trang"-->
+                <!--android:textSize="@dimen/norm"-->
+                <!--/>-->
         </RelativeLayout>
 
         <RelativeLayout
@@ -48,14 +48,14 @@
             android:layout_weight="0.55"
             android:gravity="center">
 
-            <Button
-                android:id="@+id/btnRegistered"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/drawable_button_style_green"
-                android:text="@string/fistmoney"
-                android:textColor="@color/color_slide1"
-                android:textSize="@dimen/norm" />
+            <!--<Button-->
+                <!--android:id="@+id/btnRegistered"-->
+                <!--android:layout_width="250dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:background="@drawable/drawable_button_style_green"-->
+                <!--android:text="@string/fistmoney"-->
+                <!--android:textColor="@color/color_slide1"-->
+                <!--android:textSize="@dimen/norm" />-->
         </RelativeLayout>
     </LinearLayout>
 

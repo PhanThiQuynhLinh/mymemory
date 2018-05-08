@@ -23,8 +23,7 @@ public class WelcomeActivity extends Activity {
     private int[] layouts;
     private Button btnSkip;
     private Button btnNext;
-    private Button btnLogin;
-//    private Button btnRegistered;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,13 +38,13 @@ public class WelcomeActivity extends Activity {
                 R.layout.item_slide_3
         };
 //        add login
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(WelcomeActivity.this, LoginActivity.class);
-                startActivity(intent);
-            }
-        });
+//        btnLogin.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent=new Intent(WelcomeActivity.this, LoginActivity.class);
+//                startActivity(intent);
+//            }
+//        });
         // adding bottom dots
         addBottomDots(0);
 
@@ -58,7 +57,7 @@ public class WelcomeActivity extends Activity {
     public void Init() {
         btnSkip = findViewById(R.id.btn_skip);
         btnNext = findViewById(R.id.btn_next);
-        btnLogin = findViewById(R.id.btnLogin);
+//        btnLogin = findViewById(R.id.btnLogin);
 //        btnRegistered = (Button) findViewById(R.id.btnRegistered);
     }
     boolean twice = false;
@@ -149,7 +148,8 @@ public class WelcomeActivity extends Activity {
     }
 
     private void launchHomeScreen() {
-
+        Intent intent=new Intent(WelcomeActivity.this,LoginActivity.class);
+        startActivity(intent);
     }
 
     public class ViewPagerAdapter extends PagerAdapter {

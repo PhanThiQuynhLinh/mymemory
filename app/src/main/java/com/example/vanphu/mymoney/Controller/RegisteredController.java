@@ -2,6 +2,7 @@ package com.example.vanphu.mymoney.Controller;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.view.Window;
 import android.widget.Toast;
@@ -13,6 +14,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.vanphu.mymoney.PayonActivity;
 import com.example.vanphu.mymoney.R;
 import com.example.vanphu.mymoney.Tab.Tab_Registered;
 
@@ -52,7 +54,9 @@ public class RegisteredController {
                                 try {
                                     JSONObject jsonObject = new JSONObject(response);
                                     if (jsonObject.names().get(0).equals("success")) {
-                                        Toast.makeText(mContext, "Đăng Ký Thành Công", Toast.LENGTH_SHORT).show();
+                                        Intent intent=new Intent(mContext, PayonActivity.class);
+                                        intent.putExtra("User",Tab_Registered.sEdit_User.getText().toString());
+                                        mContext.startActivity(intent);
                                     } else {
                                         dialog.dismiss();
                                         Toast.makeText(mContext, "Tài khoản đã được đăng ký hoặc không hợp lệ", Toast.LENGTH_SHORT).show();

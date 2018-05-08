@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_login"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="330dp"
+        android:layout_height="300dp"
+        android:layout_below="@+id/layout_First"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/drawable_layout_login"
+        android:orientation="vertical"
+        android:weightSum="2"
+        tools:ignore="UnknownIdInLayout">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.6"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/img_Money"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:contentDescription="@string/welcome"
+                android:src="@drawable/img_question" />
+        </RelativeLayout>
+
+        <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="0dp"-->
+            <!--android:layout_weight="0.8"-->
+            <!--android:gravity="center">-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/txt_User"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:ellipsize="end"-->
+                <!--android:singleLine="true"-->
+                <!--android:text="@string/welcome"-->
+                <!--android:textColor="@color/endblue"-->
+                <!--android:textSize="30sp"-->
+                <!--android:textStyle="bold" />-->
+        <!--</RelativeLayout>-->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.8">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/edit_Money"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/money"
+                    android:inputType="textEmailAddress" />
+            </android.support.design.widget.TextInputLayout>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.7"
+            android:gravity="center|top">
+
+            <Button
+                android:id="@+id/btn_Success"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:background="@drawable/select_button"
+                android:text="@string/ho_n_th_nh"
+                android:textColor="#f7f3f3" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -36,6 +36,8 @@
     <string name="ng_k">Đăng Ký</string>
     <string name="h_v_t_n">Họ Và Tên</string>
     <string name="l_a_ch_n_h_nh_nh">Lựa Chọn Hình Ảnh</string>
+    <string name="money">Tiền Vào</string>
+    <string name="ho_n_th_nh">Hoàn Thành</string>
     <string-array name="list_image_avatar">
         <item>img_beatifull</item>
         <item>img_boy</item>
@@ -43,6 +45,24 @@
         <item>img_hotboy</item>
         <item>img_men</item>
         <item>img_sexy</item>
+    </string-array>
+    <string-array name="list_image_flag">
+        <item>img_china_flag</item>
+        <item>img_flagvn</item>
+        <item>img_korean_flag</item>
+        <item>img_nga_flag</item>
+        <item>img_thailan_flag</item>
+        <item>img_uk_flag</item>
+        <item>img_usa_flag</item>
+    </string-array>
+    <string-array name="list_name_flag">
+        <item>¥</item>
+        <item>₫</item>
+        <item>₩</item>
+        <item>руб</item>
+        <item>฿</item>
+        <item>£</item>
+        <item>$</item>
     </string-array>
     <string-array name="list_name_avatar">
         <item>Người Đẹp</item>
@@ -52,4 +72,13 @@
         <item>Đàn Ông</item>
         <item>Quyến Rũ</item>
     </string-array>
+    <string name="title_activity_spend">SpendActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="t_ng_quan">Tổng quan</string>
+    <string name="ti_n_v_o">Tiền vào</string>
+    <string name="_5_000_000">5,000,000</string>
+    <string name="ti_n_ra">Tiền ra</string>
+    <string name="_10000">10000</string>
 </resources>

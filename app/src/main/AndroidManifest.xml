@@ -23,7 +23,13 @@
             android:name=".LoginActivity"
             android:label="@string/title_activity_login"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".SelectorImageActivity"></activity>
+        <activity android:name=".SelectorImageActivity" />
+        <activity android:name=".PayonActivity" />
+        <activity android:name=".SelectorMoneyActivity" />
+        <activity
+            android:name=".SpendActivity"
+            android:label="@string/title_activity_spend"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
