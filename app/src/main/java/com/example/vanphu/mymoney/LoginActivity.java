@@ -89,7 +89,7 @@ public class LoginActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            switch (position){
+            switch (position) {
                 case 0:
                     return new Tab_Login();
                 case 1:

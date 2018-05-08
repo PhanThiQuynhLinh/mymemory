@@ -69,7 +69,7 @@ public class MoneyInController {
                             @Override
                             protected Map<String, String> getParams() throws AuthFailureError {
                                 Map<String, String> params = new HashMap<>();
-//                post data
+//                                post api
                                 params.put("email", PayonActivity.sUser);
                                 params.put("matien", PayonActivity.sKeyMoney);
                                 params.put("tienvao", PayonActivity.sEdit_Money.getText().toString().trim());

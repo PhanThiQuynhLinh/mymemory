@@ -13,7 +13,7 @@
         android:id="@+id/layoutMain"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.2"
+        android:layout_weight="1"
         android:background="@drawable/drawable_layout_main"
         android:orientation="vertical"
         android:paddingLeft="10dp"
@@ -138,7 +138,7 @@
         android:id="@+id/layout2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.65"
+        android:layout_weight="1.85"
         android:background="@drawable/drawable_layout_main"
         android:orientation="vertical"
         android:paddingLeft="10dp"
@@ -154,7 +154,7 @@
             tools:ignore="NestedWeights">
 
             <TextView
-                android:id="@+id/txt_Date"
+                android:id="@+id/txt_Day"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.25"
@@ -172,7 +172,7 @@
                 android:weightSum="2">
 
                 <TextView
-                    android:id="@+id/txt_Day"
+                    android:id="@+id/txt_Date"
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
                     android:layout_weight="1"

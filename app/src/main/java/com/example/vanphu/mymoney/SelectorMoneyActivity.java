@@ -1,17 +1,17 @@
 package com.example.vanphu.mymoney;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.GridView;
 
 import com.example.vanphu.mymoney.Controller.MoneyController;
 
 public class SelectorMoneyActivity extends AppCompatActivity {
-    GridView grid_Avatar;
-    Button btn_Previous;
+    private GridView mGrid_Avatar;
+
     MoneyController moneyController;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,13 +20,14 @@ public class SelectorMoneyActivity extends AppCompatActivity {
 //        call init
         init();
 //        call money
-        moneyController=new MoneyController(this);
-        moneyController.addImage(grid_Avatar);
+        moneyController = new MoneyController(this);
+        moneyController.addImage(mGrid_Avatar);
     }
-//    Declare
-    private void init(){
-        grid_Avatar=findViewById(R.id.grid_Avatar);
-        btn_Previous=findViewById(R.id.btn_Previous);
+
+    //    Declare
+    private void init() {
+        mGrid_Avatar = findViewById(R.id.grid_Avatar);
+
     }
 
     public void btnSkipClick(View view) {

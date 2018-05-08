@@ -19,12 +19,12 @@ public class PayonActivity extends AppCompatActivity {
     public static Button sBtn_Success;
     @SuppressLint("StaticFieldLeak")
     public static TextInputEditText sEdit_Money;
-    ImageView img_Money;
+    private ImageView mImg_Money;
     public static int sMIdImage = -1;
     public static String sKeyMoney = "$";
     public static String sUser="";
-    MoneyInController moneyInController;
-    String url = "https://vanphudhsp2015.000webhostapp.com/insertuser.php";
+    private MoneyInController mMoneyInController;
+    private String mURL = "https://vanphudhsp2015.000webhostapp.com/insertuser.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,14 +33,14 @@ public class PayonActivity extends AppCompatActivity {
         setContentView(R.layout.payon_activity);
 //        call init
         init();
-        img_Money.setOnClickListener(new View.OnClickListener() {
+        mImg_Money.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivityForResult(new Intent(PayonActivity.this, SelectorMoneyActivity.class), 100);
             }
         });
-        moneyInController = new MoneyInController(this);
-        moneyInController.moneyIn(url);
+        mMoneyInController = new MoneyInController(this);
+        mMoneyInController.moneyIn(mURL);
         getIntentdata();
     }
     public void getIntentdata(){
@@ -56,7 +56,7 @@ public class PayonActivity extends AppCompatActivity {
             String[] arrayAvatar = getResources().getStringArray(R.array.list_image_flag);
             ArrayList<String> mArrayImage = new ArrayList<>(Arrays.asList(arrayAvatar));
             int idImage = getResources().getIdentifier(mArrayImage.get(sMIdImage), "drawable", getPackageName());
-            img_Money.setImageResource(idImage);
+            mImg_Money.setImageResource(idImage);
         }
     }
 
@@ -64,7 +64,7 @@ public class PayonActivity extends AppCompatActivity {
     public void init() {
         sBtn_Success = findViewById(R.id.btn_Success);
         sEdit_Money = findViewById(R.id.edit_Money);
-        img_Money = findViewById(R.id.img_Money);
+        mImg_Money = findViewById(R.id.img_Money);
 
     }
 }

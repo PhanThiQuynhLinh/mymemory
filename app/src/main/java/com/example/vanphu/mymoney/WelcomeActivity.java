@@ -3,6 +3,7 @@ package com.example.vanphu.mymoney;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
@@ -23,6 +24,7 @@ public class WelcomeActivity extends Activity {
     private int[] layouts;
     private Button btnSkip;
     private Button btnNext;
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +32,15 @@ public class WelcomeActivity extends Activity {
         setContentView(R.layout.welcome_activity);
         viewPager = findViewById(R.id.view_pager);
         dotsLayout = findViewById(R.id.layoutDots);
-        Init();
+        sharedPreferences =getSharedPreferences("datalogin",MODE_PRIVATE);
+        String mUser = sharedPreferences.getString("username", "");
+        if(mUser.equals("")){
+            Init();
+        }else{
+            Intent intent=new Intent(WelcomeActivity.this,SpendActivity.class);
+            intent.putExtra("User", mUser);
+            startActivity(intent);
+        }
 //        list layout slides
         layouts = new int[]{
                 R.layout.item_slide_1,

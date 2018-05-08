@@ -34,7 +34,7 @@ public class Tab_Registered extends Fragment {
     RegisteredController registeredController;
     @SuppressLint("StaticFieldLeak")
     public static Button sBtn_Registered;
-    String URL = "https://vanphudhsp2015.000webhostapp.com/login.php";
+    private String mURL = "https://vanphudhsp2015.000webhostapp.com/login.php";
     public static int sMIdImage = -1;
 
     @Override
@@ -43,7 +43,7 @@ public class Tab_Registered extends Fragment {
         View rootView = inflater.inflate(R.layout.tab_registered, container, false);
         init(rootView);
         registeredController = new RegisteredController(inflater.getContext());
-        registeredController.registered(URL);
+        registeredController.registered(mURL);
         sImg_Avatar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

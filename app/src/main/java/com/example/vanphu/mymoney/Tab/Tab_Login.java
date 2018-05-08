@@ -24,8 +24,8 @@ public class Tab_Login extends Fragment {
     public static CheckBox sCb_Remember;
     @SuppressLint("StaticFieldLeak")
     public static Button sBtn_Login;
-    LoginController loginController;
-    String URL = "https://vanphudhsp2015.000webhostapp.com/user_control.php";
+    private LoginController mLoginController;
+    private String mURL = "https://vanphudhsp2015.000webhostapp.com/user_control.php";
 
     @Override
     public View onCreateView(@NonNull final LayoutInflater inflater, ViewGroup container,
@@ -34,8 +34,8 @@ public class Tab_Login extends Fragment {
 //        call Init
         init(rootView);
 //        call class login
-        loginController = new LoginController(inflater.getContext());
-        loginController.login(URL);
+        mLoginController = new LoginController(inflater.getContext());
+        mLoginController.login(mURL);
         return rootView;
     }
 

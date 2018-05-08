@@ -74,8 +74,8 @@ public class LoginController {
                                         editor.remove("checked");
                                         editor.commit();
                                     }
-                                    Intent intent=new Intent(mContext, SpendActivity.class);
-                                    intent.putExtra("User",Tab_Login.sEdit_User.getText().toString().trim());
+                                    Intent intent = new Intent(mContext, SpendActivity.class);
+                                    intent.putExtra("User", Tab_Login.sEdit_User.getText().toString().trim());
                                     mContext.startActivity(intent);
                                 } else {
                                     dialog.dismiss();
@@ -110,4 +110,5 @@ public class LoginController {
         });
 
     }
+
 }

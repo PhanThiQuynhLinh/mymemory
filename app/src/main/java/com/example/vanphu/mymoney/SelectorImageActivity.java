@@ -9,9 +9,8 @@ import android.widget.GridView;
 import com.example.vanphu.mymoney.Controller.ImageController;
 
 public class SelectorImageActivity extends AppCompatActivity {
-    GridView grid_Avatar;
-    ImageController imageController;
-    Button btn_Previous;
+    private GridView mGrid_Avatar;
+    private ImageController mImageController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,13 +19,12 @@ public class SelectorImageActivity extends AppCompatActivity {
         setContentView(R.layout.selectorimg_activity);
         init();
         // add gridview
-        imageController.addImage(grid_Avatar);
+        mImageController.addImage(mGrid_Avatar);
     }
 
     public void init() {
-        grid_Avatar = findViewById(R.id.grid_Avatar);
-        btn_Previous = findViewById(R.id.btn_Previous);
-        imageController = new ImageController(this);
+        mGrid_Avatar = findViewById(R.id.grid_Avatar);
+        mImageController = new ImageController(this);
     }
 
     public void btnSkipClick(View view) {

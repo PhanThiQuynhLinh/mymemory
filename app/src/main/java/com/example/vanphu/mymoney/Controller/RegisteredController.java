@@ -54,8 +54,8 @@ public class RegisteredController {
                                 try {
                                     JSONObject jsonObject = new JSONObject(response);
                                     if (jsonObject.names().get(0).equals("success")) {
-                                        Intent intent=new Intent(mContext, PayonActivity.class);
-                                        intent.putExtra("User",Tab_Registered.sEdit_User.getText().toString());
+                                        Intent intent = new Intent(mContext, PayonActivity.class);
+                                        intent.putExtra("User", Tab_Registered.sEdit_User.getText().toString());
                                         mContext.startActivity(intent);
                                     } else {
                                         dialog.dismiss();

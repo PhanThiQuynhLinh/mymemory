@@ -72,6 +72,47 @@
         <item>Đàn Ông</item>
         <item>Quyến Rũ</item>
     </string-array>
+    <string-array name="list_image_spend">
+        <item>img_spend_item1</item>
+        <item>img_spend_item2</item>
+        <item>img_spend_item3</item>
+        <item>img_spend_item4</item>
+        <item>img_spend_item5</item>
+        <item>img_spend_item6</item>
+        <item>img_spend_item7</item>
+        <item>img_spend_item8</item>
+        <item>img_spend_item9</item>
+        <item>img_spend_item10</item>
+        <item>img_spend_item11</item>
+        <item>img_spend_item12</item>
+        <item>img_spend_item13</item>
+        <item>img_spend_item14</item>
+        <item>img_spend_item15</item>
+        <item>img_spend_item16</item>
+        <item>img_spend_item17</item>
+        <item>img_spend_item18</item>
+        <item>img_spend_item19</item>
+        <item>img_spend_item20</item>
+        <item>img_spend_item21</item>
+        <item>img_spend_item22</item>
+        <item>img_spend_item23</item>
+        <item>img_spend_item24</item>
+    </string-array>
+    <string-array name="thang">
+        <item>Không có tháng</item>
+        <item>Tháng Một</item>
+        <item>Tháng Hai</item>
+        <item>Tháng Ba</item>
+        <item>Tháng Tư</item>
+        <item>Tháng Năm</item>
+        <item>Tháng Sáu</item>
+        <item>Tháng Bảy</item>
+        <item>Tháng Tám</item>
+        <item>Tháng Chín</item>
+        <item>Tháng Mười</item>
+        <item>Tháng Mười Một</item>
+        <item>Tháng Một Hai</item>
+    </string-array>
     <string name="title_activity_spend">SpendActivity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
