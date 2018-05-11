@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.GridView;
 
-import com.example.vanphu.mymoney.Controller.MoneyController;
+import com.example.vanphu.mymoney.controller.MoneyController;
 
 public class SelectorMoneyActivity extends AppCompatActivity {
     private GridView mGrid_Avatar;

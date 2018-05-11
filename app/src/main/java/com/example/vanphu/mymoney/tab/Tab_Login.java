@@ -1,4 +1,4 @@
-package com.example.vanphu.mymoney.Tab;
+package com.example.vanphu.mymoney.tab;
 
 
 import android.annotation.SuppressLint;
@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 
-import com.example.vanphu.mymoney.Controller.LoginController;
+import com.example.vanphu.mymoney.controller.LoginController;
 import com.example.vanphu.mymoney.R;
 
 public class Tab_Login extends Fragment {
@@ -24,8 +24,6 @@ public class Tab_Login extends Fragment {
     public static CheckBox sCb_Remember;
     @SuppressLint("StaticFieldLeak")
     public static Button sBtn_Login;
-    private LoginController mLoginController;
-    private String mURL = "https://vanphudhsp2015.000webhostapp.com/user_control.php";
 
     @Override
     public View onCreateView(@NonNull final LayoutInflater inflater, ViewGroup container,
@@ -34,7 +32,8 @@ public class Tab_Login extends Fragment {
 //        call Init
         init(rootView);
 //        call class login
-        mLoginController = new LoginController(inflater.getContext());
+        LoginController mLoginController = new LoginController(inflater.getContext());
+        String mURL = "http://192.168.56.1/chitieu/user_control.php";
         mLoginController.login(mURL);
         return rootView;
     }

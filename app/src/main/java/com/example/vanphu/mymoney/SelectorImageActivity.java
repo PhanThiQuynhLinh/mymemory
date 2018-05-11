@@ -3,10 +3,9 @@ package com.example.vanphu.mymoney;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.GridView;
 
-import com.example.vanphu.mymoney.Controller.ImageController;
+import com.example.vanphu.mymoney.controller.ImageController;
 
 public class SelectorImageActivity extends AppCompatActivity {
     private GridView mGrid_Avatar;

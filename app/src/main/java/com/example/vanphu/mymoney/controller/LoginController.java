@@ -1,4 +1,4 @@
-package com.example.vanphu.mymoney.Controller;
+package com.example.vanphu.mymoney.controller;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -17,7 +17,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.vanphu.mymoney.R;
 import com.example.vanphu.mymoney.SpendActivity;
-import com.example.vanphu.mymoney.Tab.Tab_Login;
+import com.example.vanphu.mymoney.tab.Tab_Login;
 
 import org.json.JSONException;
 import org.json.JSONObject;

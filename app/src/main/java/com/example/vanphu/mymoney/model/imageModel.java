@@ -1,4 +1,4 @@
-package com.example.vanphu.mymoney.Model;
+package com.example.vanphu.mymoney.model;
 
 
 public class imageModel {

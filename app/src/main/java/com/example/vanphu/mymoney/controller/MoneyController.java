@@ -1,10 +1,10 @@
-package com.example.vanphu.mymoney.Controller;
+package com.example.vanphu.mymoney.controller;
 
 import android.content.Context;
 import android.widget.GridView;
 
-import com.example.vanphu.mymoney.Adapter.MoneyAdapter;
-import com.example.vanphu.mymoney.Model.MoneyModel;
+import com.example.vanphu.mymoney.adapter.MoneyAdapter;
+import com.example.vanphu.mymoney.model.MoneyModel;
 import com.example.vanphu.mymoney.R;
 
 import java.util.ArrayList;

@@ -1,6 +1,7 @@
 package com.example.vanphu.mymoney;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -13,7 +14,10 @@ import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,6 +29,7 @@ public class WelcomeActivity extends Activity {
     private Button btnSkip;
     private Button btnNext;
     SharedPreferences sharedPreferences;
+    SharedPreferences mSharedPreferences_item_1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,15 +37,47 @@ public class WelcomeActivity extends Activity {
         setContentView(R.layout.welcome_activity);
         viewPager = findViewById(R.id.view_pager);
         dotsLayout = findViewById(R.id.layoutDots);
-        sharedPreferences =getSharedPreferences("datalogin",MODE_PRIVATE);
-        String mUser = sharedPreferences.getString("username", "");
-        if(mUser.equals("")){
-            Init();
-        }else{
-            Intent intent=new Intent(WelcomeActivity.this,SpendActivity.class);
-            intent.putExtra("User", mUser);
+        final Dialog dialog = new Dialog(this, android.R.style.Theme_DeviceDefault_Light_NoActionBar_Fullscreen);
+        dialog.setContentView(R.layout.row_nitro_item);
+        ImageView img_Money = dialog.findViewById(R.id.img_Money);
+        Init();
+        dialog.show();
+        sharedPreferences = getSharedPreferences("datalogin", MODE_PRIVATE);
+//        String mUser = sharedPreferences.getString("username", "");
+        mSharedPreferences_item_1 = getSharedPreferences("datalide", MODE_PRIVATE);
+        String slide = mSharedPreferences_item_1.getString("slide", "");
+
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.anmim_translate);
+        if (slide.equals("")) {
+            Toast.makeText(WelcomeActivity.this, "Welcome", Toast.LENGTH_LONG).show();
+        } else if (!slide.equals("")) {
+            Intent intent = new Intent(WelcomeActivity.this, LoginActivity.class);
             startActivity(intent);
         }
+        SharedPreferences.Editor editor = mSharedPreferences_item_1.edit();
+        editor.putString("slide", "slide");
+        editor.apply();
+
+//        set animation
+
+        img_Money.startAnimation(animation);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+//                declare sharedpreferences
+                dialog.dismiss();
+//
+            }
+        }, 4500);
+
+
+//        if(mUser.equals("")){
+//            Init();
+//        }else{
+//            Intent intent=new Intent(WelcomeActivity.this,SpendActivity.class);
+//            intent.putExtra("User", mUser);
+//            startActivity(intent);
+//        }
 //        list layout slides
         layouts = new int[]{
                 R.layout.item_slide_1,
@@ -70,7 +107,9 @@ public class WelcomeActivity extends Activity {
 //        btnLogin = findViewById(R.id.btnLogin);
 //        btnRegistered = (Button) findViewById(R.id.btnRegistered);
     }
+
     boolean twice = false;
+
     @Override
     public void onBackPressed() {
         if (twice) {
@@ -91,6 +130,7 @@ public class WelcomeActivity extends Activity {
             }
         }, 3000);
     }
+
     public void btnSkipClick(View v) {
         launchHomeScreen();
     }
@@ -158,7 +198,7 @@ public class WelcomeActivity extends Activity {
     }
 
     private void launchHomeScreen() {
-        Intent intent=new Intent(WelcomeActivity.this,LoginActivity.class);
+        Intent intent = new Intent(WelcomeActivity.this, LoginActivity.class);
         startActivity(intent);
     }
 

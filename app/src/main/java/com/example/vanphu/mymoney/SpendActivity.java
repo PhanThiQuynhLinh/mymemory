@@ -21,7 +21,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.vanphu.mymoney.Controller.SpendController;
+import com.example.vanphu.mymoney.controller.SpendController;
 
 public class SpendActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -48,20 +48,20 @@ public class SpendActivity extends AppCompatActivity
     public static TextView sTxt_MoneyOut;
     @SuppressLint("StaticFieldLeak")
     public static TextView sTxt_MoneySum;
-    private String mUser="";
-    String URL = "https://vanphudhsp2015.000webhostapp.com/getchitieu.php?email=";
-    String URL_item_1 = "https://vanphudhsp2015.000webhostapp.com/getuser.php?email=";
-    String URL_item_2 = "https://vanphudhsp2015.000webhostapp.com/getdatatienvao.php?email=";
-    String URL_item_3 = "https://vanphudhsp2015.000webhostapp.com/tinhngay.php?email=";
-    String URL_item_4 = "https://vanphudhsp2015.000webhostapp.com/tinhtongchitieu.php?email=";
+    private String mUser = "";
+    String URL = "http://192.168.56.1/chitieu/getchitieu.php?email=";
+    String URL_item_1 = "http://192.168.56.1/chitieu/getuser.php?email=";
+    String URL_item_2 = "http://192.168.56.1/chitieu/getdatatienvao.php?email=";
+    String URL_item_3 = "http://192.168.56.1/chitieu/tinhngay.php?email=";
+    String URL_item_4 = "http://192.168.56.1/chitieu/tinhtongchitieu.php?email=";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spend);
         setTitle("");
-        Intent intent=getIntent();
-        mUser=intent.getStringExtra("User");
+        Intent intent = getIntent();
+        mUser = intent.getStringExtra("User");
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -83,7 +83,7 @@ public class SpendActivity extends AppCompatActivity
         sTxtUser = v.findViewById(R.id.txtUser);
         sTxtName = v.findViewById(R.id.txtName);
         sImg_Avatar.setImageResource(R.drawable.img_spend_item22);
-        mSpendController.readJsonNav(URL_item_1+mUser);
+        mSpendController.readJsonNav(URL_item_1 + mUser);
     }
 
     public void init() {
@@ -98,13 +98,13 @@ public class SpendActivity extends AppCompatActivity
         sTxt_MoneySum = findViewById(R.id.txt_MoneySum);
         mSpendController = new SpendController(this);
         mSpendController.addImage(mlv_Spend);
-        mSpendController.readJsonMoney(URL_item_2+mUser);
-        mSpendController.ReadJsonDate(URL_item_3+mUser);
+        mSpendController.readJsonMoney(URL_item_2 + mUser);
+        mSpendController.ReadJsonDate(URL_item_3 + mUser);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                mSpendController.readJsonSpend(URL+mUser);
-                mSpendController.readJsonSum(URL_item_4+mUser);
+                mSpendController.readJsonSpend(URL + mUser);
+                mSpendController.readJsonSum(URL_item_4 + mUser);
             }
         }, 2500);
 
@@ -127,6 +127,7 @@ public class SpendActivity extends AppCompatActivity
         return true;
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -136,24 +137,28 @@ public class SpendActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            final Dialog dialog=new Dialog(SpendActivity.this);
+            final Dialog dialog = new Dialog(SpendActivity.this);
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
             dialog.setContentView(R.layout.dialog_watting);
-            TextView txt_Text=(TextView) dialog.findViewById(R.id.txt_Text);
+            TextView txt_Text = dialog.findViewById(R.id.txt_Text);
             txt_Text.setText("Đang Đăng Xuất");
             dialog.show();
             SharedPreferences sharedPreferences = getSharedPreferences("datalogin", MODE_PRIVATE);
+            SharedPreferences mSharedPreferences_item_1 = getSharedPreferences("datalide", MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
+            SharedPreferences.Editor editor1 = mSharedPreferences_item_1.edit();
             editor.remove("username");
             editor.remove("password");
             editor.remove("checked");
+            editor1.remove("slide");
             editor.apply();
+            editor1.commit();
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    startActivity(new Intent(SpendActivity.this,LoginActivity.class));
+                    startActivity(new Intent(SpendActivity.this, LoginActivity.class));
                 }
-            },3500);
+            }, 3500);
             return true;
         }
 

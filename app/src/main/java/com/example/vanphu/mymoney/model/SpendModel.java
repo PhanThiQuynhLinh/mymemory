@@ -1,8 +1,5 @@
-package com.example.vanphu.mymoney.Model;
+package com.example.vanphu.mymoney.model;
 
-/**
- * Created by VanPhu on 5/8/2018.
- */
 
 public class SpendModel {
     private int mId;

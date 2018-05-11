@@ -1,4 +1,4 @@
-package com.example.vanphu.mymoney.Tab;
+package com.example.vanphu.mymoney.tab;
 
 
 import android.annotation.SuppressLint;
@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.example.vanphu.mymoney.Controller.RegisteredController;
+import com.example.vanphu.mymoney.controller.RegisteredController;
 import com.example.vanphu.mymoney.R;
 import com.example.vanphu.mymoney.SelectorImageActivity;
 
@@ -34,7 +34,6 @@ public class Tab_Registered extends Fragment {
     RegisteredController registeredController;
     @SuppressLint("StaticFieldLeak")
     public static Button sBtn_Registered;
-    private String mURL = "https://vanphudhsp2015.000webhostapp.com/login.php";
     public static int sMIdImage = -1;
 
     @Override
@@ -43,6 +42,7 @@ public class Tab_Registered extends Fragment {
         View rootView = inflater.inflate(R.layout.tab_registered, container, false);
         init(rootView);
         registeredController = new RegisteredController(inflater.getContext());
+        String mURL = "http://192.168.56.1/chitieu/login.php";
         registeredController.registered(mURL);
         sImg_Avatar.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,4 +1,4 @@
-package com.example.vanphu.mymoney.Adapter;
+package com.example.vanphu.mymoney.adapter;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -11,7 +11,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.vanphu.mymoney.Model.MoneyModel;
+import com.example.vanphu.mymoney.model.MoneyModel;
 import com.example.vanphu.mymoney.R;
 
 import java.util.ArrayList;

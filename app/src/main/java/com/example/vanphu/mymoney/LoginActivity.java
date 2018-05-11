@@ -13,8 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.vanphu.mymoney.Tab.Tab_Login;
-import com.example.vanphu.mymoney.Tab.Tab_Registered;
+import com.example.vanphu.mymoney.tab.Tab_Login;
+import com.example.vanphu.mymoney.tab.Tab_Registered;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -101,7 +101,7 @@ public class LoginActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
+            // Show 2 total pages.
             return 2;
         }
     }

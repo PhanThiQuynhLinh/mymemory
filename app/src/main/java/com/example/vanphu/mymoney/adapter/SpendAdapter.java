@@ -1,4 +1,4 @@
-package com.example.vanphu.mymoney.Adapter;
+package com.example.vanphu.mymoney.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -9,8 +9,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.vanphu.mymoney.Controller.SpendController;
-import com.example.vanphu.mymoney.Model.SpendModel;
+import com.example.vanphu.mymoney.controller.SpendController;
+import com.example.vanphu.mymoney.model.SpendModel;
 import com.example.vanphu.mymoney.R;
 
 import java.text.DecimalFormat;

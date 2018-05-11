@@ -1,4 +1,4 @@
-package com.example.vanphu.mymoney.Controller;
+package com.example.vanphu.mymoney.controller;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -74,6 +74,7 @@ public class MoneyInController {
                                 params.put("matien", PayonActivity.sKeyMoney);
                                 params.put("tienvao", PayonActivity.sEdit_Money.getText().toString().trim());
                                 params.put("idhinh", String.valueOf(PayonActivity.sMIdImage));
+                                params.put("tenchitieu", "Tien Nhap Vao");
                                 return params;
                             }
                         };

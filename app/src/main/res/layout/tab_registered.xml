@@ -67,8 +67,8 @@
                     android:id="@+id/edit_Name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:drawableLeft="@android:drawable/ic_dialog_email"
-                    android:drawableStart="@android:drawable/ic_dialog_email"
+                    android:drawableLeft="@drawable/ic_person_outline_black_24dp"
+                    android:drawableStart="@drawable/ic_person_outline_black_24dp"
                     android:hint="@string/h_v_t_n"
                     android:inputType="textEmailAddress" />
             </android.support.design.widget.TextInputLayout>

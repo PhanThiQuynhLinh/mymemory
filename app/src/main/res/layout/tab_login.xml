@@ -96,13 +96,7 @@
                 android:text="@string/remember_password"
                 android:textColor="#09c6df" />
 
-            <TextView
-                android:id="@+id/txt_Registered"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="60dp"
-                android:text="@string/ng_k_t_i_kho_n"
-                tools:ignore="RtlSymmetry" />
+
         </LinearLayout>
 
         <RelativeLayout

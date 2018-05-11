@@ -1,4 +1,4 @@
-package com.example.vanphu.mymoney.Controller;
+package com.example.vanphu.mymoney.controller;
 
 import android.content.Context;
 import android.widget.ListView;
@@ -10,8 +10,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.vanphu.mymoney.Adapter.SpendAdapter;
-import com.example.vanphu.mymoney.Model.SpendModel;
+import com.example.vanphu.mymoney.adapter.SpendAdapter;
+import com.example.vanphu.mymoney.model.SpendModel;
 import com.example.vanphu.mymoney.R;
 import com.example.vanphu.mymoney.SpendActivity;
 
