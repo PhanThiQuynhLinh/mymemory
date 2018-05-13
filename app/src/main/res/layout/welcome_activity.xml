@@ -42,21 +42,6 @@
                 <!--/>-->
         </RelativeLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.55"
-            android:gravity="center">
-
-            <!--<Button-->
-                <!--android:id="@+id/btnRegistered"-->
-                <!--android:layout_width="250dp"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:background="@drawable/drawable_button_style_green"-->
-                <!--android:text="@string/fistmoney"-->
-                <!--android:textColor="@color/color_slide1"-->
-                <!--android:textSize="@dimen/norm" />-->
-        </RelativeLayout>
     </LinearLayout>
 
     <LinearLayout

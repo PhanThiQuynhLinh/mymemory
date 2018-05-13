@@ -48,12 +48,13 @@ public class SpendActivity extends AppCompatActivity
     public static TextView sTxt_MoneyOut;
     @SuppressLint("StaticFieldLeak")
     public static TextView sTxt_MoneySum;
-    private String mUser = "";
-    String URL = "http://192.168.56.1/chitieu/getchitieu.php?email=";
-    String URL_item_1 = "http://192.168.56.1/chitieu/getuser.php?email=";
-    String URL_item_2 = "http://192.168.56.1/chitieu/getdatatienvao.php?email=";
-    String URL_item_3 = "http://192.168.56.1/chitieu/tinhngay.php?email=";
-    String URL_item_4 = "http://192.168.56.1/chitieu/tinhtongchitieu.php?email=";
+    private ImageView mBtn_Add;
+    public static String mUser = "";
+    String URL = "http://192.168.149.2/chitieu/getchitieu.php?email=";
+    String URL_item_1 = "http://192.168.149.2/chitieu/getuser.php?email=";
+    String URL_item_2 = "http://192.168.149.2/chitieu/getdatatienvao.php?email=";
+    String URL_item_3 = "http://192.168.149.2/chitieu/tinhngay.php?email=";
+    String URL_item_4 = "http://192.168.149.2/chitieu/tinhtongchitieu.php?email=";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +77,20 @@ public class SpendActivity extends AppCompatActivity
         init();
         View v = navigationView.getHeaderView(0);
         initHeader(v);
+        mBtn_Add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivityForResult(new Intent(SpendActivity.this, AddSpendActivity.class), 100);
+            }
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 100) {
+            init();
+        }
     }
 
     public void initHeader(View v) {
@@ -87,6 +102,7 @@ public class SpendActivity extends AppCompatActivity
     }
 
     public void init() {
+        mBtn_Add = findViewById(R.id.btn_Add);
         ListView mlv_Spend = findViewById(R.id.lv_Spend);
         txt_MoneyIn = findViewById(R.id.txt_MoneyIn);
         sTxt_Day = findViewById(R.id.txt_Day);
@@ -152,7 +168,7 @@ public class SpendActivity extends AppCompatActivity
             editor.remove("checked");
             editor1.remove("slide");
             editor.apply();
-            editor1.commit();
+            editor1.apply();
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -171,7 +187,8 @@ public class SpendActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_statistics) {
+            startActivity(new Intent(SpendActivity.this,StatisticsActivity.class));
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
 

@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.text.Html;
@@ -19,6 +20,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +32,7 @@ public class WelcomeActivity extends Activity {
     private Button btnNext;
     SharedPreferences sharedPreferences;
     SharedPreferences mSharedPreferences_item_1;
+    RelativeLayout activity_intro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +52,9 @@ public class WelcomeActivity extends Activity {
 
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.anmim_translate);
         if (slide.equals("")) {
-            Toast.makeText(WelcomeActivity.this, "Welcome", Toast.LENGTH_LONG).show();
+            activity_intro = findViewById(R.id.activity_intro);
+            Snackbar sanSnackbar = Snackbar.make(activity_intro, "Welcome", Snackbar.LENGTH_LONG);
+            sanSnackbar.show();
         } else if (!slide.equals("")) {
             Intent intent = new Intent(WelcomeActivity.this, LoginActivity.class);
             startActivity(intent);

@@ -33,55 +33,61 @@ public class MoneyInController {
         PayonActivity.sBtn_Success.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (PayonActivity.sMIdImage == -1) {
-                    Toast.makeText(mContext, "Vui Lòng Chọn Mã Tiền Để Đăng Ký", Toast.LENGTH_LONG).show();
-                } else {
-                    if (PayonActivity.sEdit_Money.getText().toString().equals("")) {
-                        Toast.makeText(mContext, "Vui Lòng Chọn Điền Đầy Đủ Thông Tin", Toast.LENGTH_LONG).show();
+                try{
+                    Integer.parseInt(PayonActivity.sEdit_Money.getText().toString().trim());
+                    if (PayonActivity.sMIdImage == -1) {
+                        Toast.makeText(mContext, "Vui Lòng Chọn Mã Tiền Để Đăng Ký", Toast.LENGTH_LONG).show();
                     } else {
-                        final Dialog dialog = new Dialog(mContext);
-                        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                        dialog.setContentView(R.layout.dialog_watting);
-                        dialog.show();
-                        RequestQueue requestQueue = Volley.newRequestQueue(mContext);
-                        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
-                                new Response.Listener<String>() {
-                                    @Override
-                                    public void onResponse(String response) {
+                        if (PayonActivity.sEdit_Money.getText().toString().equals("")) {
+                            Toast.makeText(mContext, "Vui Lòng Chọn Điền Đầy Đủ Thông Tin", Toast.LENGTH_LONG).show();
+                        } else {
+                            final Dialog dialog = new Dialog(mContext);
+                            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                            dialog.setContentView(R.layout.dialog_watting);
+                            dialog.show();
+                            RequestQueue requestQueue = Volley.newRequestQueue(mContext);
+                            StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+                                    new Response.Listener<String>() {
+                                        @Override
+                                        public void onResponse(String response) {
 //                                      if success then done
-                                        if (response.trim().equals("Thành Công")) {
-                                            Toast.makeText(mContext, "Thêm Thành Công", Toast.LENGTH_LONG).show();
-                                            Intent intent=new Intent(mContext, SpendActivity.class);
-                                            intent.putExtra("User",PayonActivity.sUser);
-                                            mContext.startActivity(intent);
-                                        } else {
-                                            Toast.makeText(mContext, "Lỗi", Toast.LENGTH_LONG).show();
+                                            if (response.trim().equals("Thành Công")) {
+                                                Toast.makeText(mContext, "Thêm Thành Công", Toast.LENGTH_LONG).show();
+                                                Intent intent=new Intent(mContext, SpendActivity.class);
+                                                intent.putExtra("User",PayonActivity.sUser);
+                                                mContext.startActivity(intent);
+                                            } else {
+                                                Toast.makeText(mContext, "Lỗi", Toast.LENGTH_LONG).show();
+                                            }
+                                        }
+                                    },
+                                    new Response.ErrorListener() {
+                                        @Override
+                                        public void onErrorResponse(VolleyError error) {
+                                            Toast.makeText(mContext, "Lỗi Xảy ra! " + error.toString(), Toast.LENGTH_LONG).show();
                                         }
                                     }
-                                },
-                                new Response.ErrorListener() {
-                                    @Override
-                                    public void onErrorResponse(VolleyError error) {
-                                        Toast.makeText(mContext, "Lỗi Xảy ra! " + error.toString(), Toast.LENGTH_LONG).show();
-                                    }
-                                }
-                        ) {
-                            @Override
-                            protected Map<String, String> getParams() throws AuthFailureError {
-                                Map<String, String> params = new HashMap<>();
+                            ) {
+                                @Override
+                                protected Map<String, String> getParams() throws AuthFailureError {
+                                    Map<String, String> params = new HashMap<>();
 //                                post api
-                                params.put("email", PayonActivity.sUser);
-                                params.put("matien", PayonActivity.sKeyMoney);
-                                params.put("tienvao", PayonActivity.sEdit_Money.getText().toString().trim());
-                                params.put("idhinh", String.valueOf(PayonActivity.sMIdImage));
-                                params.put("tenchitieu", "Tien Nhap Vao");
-                                return params;
-                            }
-                        };
-                        requestQueue.add(stringRequest);
+                                    params.put("email", PayonActivity.sUser);
+                                    params.put("matien", PayonActivity.sKeyMoney);
+                                    params.put("tienvao", PayonActivity.sEdit_Money.getText().toString().trim());
+                                    params.put("idhinh", String.valueOf(PayonActivity.sMIdImage));
+                                    params.put("tenchitieu", "Tien Nhap Vao");
+                                    return params;
+                                }
+                            };
+                            requestQueue.add(stringRequest);
 
+                        }
                     }
+                }catch (Exception e){
+                    Toast.makeText(mContext,"Vui Lòng Nhập Tiền Bằng Số",Toast.LENGTH_LONG).show();
                 }
+
             }
         });
     }

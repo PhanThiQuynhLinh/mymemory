@@ -29,6 +29,12 @@
         <activity
             android:name=".SpendActivity"
             android:label="@string/title_activity_spend"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".AddSpendActivity" />
+        <activity android:name=".UpdateSpendActivity" />
+        <activity
+            android:name=".StatisticsActivity"
+            android:label="@string/title_activity_statistics"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

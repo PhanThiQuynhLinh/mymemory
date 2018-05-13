@@ -1,9 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.vanphu.mymoney.AddSpendActivity">
+    android:background="@drawable/img_login"
+    android:orientation="vertical"
+    android:weightSum="2"
+    >
+    <RelativeLayout
+        android:layout_weight="0.2"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        >
+        <Button
+            android:id="@+id/btn_Previous"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@android:drawable/ic_menu_revert"
+            android:onClick="btnSkipClick"
+            />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_weight="1.5"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="330dp"
+        android:layout_height="0dp"
+        android:layout_below="@+id/layout_First"
+        android:background="@drawable/drawable_layout_login"
+        android:orientation="vertical"
+        android:weightSum="3.5">
 
-</android.support.constraint.ConstraintLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/img_Spend"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:contentDescription="@string/welcome"
+                android:src="@drawable/img_question"
+                android:onClick="btnSelectorImage"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.8">
+
+            <android.support.design.widget.TextInputLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/edit_TitleSpend"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/img_money_icon"
+                    android:drawableStart="@drawable/img_money_icon"
+                    android:hint="@string/t_n_chi_ti_u"
+                    android:inputType="textEmailAddress" />
+            </android.support.design.widget.TextInputLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.8">
+
+            <android.support.design.widget.TextInputLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/edit_MoneySpend"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/img_money_item_1"
+                    android:drawableStart="@drawable/img_money_item_1"
+                    android:hint="@string/ti_n_chi_ti_u"
+                    android:inputType="textEmailAddress" />
+            </android.support.design.widget.TextInputLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.7"
+            android:gravity="center|top">
+
+            <Button
+                android:id="@+id/btn_Add"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:background="@drawable/select_button"
+                android:text="@string/th_m_chi_ti_u"
+                android:textColor="#f7f3f3" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

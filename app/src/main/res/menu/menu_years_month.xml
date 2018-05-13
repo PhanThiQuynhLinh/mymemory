@@ -4,20 +4,42 @@
     tools:showIn="navigation_view">
 
 
-    <item android:title="Tháng">
-        <menu>
-            <item android:id="@+id/month1" android:title="Tháng 1" />
-            <item android:id="@+id/month2" android:title="Tháng 2" />
-            <item android:id="@+id/month3" android:title="Tháng 3" />
-            <item android:id="@+id/month4" android:title="Tháng 4" />
-            <item android:id="@+id/month5" android:title="Tháng 5" />
-            <item android:id="@+id/month6" android:title="Tháng 6" />
-            <item android:id="@+id/month7" android:title="Tháng 7" />
-            <item android:id="@+id/month8" android:title="Tháng 8" />
-            <item android:id="@+id/month9" android:title="Tháng 9" />
-            <item android:id="@+id/month10" android:title="Tháng 10" />
-            <item android:id="@+id/month11" android:title="Tháng 11" />
-            <item android:id="@+id/month12" android:title="Tháng 12" />
-        </menu>
-    </item>
+    <item
+        android:id="@+id/month1"
+        android:title="Tháng 1" />
+    <item
+        android:id="@+id/month2"
+        android:title="Tháng 2" />
+    <item
+        android:id="@+id/month3"
+        android:title="Tháng 3" />
+    <item
+        android:id="@+id/month4"
+        android:title="Tháng 4" />
+    <item
+        android:id="@+id/month5"
+        android:title="Tháng 5" />
+    <item
+        android:id="@+id/month6"
+        android:title="Tháng 6" />
+    <item
+        android:id="@+id/month7"
+        android:title="Tháng 7" />
+    <item
+        android:id="@+id/month8"
+        android:title="Tháng 8" />
+    <item
+        android:id="@+id/month9"
+        android:title="Tháng 9" />
+    <item
+        android:id="@+id/month10"
+        android:title="Tháng 10" />
+    <item
+        android:id="@+id/month11"
+        android:title="Tháng 11" />
+    <item
+        android:id="@+id/month12"
+        android:title="Tháng 12" />
+
+
 </menu>

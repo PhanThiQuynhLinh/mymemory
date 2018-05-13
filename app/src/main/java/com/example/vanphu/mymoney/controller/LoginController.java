@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.view.Window;
 import android.widget.Toast;
@@ -43,6 +44,8 @@ public class LoginController {
         Tab_Login.sBtn_Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                final Snackbar snackbar = Snackbar
+                        .make(Tab_Login.sLayout_Login, "Đăng Nhập Thất Bại", Snackbar.LENGTH_LONG);
                 if (Tab_Login.sEdit_Password.getText().toString().equals("") || Tab_Login.sEdit_User.getText().toString().equals("")) {
                     Toast.makeText(mContext, "Vui Lòng Chọn Điền Đầy Đủ Thông Tin", Toast.LENGTH_LONG).show();
                 } else {
@@ -79,18 +82,19 @@ public class LoginController {
                                     mContext.startActivity(intent);
                                 } else {
                                     dialog.dismiss();
-                                    Toast.makeText(mContext, "Đăng Nhập Thất Bại", Toast.LENGTH_LONG).show();
+                                    dialog.dismiss();
                                 }
 
                             } catch (JSONException e) {
                                 dialog.dismiss();
-                                Toast.makeText(mContext, "Đăng Nhập Thất Bại", Toast.LENGTH_LONG).show();
+                                dialog.dismiss();
                             }
                         }
                     }, new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
-                            Toast.makeText(mContext, "Error" + error, Toast.LENGTH_SHORT).show();
+                            dialog.dismiss();
+                            snackbar.show();
                         }
                     }) {
                         @Override

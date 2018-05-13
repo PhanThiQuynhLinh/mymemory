@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import com.example.vanphu.mymoney.controller.RegisteredController;
 import com.example.vanphu.mymoney.R;
@@ -35,14 +36,14 @@ public class Tab_Registered extends Fragment {
     @SuppressLint("StaticFieldLeak")
     public static Button sBtn_Registered;
     public static int sMIdImage = -1;
-
+    public static RelativeLayout layout_Registered;
     @Override
     public View onCreateView(@NonNull final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceStat) {
         View rootView = inflater.inflate(R.layout.tab_registered, container, false);
         init(rootView);
         registeredController = new RegisteredController(inflater.getContext());
-        String mURL = "http://192.168.56.1/chitieu/login.php";
+        String mURL = "http://192.168.149.2/chitieu/login.php";
         registeredController.registered(mURL);
         sImg_Avatar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,5 +72,6 @@ public class Tab_Registered extends Fragment {
         sEdit_Name = rootView.findViewById(R.id.edit_Name);
         sImg_Avatar = rootView.findViewById(R.id.img_Avatar);
         sBtn_Registered = rootView.findViewById(R.id.btn_Registered);
+        layout_Registered = rootView.findViewById(R.id.layout_Registered);
     }
 }

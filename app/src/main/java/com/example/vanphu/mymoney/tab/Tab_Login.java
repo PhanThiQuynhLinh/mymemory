@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.RelativeLayout;
 
 import com.example.vanphu.mymoney.controller.LoginController;
 import com.example.vanphu.mymoney.R;
@@ -24,7 +25,7 @@ public class Tab_Login extends Fragment {
     public static CheckBox sCb_Remember;
     @SuppressLint("StaticFieldLeak")
     public static Button sBtn_Login;
-
+    public static RelativeLayout sLayout_Login;
     @Override
     public View onCreateView(@NonNull final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -33,7 +34,7 @@ public class Tab_Login extends Fragment {
         init(rootView);
 //        call class login
         LoginController mLoginController = new LoginController(inflater.getContext());
-        String mURL = "http://192.168.56.1/chitieu/user_control.php";
+        String mURL = "http://192.168.149.2/chitieu/user_control.php";
         mLoginController.login(mURL);
         return rootView;
     }
@@ -43,5 +44,6 @@ public class Tab_Login extends Fragment {
         sEdit_Password = rootView.findViewById(R.id.edit_Password);
         sBtn_Login = rootView.findViewById(R.id.btn_Login);
         sCb_Remember = rootView.findViewById(R.id.cb_Remember);
+        sLayout_Login = rootView.findViewById(R.id.layout_Login);
     }
 }

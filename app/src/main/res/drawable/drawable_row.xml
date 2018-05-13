@@ -1,4 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-
-</selector>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item>
+        <rotate
+            android:fromDegrees="-15"
+            android:toDegrees="35"
+            android:pivotX="45%"
+            android:pivotY="67%" >
+            <shape
+                android:shape="rectangle" >
+                <stroke android:color="#f00" android:width="5dp"/>
+                <solid
+                    android:color="@color/startblue" />
+            </shape>
+        </rotate>
+    </item>
+    <item>
+        <rotate
+            android:fromDegrees="15"
+            android:toDegrees="35"
+            android:pivotX="45%"
+            android:pivotY="67%" >
+            <shape
+                android:shape="rectangle" >
+                <stroke android:color="#f00" android:width="5dp"/>
+                <solid
+                    android:color="@color/startblue" />
+            </shape>
+        </rotate>
+    </item>
+    <item>
+        <rotate
+            android:fromDegrees="15"
+            android:toDegrees="-35"
+            android:pivotX="15%"
+            android:pivotY="17%" >
+            <shape
+                android:shape="rectangle" >
+                <stroke android:color="#f00" android:width="5dp"/>
+                <solid
+                    android:color="@color/startblue" />
+            </shape>
+        </rotate>
+    </item>
+</layer-list>

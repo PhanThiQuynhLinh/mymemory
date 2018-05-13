@@ -3,6 +3,7 @@ package com.example.vanphu.mymoney.controller;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.view.Window;
 import android.widget.Toast;
@@ -38,6 +39,8 @@ public class RegisteredController {
         Tab_Registered.sBtn_Registered.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                final Snackbar snackbar = Snackbar
+                        .make(Tab_Registered.layout_Registered, "Đăng Ký Thất Bại", Snackbar.LENGTH_LONG);
                 if (Tab_Registered.sMIdImage == -1) {
                     Toast.makeText(mContext, "Vui Lòng Chọn Avatar Đăng Ký", Toast.LENGTH_LONG).show();
                 } else {
@@ -59,18 +62,18 @@ public class RegisteredController {
                                         mContext.startActivity(intent);
                                     } else {
                                         dialog.dismiss();
-                                        Toast.makeText(mContext, "Tài khoản đã được đăng ký hoặc không hợp lệ", Toast.LENGTH_SHORT).show();
+                                        snackbar.show();
                                     }
                                 } catch (JSONException e) {
                                     dialog.dismiss();
-                                    Toast.makeText(mContext, "Error" + e, Toast.LENGTH_LONG).show();
+                                    snackbar.show();
                                 }
                             }
                         }, new Response.ErrorListener() {
                             @Override
                             public void onErrorResponse(VolleyError error) {
                                 dialog.dismiss();
-                                Toast.makeText(mContext, "Error" + error, Toast.LENGTH_SHORT).show();
+                                snackbar.show();
                             }
                         }) {
                             @Override
