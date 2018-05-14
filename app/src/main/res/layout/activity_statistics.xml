@@ -22,7 +22,7 @@
             android:background="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|enterAlways"
             app:popupTheme="@style/AppTheme.PopupOverlay"
-            app:title="Thống Kê">
+            app:title="Thống Kê Tiền Tiêu">
 
         </android.support.v7.widget.Toolbar>
 
@@ -47,6 +47,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Các Tuần" />
+            <android.support.design.widget.TabItem
+                android:id="@+id/tabItem4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tuần" />
+            <android.support.design.widget.TabItem
+                android:id="@+id/tabItem5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ngày" />
         </android.support.design.widget.TabLayout>
     </android.support.design.widget.AppBarLayout>
 

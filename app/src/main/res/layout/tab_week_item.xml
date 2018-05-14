@@ -1,43 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="2"
-    >
+    android:weightSum="2">
+
     <LinearLayout
-        android:layout_weight="0.2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="horizontal"
-        >
+        android:layout_weight="0.2"
+        android:orientation="horizontal">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Theo tháng"
-            android:textSize="15sp"
-            />
+            android:text="Tuần"
+            android:textSize="15sp" />
+
         <Button
-            android:layout_marginLeft="10dp"
+            android:id="@+id/btnWeek_item_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="3"
-            android:id="@+id/btnMonth"
-            android:textSize="15sp"
             android:background="@drawable/drawable_button"
-            android:textColor="#ffffffff"
-            />
+            android:text="18"
+            android:textColor="#ffffffff" />
+
     </LinearLayout>
+
     <RelativeLayout
-        android:layout_weight="1.7"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="#ffffff"
-        >
+        android:layout_weight="1.7"
+        android:background="#ffffff">
+
         <ListView
             android:id="@+id/lv_statis"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
     </RelativeLayout>
 
 

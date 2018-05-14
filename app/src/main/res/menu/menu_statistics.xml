@@ -3,9 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.vanphu.mymoney.StatisticsActivity">
     <item
+        android:id="@+id/action_day_now"
+        android:orderInCategory="100"
+        android:title="Hôm Nay"
+        app:showAsAction="always"
+        />
+    <item
         android:id="@+id/action_pass"
         android:orderInCategory="100"
         android:title="Quay Về"
         app:showAsAction="always"
         />
+
 </menu>

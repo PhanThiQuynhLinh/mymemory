@@ -14,14 +14,30 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Theo tháng"
+            android:text="Ngày"
             android:textSize="15sp"
             />
         <Button
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="3"
+            android:text="11"
+            android:id="@+id/btnDay"
+            android:textSize="15sp"
+            android:background="@drawable/drawable_button"
+            android:textColor="#ffffffff"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tháng"
+            android:textSize="15sp"
+            />
+        <Button
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5"
             android:id="@+id/btnMonth"
             android:textSize="15sp"
             android:background="@drawable/drawable_button"
@@ -33,7 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="#ffffff"
-        >
+        >s
         <ListView
             android:id="@+id/lv_statis"
             android:layout_width="match_parent"

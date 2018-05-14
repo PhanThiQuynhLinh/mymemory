@@ -25,7 +25,7 @@ public class AddSpendActivity extends AppCompatActivity {
     public static Button sBtn_Add;
     public static int sIdImage = -1;
     private AddSpendController mAddSpendController;
-    private String mUrl = "http://192.168.56.1/chitieu/insertchitieu.php";
+    private String mUrl = "http://192.168.149.2/chitieu/insertchitieu.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,7 +64,7 @@ public class AddSpendActivity extends AppCompatActivity {
     }
 
     public void btnSelectorImage(View view) {
-        startActivityForResult(new Intent(AddSpendActivity.this, SelectorImageActivity.class), 100);
+        startActivityForResult(new Intent(AddSpendActivity.this, SelectImageSpendActivity.class), 100);
     }
 
     @Override
@@ -72,7 +72,7 @@ public class AddSpendActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 100 && resultCode == RESULT_OK && data != null) {
             sIdImage = Integer.parseInt(data.getStringExtra("idImage"));
-            String[] arrayAvatar = getResources().getStringArray(R.array.list_image_avatar);
+            String[] arrayAvatar = getResources().getStringArray(R.array.list_image_spend);
             ArrayList<String> mArrayImage = new ArrayList<>(Arrays.asList(arrayAvatar));
             int idImage = getResources().getIdentifier(mArrayImage.get(sIdImage), "drawable", getPackageName());
             sImg_Spend.setImageResource(idImage);

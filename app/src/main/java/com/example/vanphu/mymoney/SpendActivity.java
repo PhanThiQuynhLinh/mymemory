@@ -90,6 +90,8 @@ public class SpendActivity extends AppCompatActivity
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 100) {
             init();
+        }else if(requestCode==1000){
+            init();
         }
     }
 
@@ -114,7 +116,7 @@ public class SpendActivity extends AppCompatActivity
         sTxt_MoneySum = findViewById(R.id.txt_MoneySum);
         mSpendController = new SpendController(this);
         mSpendController.addImage(mlv_Spend);
-        mSpendController.readJsonMoney(URL_item_2 + mUser);
+        mSpendController.readJsonMoney(URL_item_2 + 'b');
         mSpendController.ReadJsonDate(URL_item_3 + mUser);
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -190,7 +192,8 @@ public class SpendActivity extends AppCompatActivity
         if (id == R.id.nav_statistics) {
             startActivity(new Intent(SpendActivity.this,StatisticsActivity.class));
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_tranfers) {
+            startActivityForResult(new Intent(SpendActivity.this, TranfersActivity.class), 1000);
 
         } else if (id == R.id.nav_slideshow) {
 

@@ -56,8 +56,15 @@ public class WelcomeActivity extends Activity {
             Snackbar sanSnackbar = Snackbar.make(activity_intro, "Welcome", Snackbar.LENGTH_LONG);
             sanSnackbar.show();
         } else if (!slide.equals("")) {
-            Intent intent = new Intent(WelcomeActivity.this, LoginActivity.class);
-            startActivity(intent);
+            String mUser = sharedPreferences.getString("username", "");
+            if(mUser.equals("")){
+                Intent intent = new Intent(WelcomeActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }else{
+                Intent intent = new Intent(WelcomeActivity.this, SpendActivity.class);
+                intent.putExtra("User",mUser);
+                startActivity(intent);
+            }
         }
         SharedPreferences.Editor editor = mSharedPreferences_item_1.edit();
         editor.putString("slide", "slide");

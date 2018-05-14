@@ -17,45 +17,41 @@ import com.example.vanphu.mymoney.SpendActivity;
 import com.example.vanphu.mymoney.controller.StatisticsController;
 
 /**
- * Created by VanPhu on 5/12/2018.
+ * Created by VanPhu on 5/14/2018.
  */
 
-public class Tab_Month_To_Month extends Fragment {
-    private String mMonth_item1 = "1";
-    private String mMonth_item2 = "6";
+public class Tab_Day extends Fragment {
+    private Button btnDay;
+    private Button btnMonth;
     private ListView mLv_statis;
-    private Button mBtnMonth_item1, mBtnMonth_item2, btn;
     private StatisticsController mStatisticsController;
-    private String mUrl = "http://192.168.149.2/chitieu/getchitieucacthang.php?";
+    private String mUrl = "http://192.168.149.2/chitieu/getngay.php?";
 
     @Override
     public View onCreateView(@NonNull final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        final View rootView = inflater.inflate(R.layout.tab_month_to_month, container, false);
-//        call Init
+        final View rootView = inflater.inflate(R.layout.tab_day, container, false);
         init(rootView);
-//        call class login
-        mStatisticsController.readJsonSpend(mUrl + "email=" + SpendActivity.mUser + "&thang1=" + mBtnMonth_item1.getText().toString().trim() + "&thang2=" + mBtnMonth_item2.getText().toString().trim());
+        mStatisticsController.readJsonSpend(mUrl + "email=" + SpendActivity.mUser + "&ngay=" + btnDay.getText().toString().trim()+"&thang="+btnMonth.getText().toString().trim());
         mStatisticsController.addImage(mLv_statis);
-        mBtnMonth_item1.setOnClickListener(new View.OnClickListener() {
+        btnMonth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ShowMenu(mBtnMonth_item1);
-
+                ShowMenu(btnMonth);
             }
         });
-        mBtnMonth_item2.setOnClickListener(new View.OnClickListener() {
+        btnDay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ShowMenu(mBtnMonth_item2);
+                ShowMenu1(btnDay);
             }
         });
-
         return rootView;
     }
 
     private void ShowMenu(final Button btnMonth_item1) {
         PopupMenu popupMenu = new PopupMenu(getLayoutInflater().getContext(), btnMonth_item1);
+
         for (int i = 1; i <= 12; i++) {
             popupMenu.getMenu().add(Menu.NONE, i, i, String.valueOf(i));
         }
@@ -63,21 +59,36 @@ public class Tab_Month_To_Month extends Fragment {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 btnMonth_item1.setText(item.getTitle());
-                mStatisticsController.readJsonSpend(mUrl + "email=" + SpendActivity.mUser + "&thang1=" + mBtnMonth_item1.getText().toString().trim() + "&thang2=" + mBtnMonth_item2.getText().toString().trim());
+                mStatisticsController.readJsonSpend(mUrl + "email=" + SpendActivity.mUser + "&ngay=" + btnDay.getText().toString().trim()+"&thang="+btnMonth.getText().toString().trim());
                 mStatisticsController.addImage(mLv_statis);
                 return false;
             }
         });
-
         popupMenu.show();
-    }
 
+    }
+    private void ShowMenu1(final Button btnMonth_item1) {
+        PopupMenu popupMenu = new PopupMenu(getLayoutInflater().getContext(), btnMonth_item1);
+
+        for (int i = 1; i <= 31; i++) {
+            popupMenu.getMenu().add(Menu.NONE, i, i, String.valueOf(i));
+        }
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                btnMonth_item1.setText(item.getTitle());
+                mStatisticsController.readJsonSpend(mUrl + "email=" + SpendActivity.mUser + "&ngay=" + btnDay.getText().toString().trim()+"&thang="+btnMonth.getText().toString().trim());
+                mStatisticsController.addImage(mLv_statis);
+                return false;
+            }
+        });
+        popupMenu.show();
+
+    }
     public void init(View rootView) {
-        mBtnMonth_item1 = rootView.findViewById(R.id.btnMonth_item1);
-        mBtnMonth_item2 = rootView.findViewById(R.id.btnMonth_item2);
+        btnDay = rootView.findViewById(R.id.btnDay);
+        btnMonth = rootView.findViewById(R.id.btnMonth);
         mLv_statis = rootView.findViewById(R.id.lv_statis);
         mStatisticsController = new StatisticsController(getContext());
-
     }
-
 }

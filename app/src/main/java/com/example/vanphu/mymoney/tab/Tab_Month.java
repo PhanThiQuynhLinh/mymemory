@@ -30,7 +30,8 @@ public class Tab_Month extends Fragment {
                              Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.tab_month, container, false);
         init(rootView);
-
+        mStatisticsController.readJsonSpend(URL + "email=" + SpendActivity.mUser + "&thang=" + btnMonth.getText().toString().trim());
+        mStatisticsController.addImage(mLv_statis);
 
         btnMonth.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,7 +39,6 @@ public class Tab_Month extends Fragment {
                 ShowMenu(btnMonth);
             }
         });
-        mStatisticsController = new StatisticsController(inflater.getContext());
 
         return rootView;
     }
@@ -114,6 +114,7 @@ public class Tab_Month extends Fragment {
     public void init(View rootView) {
         btnMonth = rootView.findViewById(R.id.btnMonth);
         mLv_statis = rootView.findViewById(R.id.lv_statis);
+        mStatisticsController = new StatisticsController(getLayoutInflater().getContext());
     }
 
 
