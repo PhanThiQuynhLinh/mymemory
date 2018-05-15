@@ -17,13 +17,16 @@ import com.example.vanphu.mymoney.R;
 import com.example.vanphu.mymoney.SpendActivity;
 import com.example.vanphu.mymoney.controller.StatisticsController;
 
+/**
+ * Created by VanPhu on 5/15/2018.
+ */
 
-public class Tab_Month extends Fragment {
+public class Tab_Month_Total extends Fragment {
     Spinner spinner;
     Button btnMonth;
     private ListView mLv_statis;
     private StatisticsController mStatisticsController;
-    String URL = "http://192.168.149.2/chitieu/getchitieumonth.php?";
+    String URL = "http://192.168.149.2/chitieu/getchitieutienthumonth.php?";
 
     @Override
     public View onCreateView(@NonNull final LayoutInflater inflater, ViewGroup container,
@@ -42,9 +45,6 @@ public class Tab_Month extends Fragment {
 
         return rootView;
     }
-
-
-
     private void ShowMenu(final Button btnMonth_item1) {
         PopupMenu popupMenu = new PopupMenu(getLayoutInflater().getContext(), btnMonth_item1);
 
@@ -68,6 +68,4 @@ public class Tab_Month extends Fragment {
         mLv_statis = rootView.findViewById(R.id.lv_statis);
         mStatisticsController = new StatisticsController(getLayoutInflater().getContext());
     }
-
-
 }

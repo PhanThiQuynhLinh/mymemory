@@ -26,6 +26,7 @@ public class AddSpendActivity extends AppCompatActivity {
     public static int sIdImage = -1;
     private AddSpendController mAddSpendController;
     private String mUrl = "http://192.168.149.2/chitieu/insertchitieu.php";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,18 +36,23 @@ public class AddSpendActivity extends AppCompatActivity {
         sBtn_Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
-                    Integer.parseInt(sEdit_MoneySpend.getText().toString().trim());
-                    if (sIdImage == -1) {
-                        Toast.makeText(AddSpendActivity.this, "Vui Lòng Chọn Hình Ảnh Chi Tiêu", Toast.LENGTH_LONG).show();
-                    } else {
-                        mAddSpendController = new AddSpendController(AddSpendActivity.this);
-                        mAddSpendController.AddSpend(mUrl);
-                        finish();
+                if (sEdit_MoneySpend.getText().toString().equals("") || sEdit_TitleSpend.getText().toString().trim().equals("")) {
+                    Toast.makeText(AddSpendActivity.this, "Vui Lòng Nhập Đủ Thống Tin", Toast.LENGTH_LONG).show();
+                } else {
+                    try {
+                        Integer.parseInt(sEdit_MoneySpend.getText().toString().trim());
+                        if (sIdImage == -1) {
+                            Toast.makeText(AddSpendActivity.this, "Vui Lòng Chọn Hình Ảnh Chi Tiêu", Toast.LENGTH_LONG).show();
+                        } else {
+                            mAddSpendController = new AddSpendController(AddSpendActivity.this);
+                            mAddSpendController.AddSpend(mUrl);
+                            finish();
+                        }
+                    } catch (Exception e) {
+                        Toast.makeText(AddSpendActivity.this, "Vui Lòng Nhập Tiền Bằng Số", Toast.LENGTH_LONG).show();
                     }
-                } catch (Exception e) {
-                    Toast.makeText(AddSpendActivity.this, "Vui Lòng Nhập Tiền Bằng Số", Toast.LENGTH_LONG).show();
                 }
+
 
             }
         });

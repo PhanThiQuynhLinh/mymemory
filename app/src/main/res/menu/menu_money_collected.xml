@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.vanphu.mymoney.StatisticsActivity">
+    <item
+        android:id="@+id/action_finished"
+        android:orderInCategory="100"
+        android:title="Quay Về"
+        app:showAsAction="always"
+        />
+
+    <item
+        android:id="@+id/action_money_collected"
+        android:orderInCategory="99"
+        android:title="Thêm Tiền Thu"
+        app:showAsAction="always"
+        />
+
+</menu>

@@ -98,6 +98,31 @@
         <item>img_spend_item23</item>
         <item>img_spend_item24</item>
     </string-array>
+    <string-array name="list_name_spend">
+        <item>Mua Sữa</item>
+        <item>Mua Bánh</item>
+        <item>Mua Báo</item>
+        <item>Nhậu</item>
+        <item>Cafe</item>
+        <item>Máy Bay</item>
+        <item>Cúng Hương</item>
+        <item>Nghe Nhạc</item>
+        <item>Ăn Mỳ</item>
+        <item>Tạp Hóa</item>
+        <item>Kem</item>
+        <item>Nước</item>
+        <item>Quần Áo</item>
+        <item>Trò Chơi</item>
+        <item>Chơi Bộ</item>
+        <item>Rượu</item>
+        <item>Sữa</item>
+        <item>Khám Răng</item>
+        <item>Tạp Hóa</item>
+        <item>Ăn</item>
+        <item>Lúa Mạch</item>
+        <item>Thuốc</item>
+        <item>Đi Học</item>
+    </string-array>
     <string-array name="thang">
         <item>Không có tháng</item>
         <item>Tháng Một</item>
@@ -131,6 +156,7 @@
     <string name="title_activity_statistics">StatisticsActivity</string>
     <string name="th_ng">Tháng</string>
     <string name="chuy_n_ti_n">Chuyển Tiền</string>
+    <string name="title_activity_total_spend_colleted">TotalSpendColletedActivity</string>
 
 
 </resources>

@@ -13,13 +13,13 @@
             android:icon="@drawable/ic_menu_gallery"
             android:title="Chuyển Tiền" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_money_collected"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:title="Tiền Thu" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_total_collected"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:title="Thống Kê Tiền Thu" />
     </group>
 
     <item android:title="Communicate">

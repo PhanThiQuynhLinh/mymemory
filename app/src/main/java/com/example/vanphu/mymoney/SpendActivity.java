@@ -92,6 +92,10 @@ public class SpendActivity extends AppCompatActivity
             init();
         }else if(requestCode==1000){
             init();
+        }else if(requestCode==1001){
+            init();
+        }else if(requestCode==1002){
+            init();
         }
     }
 
@@ -116,7 +120,7 @@ public class SpendActivity extends AppCompatActivity
         sTxt_MoneySum = findViewById(R.id.txt_MoneySum);
         mSpendController = new SpendController(this);
         mSpendController.addImage(mlv_Spend);
-        mSpendController.readJsonMoney(URL_item_2 + 'b');
+        mSpendController.readJsonMoney(URL_item_2 + mUser);
         mSpendController.ReadJsonDate(URL_item_3 + mUser);
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -162,15 +166,11 @@ public class SpendActivity extends AppCompatActivity
             txt_Text.setText("Đang Đăng Xuất");
             dialog.show();
             SharedPreferences sharedPreferences = getSharedPreferences("datalogin", MODE_PRIVATE);
-            SharedPreferences mSharedPreferences_item_1 = getSharedPreferences("datalide", MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
-            SharedPreferences.Editor editor1 = mSharedPreferences_item_1.edit();
             editor.remove("username");
             editor.remove("password");
             editor.remove("checked");
-            editor1.remove("slide");
             editor.apply();
-            editor1.apply();
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -195,9 +195,11 @@ public class SpendActivity extends AppCompatActivity
         } else if (id == R.id.nav_tranfers) {
             startActivityForResult(new Intent(SpendActivity.this, TranfersActivity.class), 1000);
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_money_collected) {
+            startActivityForResult(new Intent(SpendActivity.this, MoneyCollectedActivity.class), 1001);
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_total_collected) {
+            startActivityForResult(new Intent(SpendActivity.this, TotalSpendColletedActivity.class), 1002);
 
         } else if (id == R.id.nav_share) {
 

@@ -4,11 +4,13 @@ import android.content.Context;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.vanphu.mymoney.adapter.SpendAdapter;
 import com.example.vanphu.mymoney.model.SpendModel;
@@ -21,6 +23,8 @@ import org.json.JSONObject;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class SpendController {
@@ -73,7 +77,7 @@ public class SpendController {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(mContext, "Error", Toast.LENGTH_LONG).show();
+
                     }
                 }
         );
@@ -204,7 +208,7 @@ public class SpendController {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(mContext, "Lỗi 123" + error.toString(), Toast.LENGTH_LONG).show();
+
 
                     }
                 }
@@ -233,7 +237,7 @@ public class SpendController {
                                 String sum_main = formatter.format(mMoneySum) + " " + sKeyMoney;
                                 SpendActivity.sTxt_MoneySum.setText(sum_main);
                             } catch (Exception e) {
-                                Toast.makeText(mContext, "Lỗi" + e, Toast.LENGTH_LONG).show();
+//                                Toast.makeText(mContext, "Lỗi" + e, Toast.LENGTH_LONG).show();
                             }
                         }
                     }
@@ -241,11 +245,42 @@ public class SpendController {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(mContext, "Lỗi 123" + error.toString(), Toast.LENGTH_LONG).show();
+
 
                     }
                 }
         );
         requestQueue.add(jsonArrayRequest);
+    }
+    public void addmoneycollected(String URL, final String nameSpend, final int MoneySpend){
+        RequestQueue requestQueue = Volley.newRequestQueue(mContext);
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        if (response.trim().equals("Thành Công")) {
+                            Toast.makeText(mContext, "Thêm Thành Công", Toast.LENGTH_LONG).show();
+                        } else {
+                            Toast.makeText(mContext, "Lỗi Thêm", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(mContext, "Lỗi Xảy ra! " + error.toString(), Toast.LENGTH_LONG).show();
+                    }
+                }
+        ) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("tenchitieu",nameSpend);
+                params.put("giachitieu", String.valueOf(MoneySpend));
+                params.put("email", SpendActivity.mUser);
+                return params;
+            }
+        };
+        requestQueue.add(stringRequest);
     }
 }

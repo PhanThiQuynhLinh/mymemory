@@ -11,63 +11,57 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.PopupMenu;
-import android.widget.Spinner;
 
 import com.example.vanphu.mymoney.R;
 import com.example.vanphu.mymoney.SpendActivity;
 import com.example.vanphu.mymoney.controller.StatisticsController;
 
+/**
+ * Created by VanPhu on 5/15/2018.
+ */
 
-public class Tab_Month extends Fragment {
-    Spinner spinner;
-    Button btnMonth;
+public class Tab_Week_item_Total  extends Fragment {
+    private Button mBtnWeek_item_1;
     private ListView mLv_statis;
     private StatisticsController mStatisticsController;
-    String URL = "http://192.168.149.2/chitieu/getchitieumonth.php?";
-
+    private String mUrl="http://192.168.149.2/chitieu/gettienthutuan.php?";
     @Override
     public View onCreateView(@NonNull final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        final View rootView = inflater.inflate(R.layout.tab_month, container, false);
+        final View rootView = inflater.inflate(R.layout.tab_week_item, container, false);
         init(rootView);
-        mStatisticsController.readJsonSpend(URL + "email=" + SpendActivity.mUser + "&thang=" + btnMonth.getText().toString().trim());
+        mStatisticsController.readJsonSpend(mUrl + "email=" + SpendActivity.mUser + "&week=" + mBtnWeek_item_1.getText().toString().trim());
         mStatisticsController.addImage(mLv_statis);
-
-        btnMonth.setOnClickListener(new View.OnClickListener() {
+        mBtnWeek_item_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ShowMenu(btnMonth);
+                ShowMenu(mBtnWeek_item_1);
+
             }
         });
 
         return rootView;
     }
-
-
-
     private void ShowMenu(final Button btnMonth_item1) {
         PopupMenu popupMenu = new PopupMenu(getLayoutInflater().getContext(), btnMonth_item1);
-
-        for (int i = 1; i <= 12; i++) {
+        for (int i = 1; i <= 52; i++) {
             popupMenu.getMenu().add(Menu.NONE, i, i, String.valueOf(i));
         }
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                btnMonth.setText(item.getTitle());
-                mStatisticsController.readJsonSpend(URL + "email=" + SpendActivity.mUser + "&thang=" + btnMonth.getText().toString().trim());
+                btnMonth_item1.setText(item.getTitle());
+                mStatisticsController.readJsonSpend(mUrl + "email=" + SpendActivity.mUser + "&week=" + mBtnWeek_item_1.getText().toString().trim());
                 mStatisticsController.addImage(mLv_statis);
                 return false;
             }
         });
+
         popupMenu.show();
     }
-
-    public void init(View rootView) {
-        btnMonth = rootView.findViewById(R.id.btnMonth);
-        mLv_statis = rootView.findViewById(R.id.lv_statis);
-        mStatisticsController = new StatisticsController(getLayoutInflater().getContext());
+    public void init(View rootView){
+        mBtnWeek_item_1=rootView.findViewById(R.id.btnWeek_item_1);
+        mLv_statis=rootView.findViewById(R.id.lv_statis);
+        mStatisticsController=new StatisticsController(getContext());
     }
-
-
 }
