@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">MyMoney</string>
     <string name="welcome">Welcome</string>
-    <string name="next">Next</string>
-    <string name="skip">Skip</string>
-    <string name="start">Start</string>
+    <string name="next">Tiếp</string>
+    <string name="skip">Bỏ Qua</string>
+    <string name="start">Bắt Đầu</string>
     <string name="title_slide1">Connect the charger</string>
     <string name="string_slide1">Money Lover</string>
 
@@ -12,7 +12,6 @@
 
     <string name="title_slide2">Kiểm soát từng khoản thu chi với hệ thống báo cáo chi tiết.</string>
 
-    <string name="desc_slide2">It will  keep you updated on battery charging status through notification and home screen widget</string>
     <string name="title_slide3">Alert on 100%</string>
     <string name="title_slide4">Chán nản sẽ có những trò chơi giải trí cùng app…</string>
     <string name="title_slide5">Nghe nhạc mp3 cực đỉnh cùng app và được thiết kế giao diện cực đẹp.</string>
@@ -138,15 +137,6 @@
         <item>Tháng Mười Một</item>
         <item>Tháng Một Hai</item>
     </string-array>
-    <string-array name="thu_ngay">
-        <item>Chủ Nhật</item>
-        <item>Thứ Hai</item>
-        <item>Thứ Ba</item>
-        <item>Thứ Tư</item>
-        <item>Thứ Năm</item>
-        <item>Thứ Sáu</item>
-        <item>Thứ Bảy</item>
-    </string-array>
     <string name="title_activity_spend">SpendActivity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -167,21 +157,6 @@
     <string name="chuy_n_ti_n">Chuyển Tiền</string>
     <string name="title_activity_total_spend_colleted">TotalSpendColletedActivity</string>
     <string name="ti_n_thu_nhi_u_n2h_t">Tiền Thu Nhiều Nhất</string>
-    <string name="thongke">Thống Kê Tiền Tiêu</string>
-    <string name="ti_n_thu">Tiền Thu</string>
-    <string name="th_ng_k_ti_n_thu">Thống Kê Tiền Thu</string>
-    <string name="ng_xu_t">Đăng Xuất</string>
-    <string name="c_c_th_ng">Các Tháng</string>
-    <string name="c_c_tu_n">Các Tuần</string>
-    <string name="tu_n">Tuần</string>
-    <string name="ng_y">Ngày</string>
-    <string name="t_k_t_t">Thống Kê Tiền Tiêu</string>
-    <string name="quay_v">Quay Về</string>
-    <string name="th_m_ti_n_thu">Thêm Tiền Thu</string>
-    <string name="h_m_nay">Hôm Nay</string>
-    <string name="tktt_1">Thống Kê Tiền Thu</string>
-    <string name="t_i_kho_n_c_n_chuy_n">Tài Khoản Cần Chuyển</string>
-    <string name="s_ti_n">Số Tiền</string>
 
 
 </resources>

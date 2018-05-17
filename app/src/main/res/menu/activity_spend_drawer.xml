@@ -7,19 +7,19 @@
         <item
             android:id="@+id/nav_statistics"
             android:icon="@android:drawable/stat_notify_error"
-            android:title="Thống Kê Tiền Tiêu" />
+            android:title="@string/thongke" />
         <item
             android:id="@+id/nav_tranfers"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Chuyển Tiền" />
+            android:title="@string/chuy_n_ti_n" />
         <item
             android:id="@+id/nav_money_collected"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Tiền Thu" />
+            android:title="@string/ti_n_thu" />
         <item
             android:id="@+id/nav_total_collected"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Thống Kê Tiền Thu" />
+            android:title="@string/th_ng_k_ti_n_thu" />
     </group>
 
     <item android:title="Communicate">

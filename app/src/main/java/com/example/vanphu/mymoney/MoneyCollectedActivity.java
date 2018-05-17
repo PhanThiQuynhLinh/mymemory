@@ -11,17 +11,25 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.vanphu.mymoney.controller.AddSpendController;
 import com.example.vanphu.mymoney.controller.SpendController;
 
 public class MoneyCollectedActivity extends AppCompatActivity {
-    private SpendController mSpendController;
     private ListView mLvMoneyCollected;
     private String mURL = "http://192.168.149.2/chitieu/getdatatienthu.php?email=";
     private String mURL_item_1 = "http://192.168.149.2/chitieu/inserttienthu.php";
-
+    private String mUrl_item_2="http://192.168.149.2/chitieu/tinhngaytienthu.php?email=";
+    private String mUrl_item_3="http://192.168.149.2/chitieu/maxtienthu.php?email=";
+    public static TextView txt_MoneyMax;
+    public static TextView sTxt_Day;
+    public static TextView sTxt_Date;
+    public static TextView sTxt_Month;
+    public static TextView sTxt_Year;
+    public static TextView sTxt_SumSpendMoney;
+    private SpendController mSpendController;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +43,15 @@ public class MoneyCollectedActivity extends AppCompatActivity {
         mLvMoneyCollected = findViewById(R.id.lvMoneyCollected);
         mSpendController.addImage(mLvMoneyCollected);
         mSpendController.readJsonSpend(mURL + SpendActivity.mUser);
+        sTxt_Day=findViewById(R.id.txt_Day);
+        sTxt_Date=findViewById(R.id.txt_Date);
+        sTxt_Month=findViewById(R.id.txt_Month);
+        sTxt_Year=findViewById(R.id.txt_Year);
+        txt_MoneyMax=findViewById(R.id.txt_MoneyMax);
+        sTxt_SumSpendMoney=findViewById(R.id.txt_SumSpendMoney);
+        mSpendController=new SpendController(MoneyCollectedActivity.this);
+        mSpendController.ReadJsonDateCollected(mUrl_item_2+SpendActivity.mUser);
+        mSpendController.readJsonMoneyCollected(mUrl_item_3+SpendActivity.mUser);
     }
 
     @Override

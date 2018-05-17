@@ -75,7 +75,7 @@
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/ic_person_outline_black_24dp"
                     android:drawableStart="@drawable/ic_person_outline_black_24dp"
-                    android:hint="Tài Khoản Cần Chuyển"
+                    android:hint="@string/t_i_kho_n_c_n_chuy_n"
                     android:inputType="text" />
             </android.support.design.widget.TextInputLayout>
         </RelativeLayout>
@@ -98,7 +98,7 @@
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/img_money_icon"
                     android:drawableStart="@drawable/img_money_icon"
-                    android:hint="Số Tiền"
+                    android:hint="@string/s_ti_n"
                     android:inputType="text" />
             </android.support.design.widget.TextInputLayout>
         </RelativeLayout>

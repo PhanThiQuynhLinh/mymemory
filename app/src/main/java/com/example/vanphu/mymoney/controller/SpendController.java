@@ -12,6 +12,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.vanphu.mymoney.MoneyCollectedActivity;
 import com.example.vanphu.mymoney.adapter.SpendAdapter;
 import com.example.vanphu.mymoney.model.SpendModel;
 import com.example.vanphu.mymoney.R;
@@ -32,6 +33,7 @@ public class SpendController {
     private SpendAdapter mAdapter;
     private ArrayList<String> mArrayImage;
     private ArrayList<String> mArrayImageAvatar;
+    private ArrayList<String> mArrayDate;
     private Context mContext;
     private int mIdImage;
     private int mMoneyIn = 0;
@@ -174,22 +176,10 @@ public class SpendController {
                                     numberYear = numberYear - 1;
                                 }
                                 int n = (numberDate + 2 * numberMonth + (3 * (numberMonth + 1)) / 5 + numberYear + (numberYear / 4)) % 7;
-                                String DATE = "";
-                                if (n == 0) {
-                                    DATE = "Chủ Nhật";
-                                } else if (n == 1) {
-                                    DATE = "Thứ Hai";
-                                } else if (n == 2) {
-                                    DATE = "Thứ Ba";
-                                } else if (n == 3) {
-                                    DATE = "Thứ Tư";
-                                } else if (n == 4) {
-                                    DATE = "Thứ Năm";
-                                } else if (n == 5) {
-                                    DATE = "Thứ Sáu";
-                                } else if (n == 6) {
-                                    DATE = "Thứ Bảy";
-                                }
+
+                                String[] arrayName = mContext.getResources().getStringArray(R.array.thu_ngay);
+                                mArrayDate = new ArrayList<>(Arrays.asList(arrayName));
+                                String DATE =mArrayDate.get(n);
                                 SpendActivity.sTxt_Date.setText(DATE);
                                 String[] mangten = mContext.getResources().getStringArray(R.array.thang);
                                 mArraymonth = new ArrayList<>(Arrays.asList(mangten));
@@ -282,5 +272,88 @@ public class SpendController {
             }
         };
         requestQueue.add(stringRequest);
+    }
+    public void ReadJsonDateCollected(String url) {
+
+        RequestQueue requestQueue = Volley.newRequestQueue(mContext);
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+//                        svlist.clear();
+                        for (int i = 0; i < response.length(); i++) {
+                            try {
+                                JSONObject object = response.getJSONObject(i);
+
+                                MoneyCollectedActivity.sTxt_Day.setText(object.getString("ngay"));
+                                int numberDate = object.getInt("ngay");
+                                int numberMonth = object.getInt("thang");
+                                int numberYear = object.getInt("nam");
+                                if (numberMonth < 3) {
+                                    numberMonth = numberMonth + 12;
+                                    numberYear = numberYear - 1;
+                                }
+                                int n = (numberDate + 2 * numberMonth + (3 * (numberMonth + 1)) / 5 + numberYear + (numberYear / 4)) % 7;
+                                String[] arrayName = mContext.getResources().getStringArray(R.array.thu_ngay);
+                                mArrayDate = new ArrayList<>(Arrays.asList(arrayName));
+                                String DATE =mArrayDate.get(n);
+                                MoneyCollectedActivity.sTxt_Date.setText(DATE);
+                                String[] mangten = mContext.getResources().getStringArray(R.array.thang);
+                                mArraymonth = new ArrayList<>(Arrays.asList(mangten));
+
+                                MoneyCollectedActivity.sTxt_Month.setText(mArraymonth.get(object.getInt("thang")));
+
+                                MoneyCollectedActivity.sTxt_Year.setText(String.valueOf(object.getInt("nam")));
+                            } catch (Exception e) {
+                                Toast.makeText(mContext, "Lỗi" + e, Toast.LENGTH_LONG).show();
+                            }
+                        }
+//                        adapter.notifyDataSetChanged();
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+
+                    }
+                }
+
+        );
+        requestQueue.add(jsonArrayRequest);
+    }
+    public void readJsonMoneyCollected(String url) {
+        RequestQueue requestQueue = Volley.newRequestQueue(mContext);
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        for (int i = 0; i < response.length(); i++) {
+                            try {
+                                JSONObject object = response.getJSONObject(i);
+                                DecimalFormat formatter = new DecimalFormat("###,###,###");
+                                int MAX = object.getInt("giacaonhat");
+                                String maxMoney = formatter.format(MAX) + " " + sKeyMoney;
+                                MoneyCollectedActivity.txt_MoneyMax.setText(maxMoney);
+                                int SUM = object.getInt("tong");
+                                String sumMoney = formatter.format(SUM) + " " + sKeyMoney;
+                                MoneyCollectedActivity.sTxt_SumSpendMoney.setText(sumMoney);
+                            } catch (Exception e) {
+                                Toast.makeText(mContext, "Lỗi" + e, Toast.LENGTH_LONG).show();
+                            }
+                        }
+
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(mContext, "Lỗi" + error.toString(), Toast.LENGTH_LONG).show();
+                    }
+                }
+        );
+        requestQueue.add(jsonArrayRequest);
     }
 }

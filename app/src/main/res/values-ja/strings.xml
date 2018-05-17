@@ -1,0 +1,185 @@
+<resources>
+    <string name="app_name">私のお金</string>
+    <string name="welcome">ようこそ</string>
+    <string name="next">次</string>
+    <string name="skip">スキップ</string>
+    <string name="start">開始</string>
+    <string name="title_slide1">充電器を接続する</string>
+    <string name="string_slide1">Money Lover</string>
+
+    <string name="desc_slide1">スマートな財務計画を立て、ステップバイステップであなたの夢を実現してください。</string>
+    <string name="string_desc_slide1">最初のヒント：ログインしてすべての端末のデータにアクセスします。</string>
+
+    <string name="title_slide2">詳細な報告システムで各支出項目を管理する。</string>
+
+    <string name="desc_slide2">それは通知とホームスクリーンウィジェットを介してバッテリーの充電状況を更新する</string>
+    <string name="title_slide3">100％警告</string>
+    <string name="title_slide4">うつ病は、同じエンターテイメントゲームアプリを持っています...</string>
+    <string name="title_slide5">究極のmp3音楽を聞くとインターフェイスは美しく設計されています。</string>
+    <string name="desc_slide3">バッテリーが100％に達したときに警告します</string>
+    <string name="btnmoney">中古 MONEY LOVER</string>
+    <string name="fistmoney">最初の使用 MONEY LOVER</string>
+    <string name="suport">私たちはあなたの許可なく情報を投稿しません</string>
+    <string name="title_activity_login">ログインアクティビティ</string>
+    <string name="tab_text_1">ログイン</string>
+    <string name="tab_text_2">登録</string>
+    <string name="tab_text_3">タブ3</string>
+    <string name="action_settings">設定</string>
+    <string name="section_format">セクションからのこんにちは世界： %1$d</string>
+    <string name="username">ログイン名</string>
+    <string name="password">パスワード</string>
+    <string name="remember_password">パスワードを記憶する</string>
+    <string name="login">登録</string>
+    <string name="ng_nh_p">登録</string>
+    <string name="ang_k_t_n_i_v_i_m_y_ch">サーバーに接続中...</string>
+    <string name="ng_k_t_i_kho_n">アカウント登録</string>
+    <string name="ng_k">登録</string>
+    <string name="h_v_t_n">名前</string>
+    <string name="l_a_ch_n_h_nh_nh">画像を選択する</string>
+    <string name="money">マネーイン</string>
+    <string name="ho_n_th_nh">完了</string>
+    <string-array name="list_image_avatar">
+        <item>img_beatifull</item>
+        <item>img_boy</item>
+        <item>img_grirl</item>
+        <item>img_hotboy</item>
+        <item>img_men</item>
+        <item>img_sexy</item>
+    </string-array>
+    <string-array name="list_image_flag">
+        <item>img_china_flag</item>
+        <item>img_flagvn</item>
+        <item>img_korean_flag</item>
+        <item>img_nga_flag</item>
+        <item>img_thailan_flag</item>
+        <item>img_uk_flag</item>
+        <item>img_usa_flag</item>
+    </string-array>
+    <string-array name="list_name_flag">
+        <item>¥</item>
+        <item>₫</item>
+        <item>₩</item>
+        <item>руб</item>
+        <item>฿</item>
+        <item>£</item>
+        <item>$</item>
+    </string-array>
+    <string-array name="list_name_avatar">
+        <item>美しい人たち</item>
+        <item>男の子</item>
+        <item>女の子</item>
+        <item>美しい</item>
+        <item>男性</item>
+        <item>魅惑的な</item>
+    </string-array>
+    <string-array name="list_image_spend">
+        <item>img_spend_item1</item>
+        <item>img_spend_item2</item>
+        <item>img_spend_item3</item>
+        <item>img_spend_item4</item>
+        <item>img_spend_item5</item>
+        <item>img_spend_item6</item>
+        <item>img_spend_item7</item>
+        <item>img_spend_item8</item>
+        <item>img_spend_item9</item>
+        <item>img_spend_item10</item>
+        <item>img_spend_item11</item>
+        <item>img_spend_item12</item>
+        <item>img_spend_item13</item>
+        <item>img_spend_item14</item>
+        <item>img_spend_item15</item>
+        <item>img_spend_item16</item>
+        <item>img_spend_item17</item>
+        <item>img_spend_item18</item>
+        <item>img_spend_item19</item>
+        <item>img_spend_item20</item>
+        <item>img_spend_item21</item>
+        <item>img_spend_item22</item>
+        <item>img_spend_item23</item>
+        <item>img_spend_item24</item>
+    </string-array>
+    <string-array name="list_name_spend">
+        <item>ミルクを購入する</item>
+        <item>ケーキを買う</item>
+        <item>新聞を買う</item>
+        <item>パーティー</item>
+        <item>カフェ</item>
+        <item>航空機</item>
+        <item>礼拝</item>
+        <item>音楽を聴きます</item>
+        <item>食べる</item>
+        <item>ショップ</item>
+        <item>クリーム</item>
+        <item>水</item>
+        <item>衣服</item>
+        <item>ゲーム</item>
+        <item>セットを再生する</item>
+        <item>アルコール</item>
+        <item>ミルク</item>
+        <item>病院</item>
+        <item>ショップ</item>
+        <item>食べる</item>
+        <item>ライス</item>
+        <item>薬</item>
+        <item>授業料</item>
+    </string-array>
+    <string-array name="thang">
+        <item>いいえ月</item>
+        <item>1月</item>
+        <item>2月</item>
+        <item>3月</item>
+        <item>4月</item>
+        <item>5月</item>
+        <item>6月</item>
+        <item>7月</item>
+        <item>8月</item>
+        <item>9月</item>
+        <item>10月</item>
+        <item>11月</item>
+        <item>12月</item>
+    </string-array>
+    <string name="title_activity_spend">アクティビティを使う</string>
+
+    <string name="navigation_drawer_open">ナビゲーション・ドロワーを開く</string>
+    <string name="navigation_drawer_close">ナビゲーション・ドロワーを閉じる</string>
+    <string name="t_ng_quan">概要</string>
+    <string name="ti_n_v_o">お金を入れる</string>
+    <string name="_5_000_000">5,000,000</string>
+    <string name="ti_n_ra">お金を出す</string>
+    <string name="_10000">10000</string>
+    <string name="t_n_chi_ti_u">支出名</string>
+    <string name="ti_n_chi_ti_u">お金</string>
+    <string name="th_m_chi_ti_u">より多くの支出</string>
+    <string name="s_a_chi_ti_u">費用を編集する</string>
+    <string name="x_a_chi_ti_u">削除費用</string>
+    <string name="title_activity_statistic_spend">統計的活動を消費する</string>
+    <string name="title_activity_statistics">統計アクティビティ</string>
+    <string name="th_ng">月</string>
+    <string name="chuy_n_ti_n">送金</string>
+    <string name="title_activity_total_spend_colleted">合計は収集された活動を費やす</string>
+    <string name="thongke">マネー統計</string>
+    <string name="ti_n_thu">獲得</string>
+    <string name="th_ng_k_ti_n_thu">損益計算書</string>
+    <string name="ng_xu_t">ログアウト</string>
+    <string name="c_c_th_ng">今月</string>
+    <string name="c_c_tu_n">今週</string>
+    <string name="tu_n">週</string>
+    <string name="ng_y">日</string>
+    <string name="t_k_t_t">マネー統計</string>
+    <string name="quay_v">戻る</string>
+    <string name="th_m_ti_n_thu">お金を追加</string>
+    <string name="h_m_nay">今日</string>
+    <string name="tktt_1">損益計算書</string>
+    <string name="t_i_kho_n_c_n_chuy_n">移転する勘定</string>
+    <string name="s_ti_n">金額</string>
+    <string name="ti_n_thu_nhi_u_n2h_t">ほとんどのお金</string>
+    <string-array name="thu_ngay">
+        <item>日曜日</item>
+        <item>月曜日</item>
+        <item>火曜日</item>
+        <item>水曜日</item>
+        <item>木曜日</item>
+        <item>金曜日</item>
+        <item>土曜日</item>
+    </string-array>
+</resources>

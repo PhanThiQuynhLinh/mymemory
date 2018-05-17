@@ -5,12 +5,12 @@
     <item
         android:id="@+id/action_day_now"
         android:orderInCategory="100"
-        android:title="Hôm Nay"
+        android:title="@string/h_m_nay"
         app:showAsAction="always"
         />
     <item
         android:id="@+id/action_finished"
         android:orderInCategory="100"
-        android:title="Quay Về"
+        android:title="@string/quay_v"
         app:showAsAction="always" />
 </menu>
