@@ -27,7 +27,7 @@
             android:text="@string/t_ng_quan"
             android:textColor="@color/backed"
             android:textSize="@dimen/baoden"
-            tools:ignore="NestedWeights,SpUsage" />
+             />
 
         <View
             android:layout_width="match_parent"
