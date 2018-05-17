@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/img_login"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:weightSum="2">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="0dp"
+        android:layout_weight="0.5">
 
         <Button
             android:id="@+id/btn_Previous"
@@ -19,9 +22,9 @@
 
     <LinearLayout
         android:layout_width="330dp"
-        android:layout_height="300dp"
-        android:layout_gravity="center|bottom"
-        android:layout_marginTop="50dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1.3"
         android:background="@drawable/drawable_layout_login"
         android:orientation="vertical"
         android:weightSum="3.5">
@@ -29,22 +32,8 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:gravity="center">
-
-            <ImageView
-                android:id="@+id/img_Spend"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:contentDescription="@string/welcome"
-                android:onClick="btnSelectorImage"
-                android:src="@drawable/img_question" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.8">
+            android:layout_weight="0.8"
+            tools:ignore="NestedWeights">
 
             <android.support.design.widget.TextInputLayout
 
@@ -82,7 +71,21 @@
                     android:inputType="textEmailAddress" />
             </android.support.design.widget.TextInputLayout>
         </RelativeLayout>
-
+        <RelativeLayout
+            android:layout_weight="0.5"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center_horizontal"
+            >
+            <TextView
+                android:id="@+id/txt_time"
+                android:textColor="#f00"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/welcome"
+                />
+        </RelativeLayout>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -90,11 +93,25 @@
             android:gravity="center|top">
 
             <Button
-                android:id="@+id/btn_Add"
+                android:id="@+id/btn_Update"
                 android:layout_width="250dp"
                 android:layout_height="50dp"
                 android:background="@drawable/select_button"
-                android:text="@string/th_m_chi_ti_u"
+                android:text="@string/s_a_chi_ti_u"
+                android:textColor="#f7f3f3" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.7"
+            android:gravity="center|top">
+
+            <Button
+                android:id="@+id/btn_Delete"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:background="@drawable/select_button"
+                android:text="@string/x_a_chi_ti_u"
                 android:textColor="#f7f3f3" />
         </RelativeLayout>
     </LinearLayout>

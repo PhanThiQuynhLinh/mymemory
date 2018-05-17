@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_login"
+    android:gravity="center"
+    android:id="@+id/layout_Login">
+
+    <RelativeLayout
+        android:id="@+id/layout_First"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+
+    <LinearLayout
+        android:layout_width="330dp"
+        android:layout_height="300dp"
+        android:layout_below="@+id/layout_First"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/drawable_layout_login"
+        android:orientation="vertical"
+        android:weightSum="2">
+        <RelativeLayout
+            android:layout_weight="0.3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ng_nh_p"
+                android:textSize="27sp"
+                android:textColor="@color/startblue"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5">
+
+            <android.support.design.widget.TextInputLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/edit_User"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_person_outline_black_24dp"
+                    android:drawableStart="@drawable/ic_person_outline_black_24dp"
+                    android:hint="@string/username"
+                    android:inputType="textEmailAddress" />
+            </android.support.design.widget.TextInputLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5">
+
+            <android.support.design.widget.TextInputLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:passwordToggleDrawable="@drawable/select_password"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="#ce12ae">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/edit_Password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_verified_user_black_24dp"
+                    android:drawableStart="@drawable/ic_verified_user_black_24dp"
+                    android:hint="@string/password"
+
+                    android:inputType="textPassword" />
+            </android.support.design.widget.TextInputLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.3"
+            android:gravity="center|left"
+            android:orientation="horizontal"
+            tools:ignore="RtlHardcoded">
+
+            <CheckBox
+                android:id="@+id/cb_Remember"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/select_checked"
+                android:text="@string/remember_password"
+                android:textColor="#09c6df" />
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.4"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn_Login"
+                android:layout_width="250dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/select_button"
+                android:text="@string/login"
+                android:textColor="#f7f3f3" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

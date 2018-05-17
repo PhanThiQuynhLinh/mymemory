@@ -3,28 +3,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/img_login"
-    android:orientation="vertical">
-
+    android:orientation="horizontal"
+    android:weightSum="2"
+    >
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp">
-
+        android:layout_weight="0.2"
+        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        >
         <Button
             android:id="@+id/btn_Previous"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="@android:drawable/ic_menu_revert"
-            android:onClick="btnSkipClick" />
+            android:onClick="btnSkipClick"
+            />
     </RelativeLayout>
-
     <LinearLayout
-        android:layout_width="330dp"
-        android:layout_height="300dp"
-        android:layout_gravity="center|bottom"
-        android:layout_marginTop="50dp"
+        android:layout_weight="1.2"
+        android:layout_gravity="center"
+        android:layout_width="0dp"
+        android:layout_height="230dp"
+        android:layout_below="@+id/layout_First"
         android:background="@drawable/drawable_layout_login"
         android:orientation="vertical"
-        android:weightSum="3.5">
+        android:weightSum="3">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -37,14 +40,15 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:contentDescription="@string/welcome"
+                android:src="@drawable/img_question"
                 android:onClick="btnSelectorImage"
-                android:src="@drawable/img_question" />
+                />
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.8">
+            android:layout_weight="1">
 
             <android.support.design.widget.TextInputLayout
 
@@ -65,7 +69,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.8">
+            android:layout_weight="1">
 
             <android.support.design.widget.TextInputLayout
 
@@ -83,19 +87,23 @@
             </android.support.design.widget.TextInputLayout>
         </RelativeLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.7"
-            android:gravity="center|top">
-
-            <Button
-                android:id="@+id/btn_Add"
-                android:layout_width="250dp"
-                android:layout_height="50dp"
-                android:background="@drawable/select_button"
-                android:text="@string/th_m_chi_ti_u"
-                android:textColor="#f7f3f3" />
-        </RelativeLayout>
     </LinearLayout>
+    <RelativeLayout
+        android:layout_gravity="center"
+        android:layout_below="@+id/layout_First"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.6"
+        android:gravity="right|top"
+        android:layout_marginLeft="50dp"
+        >
+
+        <Button
+            android:id="@+id/btn_Add"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:background="@drawable/select_button"
+            android:text="@string/th_m_chi_ti_u"
+            android:textColor="@color/startblue" />
+    </RelativeLayout>
 </LinearLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:orientation="horizontal"
+    android:paddingBottom="10dp"
+    android:paddingTop="10dp"
+    android:weightSum="2"
+    android:background="@drawable/drawable_button_style"
+    >
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.3">
+
+        <ImageView
+            android:id="@+id/img_Spend"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            tools:ignore="ContentDescription" />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_weight="0.6"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/txt_NameSpend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@string/welcome"
+            android:textColor="@color/backed"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+    <TextView
+        android:layout_weight="0.6"
+        android:id="@+id/txt_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="@string/welcome"
+        android:textColor="#161616"
+        android:textSize="18sp"
+        />
+
+    <TextView
+        android:id="@+id/txt_PriceSpend"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:ellipsize="end"
+        android:gravity="end"
+        android:singleLine="true"
+        android:text="@string/welcome"
+        android:textAlignment="viewEnd"
+        android:textColor="#f00"
+        android:textSize="18sp" />
+</LinearLayout>

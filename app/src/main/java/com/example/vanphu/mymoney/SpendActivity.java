@@ -48,7 +48,6 @@ public class SpendActivity extends AppCompatActivity
     public static TextView sTxt_MoneyOut;
     @SuppressLint("StaticFieldLeak")
     public static TextView sTxt_MoneySum;
-    private ImageView mBtn_Add;
     public static String mUser = "";
     String URL = "http://192.168.149.2/chitieu/getchitieu.php?email=";
     String URL_item_1 = "http://192.168.149.2/chitieu/getuser.php?email=";
@@ -77,12 +76,6 @@ public class SpendActivity extends AppCompatActivity
         init();
         View v = navigationView.getHeaderView(0);
         initHeader(v);
-        mBtn_Add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivityForResult(new Intent(SpendActivity.this, AddSpendActivity.class), 100);
-            }
-        });
     }
 
     @Override
@@ -90,11 +83,11 @@ public class SpendActivity extends AppCompatActivity
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 100) {
             init();
-        }else if(requestCode==1000){
+        } else if (requestCode == 1000) {
             init();
-        }else if(requestCode==1001){
+        } else if (requestCode == 1001) {
             init();
-        }else if(requestCode==1002){
+        } else if (requestCode == 1002) {
             init();
         }
     }
@@ -108,7 +101,6 @@ public class SpendActivity extends AppCompatActivity
     }
 
     public void init() {
-        mBtn_Add = findViewById(R.id.btn_Add);
         ListView mlv_Spend = findViewById(R.id.lv_Spend);
         txt_MoneyIn = findViewById(R.id.txt_MoneyIn);
         sTxt_Day = findViewById(R.id.txt_Day);
@@ -178,6 +170,8 @@ public class SpendActivity extends AppCompatActivity
                 }
             }, 3500);
             return true;
+        } else if (id == R.id.action_add) {
+            startActivityForResult(new Intent(SpendActivity.this, AddSpendActivity.class), 100);
         }
 
         return super.onOptionsItemSelected(item);
@@ -190,7 +184,7 @@ public class SpendActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_statistics) {
-            startActivity(new Intent(SpendActivity.this,StatisticsActivity.class));
+            startActivity(new Intent(SpendActivity.this, StatisticsActivity.class));
             // Handle the camera action
         } else if (id == R.id.nav_tranfers) {
             startActivityForResult(new Intent(SpendActivity.this, TranfersActivity.class), 1000);
