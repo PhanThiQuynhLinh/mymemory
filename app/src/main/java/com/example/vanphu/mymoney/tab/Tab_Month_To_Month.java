@@ -26,7 +26,7 @@ public class Tab_Month_To_Month extends Fragment {
     private ListView mLv_statis;
     private Button mBtnMonth_item1, mBtnMonth_item2, btn;
     private StatisticsController mStatisticsController;
-    private String mUrl = "http://192.168.149.2/chitieu/getchitieucacthang.php?";
+    private String mUrl = "https://vanphudhsp2015.000webhostapp.com/getchitieucacthang.php?";
 
     @Override
     public View onCreateView(@NonNull final LayoutInflater inflater, ViewGroup container,

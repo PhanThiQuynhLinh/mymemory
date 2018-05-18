@@ -25,7 +25,7 @@ public class AddSpendActivity extends AppCompatActivity {
     public static Button sBtn_Add;
     public static int sIdImage = -1;
     private AddSpendController mAddSpendController;
-    private String mUrl = "http://192.168.149.2/chitieu/insertchitieu.php";
+    private String mUrl = "https://vanphudhsp2015.000webhostapp.com/insertchitieu.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.example.vanphu.mymoney.R;
 import com.example.vanphu.mymoney.UpdateSpendActivity;
+import com.example.vanphu.mymoney.UpdateSpendCollectedActivity;
 import com.example.vanphu.mymoney.controller.SpendController;
 import com.example.vanphu.mymoney.model.SpendModel;
 
@@ -21,12 +22,15 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Created by VanPhu on 5/18/2018.
+ */
 
-public class SpendAdapter extends BaseAdapter {
+public class SpendCollectedAdapter extends BaseAdapter {
     private LayoutInflater mInflater;
     private List<SpendModel> mSpendList;
 
-    public SpendAdapter(Context Context, List<SpendModel> SpendList) {
+    public SpendCollectedAdapter(Context Context, List<SpendModel> SpendList) {
         this.mSpendList = SpendList;
         mInflater = LayoutInflater.from(Context);
         ArrayList<SpendModel> mArrayList = new ArrayList<>();
@@ -58,9 +62,9 @@ public class SpendAdapter extends BaseAdapter {
     @SuppressLint("InflateParams")
     @Override
     public View getView(final int position, View view, ViewGroup parent) {
-        ViewHolder holder;
+        SpendCollectedAdapter.ViewHolder holder;
         if (view == null) {
-            holder = new ViewHolder();
+            holder = new SpendCollectedAdapter.ViewHolder();
             view = mInflater.inflate(R.layout.row_spend_item, null);
             //locate the views in row.xml
             holder.img_Spend = view.findViewById(R.id.img_Spend);
@@ -69,7 +73,7 @@ public class SpendAdapter extends BaseAdapter {
             holder.txt_time = view.findViewById(R.id.txt_time);
             view.setTag(holder);
         } else {
-            holder = (ViewHolder) view.getTag();
+            holder = (SpendCollectedAdapter.ViewHolder) view.getTag();
         }
         holder.img_Spend.setImageResource(mSpendList.get(position).getmImage());
         holder.txt_NameSpend.setText(mSpendList.get(position).getmTilte());
@@ -96,7 +100,7 @@ public class SpendAdapter extends BaseAdapter {
                             public void onClick(DialogInterface dialog, int id) {
                                 // if this button is clicked, close
                                 // current activity
-                                Intent intent = new Intent(mInflater.getContext(), UpdateSpendActivity.class);
+                                Intent intent = new Intent(mInflater.getContext(), UpdateSpendCollectedActivity.class);
                                 intent.putExtra("id", String.valueOf(mSpendList.get(position).getmId()));
                                 intent.putExtra("Money", String.valueOf(mSpendList.get(position).getmPrice()));
                                 intent.putExtra("Title", mSpendList.get(position).getmTilte());

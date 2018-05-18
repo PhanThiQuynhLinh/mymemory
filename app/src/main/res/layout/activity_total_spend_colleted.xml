@@ -36,29 +36,34 @@
                 android:id="@+id/tabItem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ngày" />
+                android:text="@string/ng_y" />
             <android.support.design.widget.TabItem
                 android:id="@+id/tabItem1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tháng" />
+                android:text="@string/th_ng" />
 
             <android.support.design.widget.TabItem
                 android:id="@+id/tabItem2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Các Tháng" />
+                android:text="@string/c_c_th_ng" />
             <android.support.design.widget.TabItem
                 android:id="@+id/tabItem3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Các Tuần" />
+                android:text="@string/c_c_tu_n" />
 
             <android.support.design.widget.TabItem
                 android:id="@+id/tabItem4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tuần" />
+                android:text="@string/tu_n" />
+            <android.support.design.widget.TabItem
+                android:id="@+id/tabItem5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/c_c_ng_y" />
         </android.support.design.widget.TabLayout>
     </android.support.design.widget.AppBarLayout>
 

@@ -14,6 +14,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.vanphu.mymoney.MoneyCollectedActivity;
 import com.example.vanphu.mymoney.adapter.SpendAdapter;
+import com.example.vanphu.mymoney.adapter.SpendCollectedAdapter;
 import com.example.vanphu.mymoney.model.SpendModel;
 import com.example.vanphu.mymoney.R;
 import com.example.vanphu.mymoney.SpendActivity;
@@ -31,6 +32,7 @@ import java.util.Map;
 public class SpendController {
     private ArrayList<SpendModel> mArrayList;
     private SpendAdapter mAdapter;
+    private SpendCollectedAdapter mAdapter_item_1;
     private ArrayList<String> mArrayImage;
     private ArrayList<String> mArrayImageAvatar;
     private ArrayList<String> mArrayDate;
@@ -46,6 +48,7 @@ public class SpendController {
         mContext = Context;
         this.mArrayList = new ArrayList<>();
         mAdapter = new SpendAdapter(mContext, mArrayList);
+        mAdapter_item_1 = new SpendCollectedAdapter(mContext, mArrayList);
         String[] arrayAvatar = mContext.getResources().getStringArray(R.array.list_image_spend);
         mArrayImage = new ArrayList<>(Arrays.asList(arrayAvatar));
     }
@@ -54,7 +57,40 @@ public class SpendController {
         mArrayList.add(new SpendModel(1, R.drawable.img_spend_item24, "Chi TIeu 1", 1000, "avc", "sadsd"));
         lv_Spend.setAdapter(mAdapter);
     }
+    public void addCollected(ListView lv_Spend){
+        mArrayList.add(new SpendModel(1, R.drawable.img_spend_item24, "Chi TIeu 1", 1000, "avc", "sadsd"));
+        lv_Spend.setAdapter(mAdapter_item_1);
+    }
+    public void readJsonSpendCollected(String url) {
+        RequestQueue requestQueue = Volley.newRequestQueue(mContext);
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        mArrayList.clear();
+                        for (int i = 0; i < response.length(); i++) {
+                            try {
+                                JSONObject object = response.getJSONObject(i);
+                                final int mIdImage = mContext.getResources().getIdentifier(mArrayImage.get(object.getInt("idhinh")), "drawable", mContext.getPackageName());
+                                mArrayList.add(new SpendModel(object.getInt("id"), mIdImage, object.getString("tenchitieu"), object.getInt("giachitieu"),
+                                        object.getString("email"), object.getString("ngay")
+                                ));
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        mAdapter_item_1.notifyDataSetChanged();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
 
+                    }
+                }
+        );
+        requestQueue.add(jsonArrayRequest);
+    }
     public void readJsonSpend(String url) {
         RequestQueue requestQueue = Volley.newRequestQueue(mContext);
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null,

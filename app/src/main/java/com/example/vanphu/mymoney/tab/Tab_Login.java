@@ -34,7 +34,7 @@ public class Tab_Login extends Fragment {
         init(rootView);
 //        call class login
         LoginController mLoginController = new LoginController(inflater.getContext());
-        String mURL = "http://192.168.149.2/chitieu/user_control.php";
+        String mURL = "https://vanphudhsp2015.000webhostapp.com/user_control.php";
         mLoginController.login(mURL);
         return rootView;
     }

@@ -32,6 +32,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.vanphu.mymoney.controller.SpendController;
+import com.example.vanphu.mymoney.tab.Tab_Date_Total;
 import com.example.vanphu.mymoney.tab.Tab_Day;
 import com.example.vanphu.mymoney.tab.Tab_Day_Total;
 import com.example.vanphu.mymoney.tab.Tab_Month;
@@ -61,7 +62,7 @@ import java.util.ArrayList;
 public class TotalSpendColletedActivity extends AppCompatActivity implements OnChartValueSelectedListener {
     ArrayList<PieEntry> yValues = new ArrayList<>();
     PieDataSet dataset;
-    private String mUrl1 = "http://192.168.149.2/chitieu/gettienthuhientai.php?email=";
+    private String mUrl1 = "https://vanphudhsp2015.000webhostapp.com/gettienthuhientai.php?email=";
     private int mSum = 0;
     String keyMoney = "đ";
     /**
@@ -290,6 +291,8 @@ public class TotalSpendColletedActivity extends AppCompatActivity implements OnC
                     return new Tab_Week_Total();
                 case 4:
                     return new Tab_Week_item_Total();
+                case 5:
+                    return new Tab_Date_Total();
                 default:
                     return null;
             }
@@ -298,7 +301,7 @@ public class TotalSpendColletedActivity extends AppCompatActivity implements OnC
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 5;
+            return 6;
         }
     }
 }

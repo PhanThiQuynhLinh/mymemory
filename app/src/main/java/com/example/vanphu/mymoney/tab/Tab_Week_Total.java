@@ -25,7 +25,7 @@ public class Tab_Week_Total extends Fragment {
     private Button mBtnWeek_item_2;
     private ListView mLv_statis;
     private StatisticsController mStatisticsController;
-    private String mUrl="http://192.168.149.2/chitieu/gettienthucactuan.php?";
+    private String mUrl="https://vanphudhsp2015.000webhostapp.com/gettienthucactuan.php?";
     @Override
     public View onCreateView(@NonNull final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

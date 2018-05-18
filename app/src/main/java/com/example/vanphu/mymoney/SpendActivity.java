@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
@@ -23,8 +22,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.vanphu.mymoney.controller.SpendController;
-
-import java.util.Locale;
 
 public class SpendActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -52,22 +49,17 @@ public class SpendActivity extends AppCompatActivity
     @SuppressLint("StaticFieldLeak")
     public static TextView sTxt_MoneySum;
     public static String mUser = "";
-    String URL = "http://192.168.149.2/chitieu/getchitieu.php?email=";
-    String URL_item_1 = "http://192.168.149.2/chitieu/getuser.php?email=";
-    String URL_item_2 = "http://192.168.149.2/chitieu/getdatatienvao.php?email=";
-    String URL_item_3 = "http://192.168.149.2/chitieu/tinhngay.php?email=";
-    String URL_item_4 = "http://192.168.149.2/chitieu/tinhtongchitieu.php?email=";
-    private LanguageActivity languageActivity;
+    String URL = "https://vanphudhsp2015.000webhostapp.com/getchitieu.php?email=";
+    String URL_item_1 = "https://vanphudhsp2015.000webhostapp.com/getuser.php?email=";
+    String URL_item_2 = "https://vanphudhsp2015.000webhostapp.com/getdatatienvao.php?email=";
+    String URL_item_3 = "https://vanphudhsp2015.000webhostapp.com/tinhngay.php?email=";
+    String URL_item_4 = "https://vanphudhsp2015.000webhostapp.com/tinhtongchitieu.php?email=";
+    private com.example.vanphu.mymoney.languageActivity languageActivity;
     String language;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SharedPreferences sp = getSharedPreferences("data", MODE_PRIVATE);
-        language = sp.getString("key_language", "");
-        if (language.equals("")) {
-            language = "en";
-        }
-        setLanguage(language);
         setContentView(R.layout.activity_spend);
         setTitle("");
         Intent intent = getIntent();
@@ -88,34 +80,24 @@ public class SpendActivity extends AppCompatActivity
         initHeader(v);
     }
 
-    public void setLanguage(String language) {
-        Locale locale = new Locale(language);
-        Locale.setDefault(locale);
-        Configuration configuration = getResources().getConfiguration();
-        configuration.locale = locale;
-        getResources().updateConfiguration(configuration, getResources().getDisplayMetrics());
-
-    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 100) {
-            setLanguage(language);
-            setContentView(R.layout.activity_spend);
+
             init();
 
         } else if (requestCode == 1000) {
-            setLanguage(language);
-            setContentView(R.layout.activity_spend);
+
             init();
         } else if (requestCode == 1001) {
-            setLanguage(language);
-            setContentView(R.layout.activity_spend);
+
             init();
         } else if (requestCode == 1002) {
-            setLanguage(language);
-            setContentView(R.layout.activity_spend);
+
+            init();
+        } else if (requestCode == 1003) {
             init();
         }
     }
@@ -224,7 +206,7 @@ public class SpendActivity extends AppCompatActivity
             startActivityForResult(new Intent(SpendActivity.this, TotalSpendColletedActivity.class), 1002);
 
         } else if (id == R.id.nav_setting) {
-            startActivityForResult(new Intent(SpendActivity.this, LanguageActivity.class), 1002);
+            startActivityForResult(new Intent(SpendActivity.this, com.example.vanphu.mymoney.languageActivity.class), 1003);
         } else if (id == R.id.nav_send) {
 
 

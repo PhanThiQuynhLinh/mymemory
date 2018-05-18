@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">MyMoney</string>
-    <string name="welcome">Welcome</string>
-    <string name="next">Next</string>
-    <string name="skip">Skip</string>
-    <string name="start">Start</string>
+    <string name="app_name">Tiền Của Tôi</string>
+    <string name="welcome">Xin Chào</string>
+    <string name="next">Tiếp</string>
+    <string name="skip">Bỏ Qua</string>
+    <string name="start">Bắt Đầu</string>
     <string name="title_slide1">Connect the charger</string>
     <string name="string_slide1">Money Lover</string>
 
@@ -183,6 +183,10 @@
     <string name="t_i_kho_n_c_n_chuy_n">Tài Khoản Cần Chuyển</string>
     <string name="s_ti_n">Số Tiền</string>
     <string name="setting">Cài Đặt</string>
-
-
+	<string name="c_c_ng_y">Các Ngày</string>
+    <string name="dialogtitle">Chỉnh Sửa Hoặc Xóa</string>
+    <string name="dialogtitle_item_1">Chọn Đồng Ý Để Tiếp Tục !</string>
+    <string name="dialogdy">Đồng Ý</string>
+    <string name="dialogh">Hủy</string>
+<string name="t_t">Tắt</string>
 </resources>

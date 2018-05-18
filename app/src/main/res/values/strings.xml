@@ -183,6 +183,11 @@
     <string name="t_i_kho_n_c_n_chuy_n">Tài Khoản Cần Chuyển</string>
     <string name="s_ti_n">Số Tiền</string>
     <string name="setting">Setting</string>
-
+    <string name="c_c_ng_y">Các Ngày</string>
+    <string name="dialogtitle">Chỉnh Sửa Hoặc Xóa</string>
+    <string name="dialogtitle_item_1">Chọn Đồng Ý Để Tiếp Tục !</string>
+    <string name="dialogdy">Đồng Ý</string>
+    <string name="dialogh">Hủy</string>
+    <string name="t_t">Tắt</string>
 
 </resources>

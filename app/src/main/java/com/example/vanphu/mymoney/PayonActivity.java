@@ -24,7 +24,7 @@ public class PayonActivity extends AppCompatActivity {
     public static String sKeyMoney = "$";
     public static String sUser="";
     private MoneyInController mMoneyInController;
-    private String mURL = "http://192.168.149.2/chitieu/insert.php";
+    private String mURL = "https://vanphudhsp2015.000webhostapp.com/insert.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

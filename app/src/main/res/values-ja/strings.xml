@@ -183,4 +183,10 @@
         <item>土曜日</item>
     </string-array>
     <string name="setting">インストール</string>
+	<string name="c_c_ng_y">ザ・デイズ</string>
+    <string name="dialogtitle">編集または削除</string>
+    <string name="dialogtitle_item_1">続けるには同意を選択してください!</string>
+    <string name="dialogdy">同意する</string>
+    <string name="dialogh">キャンセル</string>
+	<string name="t_t">オフ</string>
 </resources>

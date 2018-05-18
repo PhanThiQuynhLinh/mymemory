@@ -23,7 +23,7 @@ public class Tab_Month extends Fragment {
     Button btnMonth;
     private ListView mLv_statis;
     private StatisticsController mStatisticsController;
-    String URL = "http://192.168.149.2/chitieu/getchitieumonth.php?";
+    String URL = "https://vanphudhsp2015.000webhostapp.com/getchitieumonth.php?";
 
     @Override
     public View onCreateView(@NonNull final LayoutInflater inflater, ViewGroup container,

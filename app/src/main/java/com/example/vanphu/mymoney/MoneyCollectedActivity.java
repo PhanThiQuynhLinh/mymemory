@@ -19,10 +19,10 @@ import com.example.vanphu.mymoney.controller.SpendController;
 
 public class MoneyCollectedActivity extends AppCompatActivity {
     private ListView mLvMoneyCollected;
-    private String mURL = "http://192.168.149.2/chitieu/getdatatienthu.php?email=";
-    private String mURL_item_1 = "http://192.168.149.2/chitieu/inserttienthu.php";
-    private String mUrl_item_2="http://192.168.149.2/chitieu/tinhngaytienthu.php?email=";
-    private String mUrl_item_3="http://192.168.149.2/chitieu/maxtienthu.php?email=";
+    private String mURL = "https://vanphudhsp2015.000webhostapp.com/getdatatienthu.php?email=";
+    private String mURL_item_1 = "https://vanphudhsp2015.000webhostapp.com/inserttienthu.php";
+    private String mUrl_item_2="https://vanphudhsp2015.000webhostapp.com/tinhngaytienthu.php?email=";
+    private String mUrl_item_3="https://vanphudhsp2015.000webhostapp.com/maxtienthu.php?email=";
     public static TextView txt_MoneyMax;
     public static TextView sTxt_Day;
     public static TextView sTxt_Date;
@@ -41,8 +41,8 @@ public class MoneyCollectedActivity extends AppCompatActivity {
     public void init() {
         mSpendController = new SpendController(this);
         mLvMoneyCollected = findViewById(R.id.lvMoneyCollected);
-        mSpendController.addImage(mLvMoneyCollected);
-        mSpendController.readJsonSpend(mURL + SpendActivity.mUser);
+        mSpendController.addCollected(mLvMoneyCollected);
+        mSpendController.readJsonSpendCollected(mURL + SpendActivity.mUser);
         sTxt_Day=findViewById(R.id.txt_Day);
         sTxt_Date=findViewById(R.id.txt_Date);
         sTxt_Month=findViewById(R.id.txt_Month);

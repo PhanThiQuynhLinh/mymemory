@@ -182,6 +182,11 @@
     <string name="tktt_1">Money Statistics</string>
     <string name="t_i_kho_n_c_n_chuy_n">account to be transferred</string>
     <string name="s_ti_n">Amount of money</string>
-
-
+<string name="setting">Setting</string>
+    <string name="c_c_ng_y">Days</string>
+    <string name="dialogtitle">Update or Delete</string>
+    <string name="dialogtitle_item_1">Select Agree to Continue!</string>
+    <string name="dialogdy">Agree</string>
+    <string name="dialogh">Cancel</string>
+<string name="t_t">Turn OFF</string>
 </resources>

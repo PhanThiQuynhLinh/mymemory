@@ -14,7 +14,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Theo tháng"
+            android:text="@string/th_ng"
             android:textSize="15sp"
             />
         <Button

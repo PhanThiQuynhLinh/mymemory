@@ -17,7 +17,7 @@ public class TranfersActivity extends AppCompatActivity {
     public static TextInputEditText sEdit_money;
     public static Button sBtn_tranfers;
     private TranfersController tranfersController;
-    private String mUrl="http://192.168.149.2/chitieu/chuyentien.php";
+    private String mUrl="https://vanphudhsp2015.000webhostapp.com/chuyentien.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

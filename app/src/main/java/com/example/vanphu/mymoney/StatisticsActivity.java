@@ -28,6 +28,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.vanphu.mymoney.controller.SpendController;
+import com.example.vanphu.mymoney.tab.Tab_Date;
 import com.example.vanphu.mymoney.tab.Tab_Day;
 import com.example.vanphu.mymoney.tab.Tab_Month;
 import com.example.vanphu.mymoney.tab.Tab_Month_To_Month;
@@ -62,7 +63,7 @@ public class StatisticsActivity extends AppCompatActivity implements OnChartValu
     private SectionsPagerAdapter mSectionsPagerAdapter;
     ArrayList<PieEntry> yValues = new ArrayList<>();
     PieDataSet dataset;
-    private String mUrl1="http://192.168.149.2/chitieu/getngayhientai.php?email=";
+    private String mUrl1="https://vanphudhsp2015.000webhostapp.com/getngayhientai.php?email=";
     private int mSum=0;
     String keyMoney="đ";
     /**
@@ -280,6 +281,8 @@ public class StatisticsActivity extends AppCompatActivity implements OnChartValu
                     return new Tab_Week_item();
                 case 4:
                     return new Tab_Day();
+                case 5:
+                    return new Tab_Date();
                 default:
                     return null;
             }
@@ -288,7 +291,7 @@ public class StatisticsActivity extends AppCompatActivity implements OnChartValu
         @Override
         public int getCount() {
             // Show 2 total pages.
-            return 5;
+            return 6;
         }
     }
 }

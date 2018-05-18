@@ -33,7 +33,7 @@ public class Tab_Week extends Fragment {
     private Button mBtnWeek_item_2;
     private ListView mLv_statis;
     private StatisticsController mStatisticsController;
-    private String mUrl="http://192.168.149.2/chitieu/getcactuan.php?";
+    private String mUrl="https://vanphudhsp2015.000webhostapp.com/getcactuan.php?";
     @Override
     public View onCreateView(@NonNull final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

@@ -10,7 +10,7 @@
             android:title="@string/thongke" />
         <item
             android:id="@+id/nav_tranfers"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_transform_black_24dp"
             android:title="@string/chuy_n_ti_n" />
         <item
             android:id="@+id/nav_money_collected"

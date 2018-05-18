@@ -14,7 +14,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.Locale;
 
-public class LanguageActivity extends AppCompatActivity {
+public class languageActivity extends AppCompatActivity {
     private ListView lv_language;
     private ArrayList<String> arrayList;
 
@@ -35,12 +35,16 @@ public class LanguageActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
                 if(i==0){
                     setLanguage("vn");
+                    finish();
                 }else if(i==1){
                     setLanguage("en");
+                    finish();
                 }else if(i==2){
                     setLanguage("ja");
+                    finish();
                 }else if(i==3){
                     setLanguage("zh");
+                    finish();
                 }
             }
         });
@@ -57,7 +61,6 @@ public class LanguageActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = sp.edit();
         editor.putString("key_language", language);
         editor.commit();
-        finish();
     }
     public void init(){
         lv_language=findViewById(R.id.lv_language);
@@ -67,7 +70,7 @@ public class LanguageActivity extends AppCompatActivity {
         arrayList.add("Japan");
         arrayList.add("China");
         arrayList.add("Korean");
-        ArrayAdapter adapter=new ArrayAdapter(LanguageActivity.this,android.R.layout.simple_list_item_1,arrayList);
+        ArrayAdapter adapter=new ArrayAdapter(languageActivity.this,android.R.layout.simple_list_item_1,arrayList);
         lv_language.setAdapter(adapter);
     }
     @Override

@@ -43,7 +43,7 @@ public class Tab_Registered extends Fragment {
         View rootView = inflater.inflate(R.layout.tab_registered, container, false);
         init(rootView);
         registeredController = new RegisteredController(inflater.getContext());
-        String mURL = "http://192.168.149.2/chitieu/login.php";
+        String mURL = "https://vanphudhsp2015.000webhostapp.com/login.php";
         registeredController.registered(mURL);
         sImg_Avatar.setOnClickListener(new View.OnClickListener() {
             @Override
