@@ -205,11 +205,6 @@ public class SpendActivity extends AppCompatActivity
         } else if (id == R.id.nav_total_collected) {
             startActivityForResult(new Intent(SpendActivity.this, TotalSpendColletedActivity.class), 1002);
 
-        } else if (id == R.id.nav_setting) {
-            startActivityForResult(new Intent(SpendActivity.this, com.example.vanphu.mymoney.languageActivity.class), 1003);
-        } else if (id == R.id.nav_send) {
-
-
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

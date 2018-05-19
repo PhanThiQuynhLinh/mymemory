@@ -25,7 +25,7 @@ public class Tab_Day_Total extends Fragment {
     private Button btnMonth;
     private ListView mLv_statis;
     private StatisticsController mStatisticsController;
-    private String mUrl = "http://192.168.149.2/chitieu/getngaytienthu.php?";
+    private String mUrl = "https://vanphudhsp2015.000webhostapp.com/getngaytienthu.php?";
 
     @Override
     public View onCreateView(@NonNull final LayoutInflater inflater, ViewGroup container,

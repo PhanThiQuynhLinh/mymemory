@@ -64,7 +64,7 @@ public class StatisticsController {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(mContext, "Error", Toast.LENGTH_LONG).show();
+                        Toast.makeText(mContext, "Error"+error, Toast.LENGTH_LONG).show();
                     }
                 }
         );

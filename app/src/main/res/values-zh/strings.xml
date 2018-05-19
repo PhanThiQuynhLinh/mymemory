@@ -1,0 +1,193 @@
+<resources>
+    <string name="app_name">我的錢</string>
+    <string name="welcome">歡迎</string>
+    <string name="next">下</string>
+    <string name="skip">跳躍</string>
+    <string name="start">啟動</string>
+    <string name="title_slide1">連接充電器</string>
+    <string name="string_slide1">Money Lover</string>
+
+    <string name="desc_slide1">做出明智的財務計劃和一步一步的節省來實現你的夢想。</string>
+    <string name="string_desc_slide1">第一提示：登錄訪問所有設備上的數據。</string>
+
+    <string name="title_slide2">用詳細的報告系統控制每項支出。</string>
+
+    <string name="desc_slide2">它會通過通知和主屏幕小部件更新您的電池充電狀態</string>
+    <string name="title_slide3">警報 100%</string>
+    <string name="title_slide4">抑郁症将有相同的娱乐游戏</string>
+    <string name="title_slide5">听美丽的界面上的MP3音乐。</string>
+    <string name="desc_slide3">当电池达到100％时它会提醒你</string>
+    <string name="btnmoney">使用此应用程序</string>
+    <string name="fistmoney">首先使用MONEY LOVER</string>
+    <string name="suport">未经您的许可，我们不会发布信息。</string>
+    <string name="title_activity_login">登录活动</string>
+    <string name="tab_text_1">注册</string>
+    <string name="tab_text_2">注册</string>
+    <string name="tab_text_3">标签3</string>
+    <string name="action_settings">设置</string>
+    <string name="section_format">部分你好: %1$d</string>
+    <string name="username">登录名</string>
+    <string name="password">密码</string>
+    <string name="remember_password">记住密码</string>
+    <string name="login">注册</string>
+    <string name="ng_nh_p">注册</string>
+    <string name="ang_k_t_n_i_v_i_m_y_ch">连接到服务器...</string>
+    <string name="ng_k_t_i_kho_n">帐户注册</string>
+    <string name="ng_k">注册</string>
+    <string name="h_v_t_n">名字和姓氏</string>
+    <string name="l_a_ch_n_h_nh_nh">选择一张图片</string>
+    <string name="money">金钱在</string>
+    <string name="ho_n_th_nh">成就</string>
+    <string-array name="list_image_avatar">
+        <item>img_beatifull</item>
+        <item>img_boy</item>
+        <item>img_grirl</item>
+        <item>img_hotboy</item>
+        <item>img_men</item>
+        <item>img_sexy</item>
+    </string-array>
+    <string-array name="list_image_flag">
+        <item>img_china_flag</item>
+        <item>img_flagvn</item>
+        <item>img_korean_flag</item>
+        <item>img_nga_flag</item>
+        <item>img_thailan_flag</item>
+        <item>img_uk_flag</item>
+        <item>img_usa_flag</item>
+    </string-array>
+    <string-array name="list_name_flag">
+        <item>¥</item>
+        <item>₫</item>
+        <item>₩</item>
+        <item>руб</item>
+        <item>฿</item>
+        <item>£</item>
+        <item>$</item>
+    </string-array>
+    <string-array name="list_name_avatar">
+        <item>美丽的人</item>
+        <item>儿子</item>
+        <item>女儿</item>
+        <item>美少年</item>
+        <item>英俊</item>
+        <item>魅力</item>
+    </string-array>
+    <string-array name="list_image_spend">
+        <item>img_spend_item1</item>
+        <item>img_spend_item2</item>
+        <item>img_spend_item3</item>
+        <item>img_spend_item4</item>
+        <item>img_spend_item5</item>
+        <item>img_spend_item6</item>
+        <item>img_spend_item7</item>
+        <item>img_spend_item8</item>
+        <item>img_spend_item9</item>
+        <item>img_spend_item10</item>
+        <item>img_spend_item11</item>
+        <item>img_spend_item12</item>
+        <item>img_spend_item13</item>
+        <item>img_spend_item14</item>
+        <item>img_spend_item15</item>
+        <item>img_spend_item16</item>
+        <item>img_spend_item17</item>
+        <item>img_spend_item18</item>
+        <item>img_spend_item19</item>
+        <item>img_spend_item20</item>
+        <item>img_spend_item21</item>
+        <item>img_spend_item22</item>
+        <item>img_spend_item23</item>
+        <item>img_spend_item24</item>
+    </string-array>
+    <string-array name="list_name_spend">
+        <item>买牛奶</item>
+        <item>买蛋糕</item>
+        <item>购买杂志</item>
+        <item>党</item>
+        <item>咖啡馆</item>
+        <item>平面y</item>
+        <item>结婚纪念日</item>
+        <item>听音乐</item>
+        <item>吃面条</item>
+        <item>杂货</item>
+        <item>奶油蛋糕</item>
+        <item>淡水</item>
+        <item>衣服</item>
+        <item>游戏</item>
+        <item>闲逛</item>
+        <item>酒</item>
+        <item>牛奶</item>
+        <item>牙科检查</item>
+        <item>杂货</item>
+        <item>吃</item>
+        <item>大麦</item>
+        <item>吃药</item>
+        <item>研究</item>
+    </string-array>
+    <string-array name="thang">
+        <item>没有几个月</item>
+        <item>一月</item>
+        <item>二月</item>
+        <item>三月</item>
+        <item>四月</item>
+        <item>五月</item>
+        <item>六月</item>
+        <item>七月</item>
+        <item>八月</item>
+        <item>九月</item>
+        <item>十月</item>
+        <item>十一月</item>
+        <item>十二月</item>
+    </string-array>
+    <string-array name="thu_ngay">
+        <item>星期天</item>
+        <item>第二</item>
+        <item>第三</item>
+        <item>第四</item>
+        <item>星期四</item>
+        <item>星期五</item>
+        <item>第七</item>
+    </string-array>
+    <string name="title_activity_spend">花费活动 </string>
+
+    <string name="navigation_drawer_open">打开导航抽屉</string>
+    <string name="navigation_drawer_close">关闭导航抽屉</string>
+    <string name="t_ng_quan">概观</string>
+    <string name="ti_n_v_o">金钱在</string>
+    <string name="_5_000_000">5,000,000</string>
+    <string name="ti_n_ra">钱出来</string>
+    <string name="_10000">10000</string>
+    <string name="t_n_chi_ti_u">消费名</string>
+    <string name="ti_n_chi_ti_u">花钱</string>
+    <string name="th_m_chi_ti_u">增加开支</string>
+    <string name="s_a_chi_ti_u">花费</string>
+    <string name="x_a_chi_ti_u">删除支出</string>
+    <string name="title_activity_statistic_spend">统计消费活动</string>
+    <string name="title_activity_statistics">统计活动</string>
+    <string name="th_ng">月</string>
+    <string name="chuy_n_ti_n">转账</string>
+    <string name="title_activity_total_spend_colleted">总支出收入活动</string>
+    <string name="ti_n_thu_nhi_u_n2h_t">最赚钱</string>
+    <string name="thongke">货币统计</string>
+    <string name="ti_n_thu">收益</string>
+    <string name="th_ng_k_ti_n_thu">收入报表</string>
+    <string name="ng_xu_t">注销</string>
+    <string name="c_c_th_ng">本月</string>
+    <string name="c_c_tu_n">本周</string>
+    <string name="tu_n">周</string>
+    <string name="ng_y">天</string>
+    <string name="t_k_t_t">货币统计</string>
+    <string name="quay_v">回去吧</string>
+    <string name="th_m_ti_n_thu">添加资金</string>
+    <string name="h_m_nay">今天</string>
+    <string name="tktt_1">收入报表</string>
+    <string name="t_i_kho_n_c_n_chuy_n">账户转移</string>
+    <string name="s_ti_n">量</string>
+<string name="setting">安装</string>
+	<string name="c_c_ng_y">安装</string>
+    <string name="dialogtitle">编辑或删除</string>
+    <string name="dialogtitle_item_1">选择同意继续！</string>
+    <string name="dialogdy">同意</string>
+    <string name="dialogh">消除</string>
+<string name="t_t">关</string>
+
+</resources>
