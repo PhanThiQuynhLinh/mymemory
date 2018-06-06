@@ -19,7 +19,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.9">
+            android:layout_weight="1">
 
             <android.support.design.widget.TextInputLayout
 
@@ -40,7 +40,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.9">
+            android:layout_weight="1">
 
             <android.support.design.widget.TextInputLayout
 
@@ -60,7 +60,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.7"
+            android:layout_weight="1"
             android:gravity="center|top">
 
             <Button
@@ -69,7 +69,7 @@
                 android:layout_height="50dp"
                 android:background="@drawable/select_button"
                 android:text="@string/th_m_chi_ti_u"
-                android:textColor="#f7f3f3" />
+                android:textColor="@color/startblue" />
         </RelativeLayout>
     </LinearLayout>
 </LinearLayout>

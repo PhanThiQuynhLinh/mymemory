@@ -53,7 +53,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="right|top">
+        android:gravity="bottom|left">
 
         <Button
             android:id="@+id/btn_Success"

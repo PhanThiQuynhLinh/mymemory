@@ -1,0 +1,193 @@
+<resources>
+    <string name="app_name">내 돈</string>
+    <string name="welcome">환영</string>
+    <string name="next">다음 것</string>
+    <string name="skip">가볍게 뜀</string>
+    <string name="start">시작하다</string>
+    <string name="title_slide1">충전기 연결</string>
+    <string name="string_slide1">Money Lover</string>
+
+    <string name="desc_slide1">재무 계획 똑똑하고 자신의 꿈을 실현하기위한 조치를 절약.</string>
+    <string name="string_desc_slide1">첫 번째 팁: 모든 장치에 데이터를 액세스하기 위해 로그인합니다.</string>
+
+    <string name="title_slide2">자세한 보고서를 각 제어 시스템은 비용.</string>
+
+    <string name="desc_slide2">이 위젯과 홈 화면을 통해 상태 알림 배터리 충전에 업데이트 된 유지합니다</string>
+    <string name="title_slide3">100 % 경고</string>
+    <string name="title_slide4">지루함은 엔터테인먼트 및 애플 리케이션을해야합니다</string>
+    <string name="title_slide5">​▼아름다운 인터페이스의 MP3 플레이어</string>
+    <string name="desc_slide3">배터리가 100 %에 도달하면 알려줍니다.</string>
+    <string name="btnmoney">중고 MONEY LOVER</string>
+    <string name="fistmoney">처음 사용 MONEY LOVER</string>
+    <string name="suport">귀하의 허락없이 정보를 게시하지 않습니다.</string>
+    <string name="title_activity_login">로그인 활동</string>
+    <string name="tab_text_1">로그인</string>
+    <string name="tab_text_2">등록</string>
+    <string name="tab_text_3">탭 3</string>
+    <string name="action_settings">설정</string>
+    <string name="section_format">섹션 안녕하세요: %1$d</string>
+    <string name="username">사용자 이름</string>
+    <string name="password">암호</string>
+    <string name="remember_password">비밀번호를 기억</string>
+    <string name="login">로그인</string>
+    <string name="ng_nh_p">로그인</string>
+    <string name="ang_k_t_n_i_v_i_m_y_ch">서버에 연결...</string>
+    <string name="ng_k_t_i_kho_n">계정 등록</string>
+    <string name="ng_k"> 동사</string>
+    <string name="h_v_t_n">실제 이름</string>
+    <string name="l_a_ch_n_h_nh_nh">선택 이미지</string>
+    <string name="money">현금</string>
+    <string name="ho_n_th_nh">끝내다</string>
+    <string-array name="list_image_avatar">
+        <item>img_beatifull</item>
+        <item>img_boy</item>
+        <item>img_grirl</item>
+        <item>img_hotboy</item>
+        <item>img_men</item>
+        <item>img_sexy</item>
+    </string-array>
+    <string-array name="list_image_flag">
+        <item>img_china_flag</item>
+        <item>img_flagvn</item>
+        <item>img_korean_flag</item>
+        <item>img_nga_flag</item>
+        <item>img_thailan_flag</item>
+        <item>img_uk_flag</item>
+        <item>img_usa_flag</item>
+    </string-array>
+    <string-array name="list_name_flag">
+        <item>¥</item>
+        <item>₫</item>
+        <item>₩</item>
+        <item>руб</item>
+        <item>฿</item>
+        <item>£</item>
+        <item>$</item>
+    </string-array>
+    <string-array name="list_name_avatar">
+        <item>아름다운 사람들</item>
+        <item>소년들</item>
+        <item>소녀</item>
+        <item>아름다운</item>
+        <item>멋진</item>
+        <item>섹시한</item>
+    </string-array>
+    <string-array name="list_image_spend">
+        <item>img_spend_item1</item>
+        <item>img_spend_item2</item>
+        <item>img_spend_item3</item>
+        <item>img_spend_item4</item>
+        <item>img_spend_item5</item>
+        <item>img_spend_item6</item>
+        <item>img_spend_item7</item>
+        <item>img_spend_item8</item>
+        <item>img_spend_item9</item>
+        <item>img_spend_item10</item>
+        <item>img_spend_item11</item>
+        <item>img_spend_item12</item>
+        <item>img_spend_item13</item>
+        <item>img_spend_item14</item>
+        <item>img_spend_item15</item>
+        <item>img_spend_item16</item>
+        <item>img_spend_item17</item>
+        <item>img_spend_item18</item>
+        <item>img_spend_item19</item>
+        <item>img_spend_item20</item>
+        <item>img_spend_item21</item>
+        <item>img_spend_item22</item>
+        <item>img_spend_item23</item>
+        <item>img_spend_item24</item>
+    </string-array>
+    <string-array name="list_name_spend">
+        <item>ữ우유 사기a</item>
+        <item>케이크 구입</item>
+        <item>신문을 사다</item>
+        <item>파티</item>
+        <item>카페</item>
+        <item>항공기</item>
+        <item>기념일</item>
+        <item>음악을 듣고</item>
+        <item>국수를 먹는다</item>
+        <item>식료품 점</item>
+        <item>아이스크림</item>
+        <item>음료수</item>
+        <item>퀘스트</item>
+        <item>경기</item>
+        <item>놀이 세트</item>
+        <item>알콜</item>
+        <item>우유</item>
+        <item>치과 검진</item>
+        <item>식료품 점</item>
+        <item>먹다</item>
+        <item> 쌀</item>
+        <item>약물 치료</item>
+        <item>학습</item>
+    </string-array>
+    <string-array name="thang">
+        <item>달이 없다</item>
+        <item>1 월</item>
+        <item>2 월</item>
+        <item>3 월</item>
+        <item>4 월</item>
+        <item>5 월</item>
+        <item>6 월</item>
+        <item>7 월</item>
+        <item>8 월</item>
+        <item>9 월</item>
+        <item>10 월</item>
+        <item>11 월</item>
+        <item>12 월</item>
+    </string-array>
+    <string-array name="thu_ngay">
+        <item>일요일</item>
+        <item>월요일</item>
+        <item>화요일</item>
+        <item>수요일</item>
+        <item>목요일</item>
+        <item>금요일</item>
+        <item>토요일</item>
+    </string-array>
+    <string name="title_activity_spend">지출 활동</string>
+
+    <string name="navigation_drawer_open">탐색 창 열기</string>
+    <string name="navigation_drawer_close">탐색 창 닫기</string>
+    <string name="t_ng_quan">개요</string>
+    <string name="ti_n_v_o">돈</string>
+    <string name="_5_000_000">5,000,000</string>
+    <string name="ti_n_ra">돈 아웃</string>
+    <string name="_10000">10000</string>
+    <string name="t_n_chi_ti_u">소비 자 이름</string>
+    <string name="ti_n_chi_ti_u">지출 돈</string>
+    <string name="th_m_chi_ti_u">지출 추가</string>
+    <string name="s_a_chi_ti_u">소비 지출</string>
+    <string name="x_a_chi_ti_u">지출 삭제</string>
+    <string name="title_activity_statistic_spend">통계 지출 활동</string>
+    <string name="title_activity_statistics">통계 활동</string>
+    <string name="th_ng">달</string>
+    <string name="chuy_n_ti_n"> 송금</string>
+    <string name="title_activity_total_spend_colleted">총 지출 활동</string>
+    <string name="ti_n_thu_nhi_u_n2h_t">대부분의 돈</string>
+    <string name="thongke">돈 통계</string>
+    <string name="ti_n_thu">적립</string>
+    <string name="th_ng_k_ti_n_thu">손익 계산서</string>
+    <string name="ng_xu_t">로그 아웃</string>
+    <string name="c_c_th_ng">달</string>
+    <string name="c_c_tu_n">주</string>
+    <string name="tu_n">주</string>
+    <string name="ng_y">주간</string>
+    <string name="t_k_t_t">돈 통계</string>
+    <string name="quay_v">돌아 가기</string>
+    <string name="th_m_ti_n_thu">돈 추가</string>
+    <string name="h_m_nay">오늘</string>
+    <string name="tktt_1">손익 계산서</string>
+    <string name="t_i_kho_n_c_n_chuy_n">이전 할 계정n</string>
+    <string name="s_ti_n">금액</string>
+    <string name="setting">설치하다</string>
+    <string name="c_c_ng_y">일</string>
+    <string name="dialogtitle">수정 또는 삭제</string>
+    <string name="dialogtitle_item_1">계속 동의를 선택하십시오!</string>
+    <string name="dialogdy">동의 함</string>
+    <string name="dialogh">취소</string>
+    <string name="t_t">끄기</string>
+
+</resources>

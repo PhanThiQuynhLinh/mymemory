@@ -78,6 +78,7 @@ public class AddSpendActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 100 && resultCode == RESULT_OK && data != null) {
             sIdImage = Integer.parseInt(data.getStringExtra("idImage"));
+            sEdit_TitleSpend.setText(data.getStringExtra("nameImage"));
             String[] arrayAvatar = getResources().getStringArray(R.array.list_image_spend);
             ArrayList<String> mArrayImage = new ArrayList<>(Arrays.asList(arrayAvatar));
             int idImage = getResources().getIdentifier(mArrayImage.get(sIdImage), "drawable", getPackageName());

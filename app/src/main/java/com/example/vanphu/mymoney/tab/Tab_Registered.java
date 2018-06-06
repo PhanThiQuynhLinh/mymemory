@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.example.vanphu.mymoney.controller.RegisteredController;
@@ -36,7 +37,7 @@ public class Tab_Registered extends Fragment {
     @SuppressLint("StaticFieldLeak")
     public static Button sBtn_Registered;
     public static int sMIdImage = -1;
-    public static RelativeLayout layout_Registered;
+    public static LinearLayout layout_Registered;
     @Override
     public View onCreateView(@NonNull final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceStat) {

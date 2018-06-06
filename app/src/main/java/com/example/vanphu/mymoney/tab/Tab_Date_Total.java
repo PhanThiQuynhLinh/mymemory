@@ -27,7 +27,7 @@ public class Tab_Date_Total extends Fragment {
     private Button btnMonth_item1_2;
     private ListView mLv_statis;
     private StatisticsController mStatisticsController;
-    private String mUrl = "http://192.168.149.2/chitieu/gettienthucacngay.php?";
+    private String mUrl = "https://vanphudhsp2015.000webhostapp.com/gettienthucacngay.php?";
     private String date;
     private String date_item_1;
     @Override

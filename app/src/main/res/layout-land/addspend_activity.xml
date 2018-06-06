@@ -94,8 +94,7 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="0.6"
-        android:gravity="right|top"
-        android:layout_marginLeft="50dp"
+        android:gravity="left|bottom"
         >
 
         <Button

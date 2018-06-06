@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.5">
+        android:layout_weight="0.2">
 
         <Button
             android:id="@+id/btn_Previous"
@@ -24,7 +24,7 @@
         android:layout_width="330dp"
         android:layout_height="0dp"
         android:layout_gravity="center_horizontal"
-        android:layout_weight="1.3"
+        android:layout_weight="1.5"
         android:background="@drawable/drawable_layout_login"
         android:orientation="vertical"
         android:weightSum="3.5">
@@ -98,7 +98,7 @@
                 android:layout_height="50dp"
                 android:background="@drawable/select_button"
                 android:text="@string/s_a_chi_ti_u"
-                android:textColor="#f7f3f3" />
+                android:textColor="@color/startblue" />
         </RelativeLayout>
         <RelativeLayout
             android:layout_width="match_parent"
@@ -112,7 +112,7 @@
                 android:layout_height="50dp"
                 android:background="@drawable/select_button"
                 android:text="@string/x_a_chi_ti_u"
-                android:textColor="#f7f3f3" />
+                android:textColor="@color/startblue" />
         </RelativeLayout>
     </LinearLayout>
 </LinearLayout>

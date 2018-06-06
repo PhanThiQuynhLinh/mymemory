@@ -77,6 +77,7 @@ public class ImageAdapter extends BaseAdapter {
             public void onClick(View v) {
                 Intent intent = ((Activity) mContext).getIntent();
                 intent.putExtra("idImage", String.valueOf(position));
+                intent.putExtra("nameImage",mImgList.get(position).getmName());
                 ((Activity) mContext).setResult(RESULT_OK,
                         intent);
                 ((Activity) mContext).finish();

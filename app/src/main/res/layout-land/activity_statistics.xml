@@ -22,7 +22,7 @@
             android:background="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|enterAlways"
             app:popupTheme="@style/AppTheme.PopupOverlay"
-            app:title="Thống Kê Tiền Tiêu">
+            app:title="@string/t_k_t_t">
 
         </android.support.v7.widget.Toolbar>
 
@@ -41,22 +41,27 @@
                 android:id="@+id/tabItem2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Các Tháng" />
+                android:text="@string/c_c_th_ng" />
             <android.support.design.widget.TabItem
                 android:id="@+id/tabItem3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Các Tuần" />
+                android:text="@string/c_c_tu_n" />
             <android.support.design.widget.TabItem
                 android:id="@+id/tabItem4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tuần" />
+                android:text="@string/tu_n" />
             <android.support.design.widget.TabItem
                 android:id="@+id/tabItem5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ngày" />
+                android:text="@string/ng_y" />
+            <android.support.design.widget.TabItem
+                android:id="@+id/tabItem6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/c_c_ng_y" />
         </android.support.design.widget.TabLayout>
     </android.support.design.widget.AppBarLayout>
 

@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/img_login"
-    android:gravity="center"
     android:id="@+id/layout_Registered"
+    android:orientation="horizontal"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
     >
-
-    <RelativeLayout
-        android:id="@+id/layout_First"
-        android:layout_width="match_parent"
-        android:layout_height="40dp" />
-
     <LinearLayout
+        android:layout_gravity="center"
         android:layout_width="330dp"
-        android:layout_height="350dp"
+        android:layout_height="280dp"
         android:layout_below="@+id/layout_First"
         android:layout_centerHorizontal="true"
         android:background="@drawable/drawable_layout_login"
@@ -99,19 +96,19 @@
                     android:inputType="textPassword" />
             </android.support.design.widget.TextInputLayout>
         </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.7"
-            android:gravity="center|top">
-            <Button
-                android:id="@+id/btn_Registered"
-                android:layout_width="250dp"
-                android:layout_height="50dp"
-                android:background="@drawable/select_button"
-                android:text="@string/ng_k"
-                android:textColor="#f7f3f3" />
 
-        </RelativeLayout>
     </LinearLayout>
-</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom|left">
+        <Button
+            android:id="@+id/btn_Registered"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:background="@drawable/select_button"
+            android:text="@string/ng_k"
+            android:textColor="@color/startblue" />
+
+    </RelativeLayout>
+</LinearLayout>

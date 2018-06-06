@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.example.vanphu.mymoney.controller.LoginController;
@@ -25,7 +26,7 @@ public class Tab_Login extends Fragment {
     public static CheckBox sCb_Remember;
     @SuppressLint("StaticFieldLeak")
     public static Button sBtn_Login;
-    public static RelativeLayout sLayout_Login;
+    public static LinearLayout sLayout_Login;
     @Override
     public View onCreateView(@NonNull final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

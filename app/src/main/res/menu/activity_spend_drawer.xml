@@ -14,11 +14,11 @@
             android:title="@string/chuy_n_ti_n" />
         <item
             android:id="@+id/nav_money_collected"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_business_center_black_24dp"
             android:title="@string/ti_n_thu" />
         <item
             android:id="@+id/nav_total_collected"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_equalizer_black_24dp"
             android:title="@string/th_ng_k_ti_n_thu" />
     </group>
 
