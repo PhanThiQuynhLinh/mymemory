@@ -309,6 +309,37 @@ public class SpendController {
         };
         requestQueue.add(stringRequest);
     }
+    public void UpdateTranfer(String URL, final String nameSpend, final int MoneySpend,final String Email){
+        RequestQueue requestQueue = Volley.newRequestQueue(mContext);
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        if (response.trim().equals("Thành Công")) {
+                            Toast.makeText(mContext, "Thêm Thành Công", Toast.LENGTH_LONG).show();
+                        } else {
+                            Toast.makeText(mContext, "Lỗi Thêm", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(mContext, "Lỗi Xảy ra! " + error.toString(), Toast.LENGTH_LONG).show();
+                    }
+                }
+        ) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("tenchitieu", String.valueOf(MoneySpend)+ " " +SpendController.sKeyMoney);
+                params.put("giachitieu", "0");
+                params.put("email", Email);
+                return params;
+            }
+        };
+        requestQueue.add(stringRequest);
+    }
     public void ReadJsonDateCollected(String url) {
 
         RequestQueue requestQueue = Volley.newRequestQueue(mContext);

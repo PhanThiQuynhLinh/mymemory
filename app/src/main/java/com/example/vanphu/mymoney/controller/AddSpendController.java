@@ -57,6 +57,38 @@ public class AddSpendController {
         };
         requestQueue.add(stringRequest);
     }
+    public void AddSpendTranfer(String URL, final String email, final int tien) {
+        RequestQueue requestQueue = Volley.newRequestQueue(mContext);
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        if (response.trim().equals("Thành Công")) {
+                            Toast.makeText(mContext, "Thêm Thành Công", Toast.LENGTH_LONG).show();
+                        } else {
+                            Toast.makeText(mContext, "Lỗi Thêm", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(mContext, "Lỗi Xảy ra! " + error.toString(), Toast.LENGTH_LONG).show();
+                    }
+                }
+        ) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("tenchitieu", tien+" "+SpendController.sKeyMoney);
+                params.put("giachitieu","0" );
+                params.put("idhinh", "8");
+                params.put("email", email);
+                return params;
+            }
+        };
+        requestQueue.add(stringRequest);
+    }
     public void addmoneycollected(String URL, final String nameSpend, final int MoneySpend){
         RequestQueue requestQueue = Volley.newRequestQueue(mContext);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL,
