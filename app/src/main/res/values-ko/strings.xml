@@ -189,5 +189,7 @@
     <string name="dialogdy">동의 함</string>
     <string name="dialogh">취소</string>
     <string name="t_t">끄기</string>
-
+    <string name="loginfaile">틀린 계정 또는 틀린 암호</string>
+    <string name="loginsuccess">성공 기록</string>
+    <string name="pleasefull">전체 정보를 기입하십시오.!</string>
 </resources>

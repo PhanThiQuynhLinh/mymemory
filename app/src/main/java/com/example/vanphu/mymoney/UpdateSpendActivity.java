@@ -67,7 +67,7 @@ public class UpdateSpendActivity extends AppCompatActivity {
     }
 
     public void init() {
-        mUpdateSpendController=new UpdateSpendController(this);
+        mUpdateSpendController=new UpdateSpendController(UpdateSpendActivity.this);
         sEdit_TitleSpend = findViewById(R.id.edit_TitleSpend);
         sEdit_MoneySpend = findViewById(R.id.edit_MoneySpend);
         btn_Update=findViewById(R.id.btn_Update);

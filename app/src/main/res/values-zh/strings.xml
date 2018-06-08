@@ -182,12 +182,14 @@
     <string name="tktt_1">收入报表</string>
     <string name="t_i_kho_n_c_n_chuy_n">账户转移</string>
     <string name="s_ti_n">量</string>
-<string name="setting">安装</string>
-	<string name="c_c_ng_y">安装</string>
+    <string name="setting">安装</string>
+    <string name="c_c_ng_y">安装</string>
     <string name="dialogtitle">编辑或删除</string>
     <string name="dialogtitle_item_1">选择同意继续！</string>
     <string name="dialogdy">同意</string>
     <string name="dialogh">消除</string>
-<string name="t_t">关</string>
-
+    <string name="t_t">关</string>
+    <string name="loginfaile">假帐户或错误的密码</string>
+    <string name="loginsuccess">成功日志</string>
+    <string name="pleasefull">请填写完整信息!</string>
 </resources>

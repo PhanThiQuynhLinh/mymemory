@@ -189,4 +189,7 @@
     <string name="dialogdy">同意する</string>
     <string name="dialogh">キャンセル</string>
 	<string name="t_t">オフ</string>
+    <string name="loginfaile">誤ったアカウントまたは間違ったパスワード</string>
+    <string name="loginsuccess">成功の記録</string>
+    <string name="pleasefull">完全情報を記入してください!</string>
 </resources>

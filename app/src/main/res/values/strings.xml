@@ -189,5 +189,6 @@
     <string name="dialogdy">Đồng Ý</string>
     <string name="dialogh">Hủy</string>
     <string name="t_t">Tắt</string>
-
+    <string name="loginfaile">Tài Khoản Sai Hoặc Mật Khẩu Sai</string>
+    <string name="loginsuccess">Đăng Nhập Thành Công</string>
 </resources>

@@ -37,7 +37,7 @@ public class AddSpendActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (sEdit_MoneySpend.getText().toString().equals("") || sEdit_TitleSpend.getText().toString().trim().equals("")) {
-                    Toast.makeText(AddSpendActivity.this, "Vui Lòng Nhập Đủ Thống Tin", Toast.LENGTH_LONG).show();
+                    Toast.makeText(AddSpendActivity.this, getResources().getString(R.string.pleasefull), Toast.LENGTH_LONG).show();
                 } else {
                     try {
                         Integer.parseInt(sEdit_MoneySpend.getText().toString().trim());

@@ -45,9 +45,9 @@ public class LoginController {
             @Override
             public void onClick(View view) {
                 final Snackbar snackbar = Snackbar
-                        .make(Tab_Login.sLayout_Login, "Đăng Nhập Thất Bại", Snackbar.LENGTH_LONG);
+                        .make(Tab_Login.sLayout_Login, mContext.getResources().getString(R.string.loginfaile), Snackbar.LENGTH_LONG);
                 if (Tab_Login.sEdit_Password.getText().toString().equals("") || Tab_Login.sEdit_User.getText().toString().equals("")) {
-                    Toast.makeText(mContext, "Vui Lòng Chọn Điền Đầy Đủ Thông Tin", Toast.LENGTH_LONG).show();
+                    Toast.makeText(mContext, mContext.getResources().getString(R.string.pleasefull), Toast.LENGTH_LONG).show();
                 } else {
                     //                Declare Dialog
                     final Dialog dialog = new Dialog(mContext);
@@ -63,7 +63,7 @@ public class LoginController {
                                 if (jsonObject.names().get(0).equals("success")) {
 //                                declare dialog
 
-                                    Toast.makeText(mContext, "Đăng Nhập Thành Công", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(mContext, mContext.getResources().getString(R.string.loginsuccess), Toast.LENGTH_LONG).show();
                                     if (Tab_Login.sCb_Remember.isChecked()) {
                                         SharedPreferences.Editor editor = mSharedPreferences.edit();
                                         editor.putString("username", Tab_Login.sEdit_User.getText().toString().trim());
@@ -81,13 +81,16 @@ public class LoginController {
                                     intent.putExtra("User", Tab_Login.sEdit_User.getText().toString().trim());
                                     mContext.startActivity(intent);
                                 } else {
-                                    dialog.dismiss();
-                                    dialog.dismiss();
+                                    final Snackbar snackbar1 = Snackbar
+                                            .make(Tab_Login.sLayout_Login, mContext.getResources().getString(R.string.loginfaile), Snackbar.LENGTH_LONG);
+                                    snackbar1.show();
                                 }
 
                             } catch (JSONException e) {
                                 dialog.dismiss();
-                                dialog.dismiss();
+                                final Snackbar snackbar1 = Snackbar
+                                        .make(Tab_Login.sLayout_Login, mContext.getResources().getString(R.string.loginfaile), Snackbar.LENGTH_LONG);
+                                snackbar1.show();
                             }
                         }
                     }, new Response.ErrorListener() {
@@ -100,7 +103,7 @@ public class LoginController {
                         @Override
                         protected Map<String, String> getParams() throws AuthFailureError {
                             HashMap<String, String> hashMap = new HashMap<>();
-//                        post item data
+//                          post item data
                             hashMap.put("email", Tab_Login.sEdit_User.getText().toString());
                             hashMap.put("password", Tab_Login.sEdit_Password.getText().toString());
                             return hashMap;
