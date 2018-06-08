@@ -1,6 +1,7 @@
 package com.example.vanphu.mymoney.controller;
 
 import android.content.Context;
+import android.support.design.widget.Snackbar;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -18,6 +19,7 @@ import com.example.vanphu.mymoney.adapter.SpendCollectedAdapter;
 import com.example.vanphu.mymoney.model.SpendModel;
 import com.example.vanphu.mymoney.R;
 import com.example.vanphu.mymoney.SpendActivity;
+import com.example.vanphu.mymoney.tab.Tab_Login;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -140,7 +142,9 @@ public class SpendController {
                                 final int idImage = mContext.getResources().getIdentifier(mArrayImageAvatar.get(mIdImage), "drawable", mContext.getPackageName());
                                 SpendActivity.sImg_Avatar.setImageResource(idImage);
                             } catch (Exception e) {
-                                Toast.makeText(mContext, "Lỗi" + e, Toast.LENGTH_LONG).show();
+                                final Snackbar snackbar = Snackbar
+                                        .make(SpendActivity.layoutMain1,"Kết Nối Không Thành Công", Snackbar.LENGTH_LONG);
+                                snackbar.show();
                             }
                         }
 
@@ -149,7 +153,9 @@ public class SpendController {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(mContext, "Lỗi 123" + error.toString(), Toast.LENGTH_LONG).show();
+                        final Snackbar snackbar = Snackbar
+                                .make(SpendActivity.layoutMain1,"Kết Nối Không Thành Công", Snackbar.LENGTH_LONG);
+                        snackbar.show();
 
                     }
                 }
@@ -184,7 +190,9 @@ public class SpendController {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(mContext, "Lỗi 123" + error.toString(), Toast.LENGTH_LONG).show();
+                        final Snackbar snackbar = Snackbar
+                                .make(SpendActivity.layoutMain1,"Kết Nối Không Thành Công", Snackbar.LENGTH_LONG);
+                        snackbar.show();
                     }
                 }
         );
@@ -224,7 +232,9 @@ public class SpendController {
 
                                 SpendActivity.sTxt_Year.setText(String.valueOf(object.getInt("nam")));
                             } catch (Exception e) {
-                                Toast.makeText(mContext, "Lỗi123" + e, Toast.LENGTH_LONG).show();
+                                final Snackbar snackbar = Snackbar
+                                        .make(SpendActivity.layoutMain1,"Kết Nối Không Thành Công", Snackbar.LENGTH_LONG);
+                                snackbar.show();
                             }
                         }
 //                        adapter.notifyDataSetChanged();

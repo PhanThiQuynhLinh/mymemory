@@ -8,6 +8,8 @@ import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -123,6 +125,8 @@ public class SpendCollectedAdapter extends BaseAdapter {
                 alertDialog.show();
             }
         });
+        Animation animation10= AnimationUtils.loadAnimation(mInflater.getContext(),R.anim.slide_up);
+        view.startAnimation(animation10);
         return view;
     }
 }

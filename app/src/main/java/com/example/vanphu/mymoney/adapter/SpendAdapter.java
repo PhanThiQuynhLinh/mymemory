@@ -121,7 +121,7 @@ public class SpendAdapter extends BaseAdapter {
                 alertDialog.show();
             }
         });
-        Animation animation10= AnimationUtils.loadAnimation(mInflater.getContext(),R.anim.shake);
+        Animation animation10= AnimationUtils.loadAnimation(mInflater.getContext(),R.anim.slide_up);
         view.startAnimation(animation10);
         return view;
     }
