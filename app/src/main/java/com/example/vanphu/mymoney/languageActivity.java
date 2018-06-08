@@ -16,7 +16,6 @@ import java.util.Locale;
 
 public class languageActivity extends AppCompatActivity {
     private ListView lv_language;
-    private ArrayList<String> arrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,17 +59,17 @@ public class languageActivity extends AppCompatActivity {
         SharedPreferences sp = getSharedPreferences("data",MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
         editor.putString("key_language", language);
-        editor.commit();
+        editor.apply();
     }
     public void init(){
         lv_language=findViewById(R.id.lv_language);
-        arrayList=new ArrayList<>();
+        ArrayList<String> arrayList = new ArrayList<>();
         arrayList.add("Tieng Viet");
         arrayList.add("English");
         arrayList.add("Japan");
         arrayList.add("China");
         arrayList.add("Korean");
-        ArrayAdapter adapter=new ArrayAdapter(languageActivity.this,android.R.layout.simple_list_item_1,arrayList);
+        ArrayAdapter<String> adapter=new ArrayAdapter<>(languageActivity.this,android.R.layout.simple_list_item_1, arrayList);
         lv_language.setAdapter(adapter);
     }
     @Override

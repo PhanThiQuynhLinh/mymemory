@@ -1,5 +1,6 @@
 package com.example.vanphu.mymoney;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
@@ -11,7 +12,9 @@ import android.widget.TextView;
 import com.example.vanphu.mymoney.controller.UpdateSpendController;
 
 public class UpdateSpendActivity extends AppCompatActivity {
+    @SuppressLint("StaticFieldLeak")
     public static TextInputEditText sEdit_TitleSpend;
+    @SuppressLint("StaticFieldLeak")
     public static TextInputEditText sEdit_MoneySpend;
     Button btn_Update;
     Button btn_Delete;

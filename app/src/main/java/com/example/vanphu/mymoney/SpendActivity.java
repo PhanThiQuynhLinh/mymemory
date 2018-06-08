@@ -55,9 +55,9 @@ public class SpendActivity extends AppCompatActivity
     String URL_item_2 = "https://vanphudhsp2015.000webhostapp.com/getdatatienvao.php?email=";
     String URL_item_3 = "https://vanphudhsp2015.000webhostapp.com/tinhngay.php?email=";
     String URL_item_4 = "https://vanphudhsp2015.000webhostapp.com/tinhtongchitieu.php?email=";
-    private com.example.vanphu.mymoney.languageActivity languageActivity;
-    String language;
-   public static  LinearLayout layoutMain1;
+    @SuppressLint("StaticFieldLeak")
+    public static LinearLayout layoutMain1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -112,7 +112,7 @@ public class SpendActivity extends AppCompatActivity
     }
 
     public void init() {
-        layoutMain1=findViewById(R.id.layoutMain1);
+        layoutMain1 = findViewById(R.id.layoutMain1);
         ListView mlv_Spend = findViewById(R.id.lv_Spend);
         txt_MoneyIn = findViewById(R.id.txt_MoneyIn);
         sTxt_Day = findViewById(R.id.txt_Day);

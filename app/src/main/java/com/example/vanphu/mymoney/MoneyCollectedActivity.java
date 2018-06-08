@@ -1,5 +1,6 @@
 package com.example.vanphu.mymoney;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -14,20 +15,21 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.vanphu.mymoney.controller.AddSpendController;
 import com.example.vanphu.mymoney.controller.SpendController;
 
 public class MoneyCollectedActivity extends AppCompatActivity {
-    private ListView mLvMoneyCollected;
-    private String mURL = "https://vanphudhsp2015.000webhostapp.com/getdatatienthu.php?email=";
     private String mURL_item_1 = "https://vanphudhsp2015.000webhostapp.com/inserttienthu.php";
-    private String mUrl_item_2="https://vanphudhsp2015.000webhostapp.com/tinhngaytienthu.php?email=";
-    private String mUrl_item_3="https://vanphudhsp2015.000webhostapp.com/maxtienthu.php?email=";
+    @SuppressLint("StaticFieldLeak")
     public static TextView txt_MoneyMax;
+    @SuppressLint("StaticFieldLeak")
     public static TextView sTxt_Day;
+    @SuppressLint("StaticFieldLeak")
     public static TextView sTxt_Date;
+    @SuppressLint("StaticFieldLeak")
     public static TextView sTxt_Month;
+    @SuppressLint("StaticFieldLeak")
     public static TextView sTxt_Year;
+    @SuppressLint("StaticFieldLeak")
     public static TextView sTxt_SumSpendMoney;
     private SpendController mSpendController;
     @Override
@@ -40,8 +42,9 @@ public class MoneyCollectedActivity extends AppCompatActivity {
 
     public void init() {
         mSpendController = new SpendController(this);
-        mLvMoneyCollected = findViewById(R.id.lvMoneyCollected);
+        ListView mLvMoneyCollected = findViewById(R.id.lvMoneyCollected);
         mSpendController.addCollected(mLvMoneyCollected);
+        String mURL = "https://vanphudhsp2015.000webhostapp.com/getdatatienthu.php?email=";
         mSpendController.readJsonSpendCollected(mURL + SpendActivity.mUser);
         sTxt_Day=findViewById(R.id.txt_Day);
         sTxt_Date=findViewById(R.id.txt_Date);
@@ -50,8 +53,10 @@ public class MoneyCollectedActivity extends AppCompatActivity {
         txt_MoneyMax=findViewById(R.id.txt_MoneyMax);
         sTxt_SumSpendMoney=findViewById(R.id.txt_SumSpendMoney);
         mSpendController=new SpendController(MoneyCollectedActivity.this);
-        mSpendController.ReadJsonDateCollected(mUrl_item_2+SpendActivity.mUser);
-        mSpendController.readJsonMoneyCollected(mUrl_item_3+SpendActivity.mUser);
+        String mUrl_item_2 = "https://vanphudhsp2015.000webhostapp.com/tinhngaytienthu.php?email=";
+        mSpendController.ReadJsonDateCollected(mUrl_item_2 +SpendActivity.mUser);
+        String mUrl_item_3 = "https://vanphudhsp2015.000webhostapp.com/maxtienthu.php?email=";
+        mSpendController.readJsonMoneyCollected(mUrl_item_3 +SpendActivity.mUser);
     }
 
     @Override

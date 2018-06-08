@@ -1,5 +1,6 @@
 package com.example.vanphu.mymoney;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
@@ -14,9 +15,13 @@ import com.example.vanphu.mymoney.controller.SpendController;
 import com.example.vanphu.mymoney.controller.TranfersController;
 
 public class TranfersActivity extends AppCompatActivity {
+    @SuppressLint("StaticFieldLeak")
     public static TextInputEditText sEdit_User;
+    @SuppressLint("StaticFieldLeak")
     public static TextInputEditText sEdit_money_item1;
+    @SuppressLint("StaticFieldLeak")
     public static TextInputEditText sEdit_money;
+    @SuppressLint("StaticFieldLeak")
     public static Button sBtn_tranfers;
     private TranfersController tranfersController;
     private String mUrl = "https://vanphudhsp2015.000webhostapp.com/chuyentien.php";

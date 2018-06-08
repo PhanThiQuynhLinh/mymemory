@@ -13,11 +13,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
-import com.example.vanphu.mymoney.controller.RegisteredController;
 import com.example.vanphu.mymoney.R;
 import com.example.vanphu.mymoney.SelectorImageActivity;
+import com.example.vanphu.mymoney.controller.RegisteredController;
 
 import java.util.ArrayList;
 import java.util.Arrays;

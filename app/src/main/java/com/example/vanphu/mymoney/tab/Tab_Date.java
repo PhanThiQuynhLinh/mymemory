@@ -11,15 +11,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.PopupMenu;
-import android.widget.Toast;
 
 import com.example.vanphu.mymoney.R;
 import com.example.vanphu.mymoney.SpendActivity;
 import com.example.vanphu.mymoney.controller.StatisticsController;
 
-/**
- * Created by VanPhu on 5/18/2018.
- */
 
 public class Tab_Date extends Fragment {
     private Button btnDay;
@@ -31,14 +27,15 @@ public class Tab_Date extends Fragment {
     private String mUrl = "https://vanphudhsp2015.000webhostapp.com/getcacngay.php?";
     private String date;
     private String date_item_1;
+
     @Override
     public View onCreateView(@NonNull final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.tab_date, container, false);
         init(rootView);
-        date="2018-"+btnMonth.getText().toString().trim()+"-"+btnDay.getText().toString().trim();
-        date_item_1="2018-"+btnMonth_item1_2.getText().toString().trim()+"-"+btnDay_item1_2.getText().toString().trim();
-        mStatisticsController.readJsonSpend(mUrl + "email=" + SpendActivity.mUser + "&date1=" +date+"&date2="+date_item_1);
+        date = "2018-" + btnMonth.getText().toString().trim() + "-" + btnDay.getText().toString().trim();
+        date_item_1 = "2018-" + btnMonth_item1_2.getText().toString().trim() + "-" + btnDay_item1_2.getText().toString().trim();
+        mStatisticsController.readJsonSpend(mUrl + "email=" + SpendActivity.mUser + "&date1=" + date + "&date2=" + date_item_1);
         mStatisticsController.addImage(mLv_statis);
         btnMonth.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,6 +63,7 @@ public class Tab_Date extends Fragment {
         });
         return rootView;
     }
+
     private void ShowMenu(final Button btnMonth_item1) {
         PopupMenu popupMenu = new PopupMenu(getLayoutInflater().getContext(), btnMonth_item1);
 
@@ -76,11 +74,12 @@ public class Tab_Date extends Fragment {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 btnMonth_item1.setText(item.getTitle());
-                date="2018-"+btnMonth.getText().toString().trim()+"-"+btnDay.getText().toString().trim();
-                date_item_1="2018-"+btnMonth_item1_2.getText().toString().trim()+"-"+btnDay_item1_2.getText().toString().trim();
+                date = "2018-" + btnMonth.getText().toString().trim() + "-" + btnDay.getText().toString().trim();
+                date_item_1 = "2018-" + btnMonth_item1_2.getText().toString().trim() + "-" + btnDay_item1_2.getText().toString().trim();
 //                Toast.makeText(getLayoutInflater().getContext(),date,Toast.LENGTH_LONG).show();
 //                Toast.makeText(getLayoutInflater().getContext(),date_item_1,Toast.LENGTH_LONG).show();
-                mStatisticsController.readJsonSpend(mUrl + "email=" + SpendActivity.mUser + "&date1=" +date+"&date2="+date_item_1);                mStatisticsController.addImage(mLv_statis);
+                mStatisticsController.readJsonSpend(mUrl + "email=" + SpendActivity.mUser + "&date1=" + date + "&date2=" + date_item_1);
+                mStatisticsController.addImage(mLv_statis);
                 mStatisticsController.addImage(mLv_statis);
                 return false;
             }
@@ -88,6 +87,7 @@ public class Tab_Date extends Fragment {
         popupMenu.show();
 
     }
+
     private void ShowMenu1(final Button btnMonth_item1) {
         PopupMenu popupMenu = new PopupMenu(getLayoutInflater().getContext(), btnMonth_item1);
 
@@ -98,11 +98,12 @@ public class Tab_Date extends Fragment {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 btnMonth_item1.setText(item.getTitle());
-                date="2018-"+btnMonth.getText().toString().trim()+"-"+btnDay.getText().toString().trim();
-                date_item_1="2018-"+btnMonth_item1_2.getText().toString().trim()+"-"+btnDay_item1_2.getText().toString().trim();
+                date = "2018-" + btnMonth.getText().toString().trim() + "-" + btnDay.getText().toString().trim();
+                date_item_1 = "2018-" + btnMonth_item1_2.getText().toString().trim() + "-" + btnDay_item1_2.getText().toString().trim();
 //                Toast.makeText(getLayoutInflater().getContext(),date,Toast.LENGTH_LONG).show();
 //                Toast.makeText(getLayoutInflater().getContext(),date_item_1,Toast.LENGTH_LONG).show();
-                mStatisticsController.readJsonSpend(mUrl + "email=" + SpendActivity.mUser + "&date1=" +date+"&date2="+date_item_1);                mStatisticsController.addImage(mLv_statis);
+                mStatisticsController.readJsonSpend(mUrl + "email=" + SpendActivity.mUser + "&date1=" + date + "&date2=" + date_item_1);
+                mStatisticsController.addImage(mLv_statis);
                 mStatisticsController.addImage(mLv_statis);
                 return false;
             }
@@ -110,6 +111,7 @@ public class Tab_Date extends Fragment {
         popupMenu.show();
 
     }
+
     public void init(View rootView) {
         btnDay = rootView.findViewById(R.id.btnDay);
         btnMonth = rootView.findViewById(R.id.btnMonth);

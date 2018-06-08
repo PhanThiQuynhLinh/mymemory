@@ -16,9 +16,6 @@ import com.example.vanphu.mymoney.R;
 import com.example.vanphu.mymoney.SpendActivity;
 import com.example.vanphu.mymoney.controller.StatisticsController;
 
-/**
- * Created by VanPhu on 5/18/2018.
- */
 
 public class Tab_Date_Total extends Fragment {
     private Button btnDay;

@@ -12,10 +12,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
-import com.example.vanphu.mymoney.controller.LoginController;
 import com.example.vanphu.mymoney.R;
+import com.example.vanphu.mymoney.controller.LoginController;
 
 public class Tab_Login extends Fragment {
     @SuppressLint("StaticFieldLeak")

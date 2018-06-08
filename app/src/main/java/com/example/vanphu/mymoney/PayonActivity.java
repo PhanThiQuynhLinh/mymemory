@@ -23,8 +23,6 @@ public class PayonActivity extends AppCompatActivity {
     public static int sMIdImage = -1;
     public static String sKeyMoney = "$";
     public static String sUser="";
-    private MoneyInController mMoneyInController;
-    private String mURL = "https://vanphudhsp2015.000webhostapp.com/insert.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +37,8 @@ public class PayonActivity extends AppCompatActivity {
                 startActivityForResult(new Intent(PayonActivity.this, SelectorMoneyActivity.class), 100);
             }
         });
-        mMoneyInController = new MoneyInController(this);
+        MoneyInController mMoneyInController = new MoneyInController(this);
+        String mURL = "https://vanphudhsp2015.000webhostapp.com/insert.php";
         mMoneyInController.moneyIn(mURL);
         getIntentdata();
     }

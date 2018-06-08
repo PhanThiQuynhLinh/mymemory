@@ -63,9 +63,9 @@ public class StatisticsActivity extends AppCompatActivity implements OnChartValu
     private SectionsPagerAdapter mSectionsPagerAdapter;
     ArrayList<PieEntry> yValues = new ArrayList<>();
     PieDataSet dataset;
-    private String mUrl1="https://vanphudhsp2015.000webhostapp.com/getngayhientai.php?email=";
-    private int mSum=0;
-    String keyMoney="đ";
+    private String mUrl1 = "https://vanphudhsp2015.000webhostapp.com/getngayhientai.php?email=";
+    private int mSum = 0;
+    String keyMoney = "đ";
     /**
      * The {@link ViewPager} that will host the section contents.
      */
@@ -131,12 +131,12 @@ public class StatisticsActivity extends AppCompatActivity implements OnChartValu
             pieChart.setDrawHoleEnabled(true);
             pieChart.setHoleColor(Color.WHITE);
             pieChart.setTransparentCircleRadius(31f);
-            ReadJson1(mUrl1+SpendActivity.mUser,pieChart);
+            ReadJson1(mUrl1 + SpendActivity.mUser, pieChart);
             Button btn_turnoff = dialog.findViewById(R.id.btn_turnoff);
             btn_turnoff.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                   dialog.dismiss();
+                    dialog.dismiss();
                     yValues.clear();
                 }
             });
@@ -145,39 +145,40 @@ public class StatisticsActivity extends AppCompatActivity implements OnChartValu
 
         return super.onOptionsItemSelected(item);
     }
-    public void ReadJson1(String url, final PieChart pieChart){
-        RequestQueue requestQueue= Volley.newRequestQueue(this);
-        JsonArrayRequest jsonArrayRequest=new JsonArrayRequest(Request.Method.GET, url, null,
+
+    public void ReadJson1(String url, final PieChart pieChart) {
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
 
-                        for(int i=0;i<response.length();i++){
-                            try{
+                        for (int i = 0; i < response.length(); i++) {
+                            try {
                                 JSONObject object = null;
-                                object=response.getJSONObject(i);
-                                int tien=Integer.parseInt(object.getString("giachitieu"));
-                                String tenchitieu=object.getString("tenchitieu");
-                                yValues.add(new PieEntry(tien,tenchitieu));
+                                object = response.getJSONObject(i);
+                                int tien = Integer.parseInt(object.getString("giachitieu"));
+                                String tenchitieu = object.getString("tenchitieu");
+                                yValues.add(new PieEntry(tien, tenchitieu));
                                 pieChart.animateY(1000, Easing.EasingOption.EaseInCubic);
-                                mSum+=tien;
-                                dataset=new PieDataSet(yValues,"Dữ Liệu");
+                                mSum += tien;
+                                dataset = new PieDataSet(yValues, "Dữ Liệu");
                                 dataset.setSliceSpace(3f);
                                 dataset.setSelectionShift(5f);
                                 dataset.setColors(ColorTemplate.MATERIAL_COLORS);
 
-                                PieData data=new PieData((dataset));
+                                PieData data = new PieData((dataset));
                                 data.setValueTextSize(20f);
                                 data.setValueTextColor(Color.RED);
                                 data.setValueFormatter(new PercentFormatter());
 
                                 pieChart.setData(data);
                                 pieChart.setOnChartValueSelectedListener(StatisticsActivity.this);
-                            }catch (Exception e){
-                                Toast.makeText(StatisticsActivity.this,"Lỗi"+e,Toast.LENGTH_LONG).show();
+                            } catch (Exception e) {
+                                Toast.makeText(StatisticsActivity.this, "Lỗi" + e, Toast.LENGTH_LONG).show();
                             }
                         }
-                        pieChart.setCenterText("Tổng chi tiêu là: "+mSum);
+                        pieChart.setCenterText("Tổng chi tiêu là: " + mSum);
                         pieChart.setCenterTextSize(20f);
                         pieChart.setCenterTextColor(Color.GRAY);
                         pieChart.setNoDataTextColor(Color.BLUE);
@@ -187,16 +188,17 @@ public class StatisticsActivity extends AppCompatActivity implements OnChartValu
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(StatisticsActivity.this,"Lỗi "+error.toString(),Toast.LENGTH_LONG).show();
+                        Toast.makeText(StatisticsActivity.this, "Lỗi " + error.toString(), Toast.LENGTH_LONG).show();
 //                        error();
                     }
                 }
         );
         requestQueue.add(jsonArrayRequest);
     }
+
     @Override
     public void onValueSelected(Entry e, Highlight h) {
-        try{
+        try {
             if (e == null)
                 return;
             int intSelectedPos = (int) h.getX();
@@ -208,9 +210,9 @@ public class StatisticsActivity extends AppCompatActivity implements OnChartValu
 
                 }
             }
-            Toast.makeText(StatisticsActivity.this, "Giá Chi Tiêu: " + e.getY()+" "+ SpendController.sKeyMoney,Toast.LENGTH_LONG).show();
-        }catch (Exception e1){
-            Toast.makeText(StatisticsActivity.this,"Lỗi"+e.toString().trim(),Toast.LENGTH_LONG).show();
+            Toast.makeText(StatisticsActivity.this, "Giá Chi Tiêu: " + e.getY() + " " + SpendController.sKeyMoney, Toast.LENGTH_LONG).show();
+        } catch (Exception e1) {
+            Toast.makeText(StatisticsActivity.this, "Lỗi" + e.toString().trim(), Toast.LENGTH_LONG).show();
         }
 
 

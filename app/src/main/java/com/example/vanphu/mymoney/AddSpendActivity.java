@@ -22,6 +22,7 @@ public class AddSpendActivity extends AppCompatActivity {
     public static TextInputEditText sEdit_TitleSpend;
     @SuppressLint("StaticFieldLeak")
     public static TextInputEditText sEdit_MoneySpend;
+    @SuppressLint("StaticFieldLeak")
     public static Button sBtn_Add;
     public static int sIdImage = -1;
     private AddSpendController mAddSpendController;
